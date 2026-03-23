@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 2: DC Circuits and Component Behavior</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Module 2: DC Circuits and Component Behavior</h1>
+<p>Module 2 introduces the analytical tools you will use throughout your engineering career. You will move from understanding individual components to analyzing how they behave in connected networks, and you will verify those laws in the lab.</p>
+<p><strong>This module covers:</strong><br/>
+* Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL)<br/>
+* Series and parallel resistance combinations<br/>
+* The voltage divider and how it changes under load<br/>
+* I-V curves and the difference between linear and nonlinear components</p>
+<hr/>
+<h3>Conservation Laws in Action</h3>
+<p>KCL and KVL are not just textbook rules. They are statements of conservation of charge and energy. Every method of circuit analysis you will encounter in this course derives from these two laws. You will apply them to resistor networks and verify that they hold in the real world on your breadboard.</p>
+<h3>The Voltage Divider</h3>
+<p>If there is one circuit to master in Module 2, it is the voltage divider. This two-resistor configuration appears in almost every engineering application. You will learn how it works in theory and how its output voltage changes when a load is connected, an effect called loading. This loading concept will resurface when you study op-amps in Module 6.</p>
+<h3>The I-V Menagerie</h3>
+<p>Every component can be characterized by its I-V curve, a graph that shows how current through it relates to voltage across it. Resistors produce a straight line; diodes do not. You will be introduced to this range of component behaviors as a preview of the device characterization you will carry further in Module 3.</p>
+<hr/>
+<h3>Hands-On: Lab 2</h3>
+<p>In Lab 2, you will use the ADALM2000 (M2K) and the Keysight Bench Multimeter to verify DC circuit laws and capture your first periodic signals.</p>
+<ul>
+<li><strong>Verify the Laws:</strong> Build resistor networks and confirm that KCL and KVL hold on your breadboard.</li>
+<li><strong>Oscilloscope and Signal Generator:</strong> Use the M2K to capture and export periodic signals for the first time.</li>
+<li><strong>MATLAB Analysis:</strong> Calculate mean and standard deviation on class resistor data to see how real components vary from their nominal values.</li>
+</ul>
+  </main>
+</body>
+</html>
