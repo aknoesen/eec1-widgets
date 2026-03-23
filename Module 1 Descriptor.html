@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1: Foundations and Circuit Language</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Module 1: Foundations and Circuit Language</h1>
+<p>Module 1 is your entry point into electrical engineering. You will build a conceptual foundation for how charge, current, and voltage work, learn to read and draw circuit schematics, and get hands-on with the ADALM2000 (M2K) for the first time.</p>
+<p><strong>This module covers:</strong><br/>
+* Electric force, field, and potential using a gravity-based analogy<br/>
+* Conventional current and the difference between DC and AC<br/>
+* Circuit schematics: nodes, branches, loops, and ground conventions<br/>
+* Responsible AI use as a learning tool in engineering</p>
+<hr/>
+<h3>The Physics Behind the Circuit</h3>
+<p>We begin with the "why" before the "what." Using a gravity and hill analogy, you will learn to distinguish three foundational concepts: electric force, electric field, and electric potential. These invisible quantities are the reason a circuit does anything at all. Understanding the difference between them is the first step toward reading and building real circuits.</p>
+<h3>Speaking the Language of Circuits</h3>
+<p>Engineers communicate circuit ideas through schematics, not physical pictures of wires and components. You will learn to read and draw schematics using standard symbols and master the vocabulary of nodes, branches, and loops. You will also learn the conventions for current direction, voltage polarity, and ground references that apply throughout the rest of the course.</p>
+<h3>Responsible AI Use</h3>
+<p>This course treats AI as a thinking partner, not an answer dispenser. In Module 1, you will be introduced to how AI tools should and should not be used in your engineering education. Critical evaluation, proper attribution, and verification against the textbook are professional habits you will practice from the start.</p>
+<hr/>
+<h3>Hands-On: Lab 1</h3>
+<p>In Lab 1, you will get your first hands-on experience with the ADALM2000 (M2K), the portable instrument you will use throughout the course as your oscilloscope, signal generator, power supply, and voltmeter.</p>
+<ul>
+<li><strong>Soldering:</strong> Build your UC Davis M2K Adaptor Board, developing a foundational engineering skill you will use for the rest of the term.</li>
+<li><strong>Instrument Familiarization:</strong> Connect the M2K, launch Scopy, and complete your first DC measurements.</li>
+<li><strong>Component Collection:</strong> Gather the components you will use in the labs ahead.</li>
+</ul>
+  </main>
+</body>
+</html>
