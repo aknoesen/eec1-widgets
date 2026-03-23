@@ -168,6 +168,24 @@
 * Chapter 7 (Circuits That Remember)</p>
 <p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab4Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 4 Instructions</a></p>
 <hr/>
+<h3>Pre-Lecture Assessment</h3>
+<p>After completing the reading — and <strong>before attending lecture</strong> — you will take a short online quiz. Questions are drawn at random from a bank, so every attempt is different.</p>
+<blockquote>
+<p><strong>How to prepare:</strong> Use an AI tool to work through the checklist below. Ask it to explain each item, give you an example, then quiz you on it. When you can answer without looking, you are ready.  You will have <strong>15 minutes</strong> to complete the assessment.</p>
+</blockquote>
+<h4>Chapter 7: Circuits That Remember — 10 questions</h4>
+<ul>
+<li>Explain why a fully charged capacitor behaves like an open circuit in DC steady state</li>
+<li>Define the RC time constant and state its units</li>
+<li>Write the voltage equation for a charging capacitor and identify what each term represents</li>
+<li>State approximately how many time constants are required for a capacitor to reach 98% of its final value and explain why "fully charged" is a practical approximation</li>
+<li>Write the voltage equation for a discharging capacitor and describe the shape of the resulting waveform</li>
+<li>Explain why an ideal inductor behaves like a short circuit in DC steady state</li>
+<li>Write the expression for the RL time constant and explain why increasing resistance decreases the time constant</li>
+<li>Write the current equation for an RL circuit energizing from zero and identify what each term represents</li>
+<li>Explain why the current through an energizing inductor reaches 63.2% of its steady-state value after one time constant</li>
+</ul>
+<hr/>
 <h3>Energy Storage and Fundamental Constraints</h3>
 <p>Capacitors and inductors each store energy in a different form. A capacitor stores energy in an electric field between its plates; its defining constraint is that voltage cannot change instantaneously. An inductor stores energy in the magnetic field around its coil; its defining constraint is that current cannot change instantaneously. These constraints are what give circuits memory.</p>
 <h3>The Time Constant</h3>
@@ -175,12 +193,28 @@
 <h3>Engineering Judgment</h3>
 <p>A practical theme of this module is learning when a small physical detail is significant. The M2K signal generator has an internal resistance of about 50 ohms. You will calculate and verify why this resistance is negligible in the RC circuit but significant in the RL circuit. Knowing what to include and what to safely ignore is a core engineering skill.</p>
 <hr/>
-<h3>Hands-On: Lab 4</h3>
+<h2>Hands-On: Lab 4</h2>
+<h3>Before the Lab</h3>
+<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab4Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 4 Instructions</a></p>
 <p>In Lab 4, you will observe transient response directly and apply quantitative methods to extract accurate measurements from real data.</p>
 <ul>
 <li><strong>Visual Measurement:</strong> Use the M2K oscilloscope to identify the 63.2% point and read the time constant directly from the screen.</li>
 <li><strong>MATLAB Fitting:</strong> Export RC data and use linearization to extract a precise time constant from noisy real-world signals.</li>
 <li><strong>Statistical Rigor:</strong> Apply 95% confidence intervals to your measurements, learning how averaging multiple charge and discharge cycles reduces random error.</li>
+</ul>
+<hr/>
+<h3>Post-Lecture Assessment</h3>
+<p>After completing the lecture and lab, you will take a post-lecture assessment. These questions require you to apply the step-response equations, interpret exponential curves, and compare RC and RL behavior. Questions are drawn at random from a bank; the quiz is <strong>6 questions · 15 minutes</strong>.</p>
+<blockquote>
+<p><strong>How to prepare:</strong> For each topic below, ask your AI tool for a worked example, then solve it yourself. If you can explain your reasoning out loud, you are ready.</p>
+</blockquote>
+<h4>Chapter 7: Circuits That Remember</h4>
+<ul>
+<li><strong>Capacitor fundamentals</strong> — how a capacitor stores energy; why voltage cannot change instantaneously; the V-I relationship; open-circuit behavior at DC steady state</li>
+<li><strong>RC step response</strong> — the charging and discharging equations; the time constant τ = RC; the 63.2% point; how many time constants reach practical steady state; response to a square wave</li>
+<li><strong>Inductor fundamentals</strong> — how an inductor stores energy; why current cannot change instantaneously; the V-I relationship; short-circuit behavior at DC steady state</li>
+<li><strong>RL step response</strong> — the current rise equation; the time constant τ = L/R; why increasing resistance decreases the time constant; the voltage across the inductor during energizing</li>
+<li><strong>RC vs RL comparison</strong> — the structural parallel between the two circuits; how source resistance affects the RL time constant</li>
 </ul>
   </main>
 </body>

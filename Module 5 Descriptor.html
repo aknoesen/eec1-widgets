@@ -169,6 +169,23 @@
 * Chapter 9 (Impedance and Filters)</p>
 <p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab5Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 5 Instructions</a></p>
 <hr/>
+<h3>Pre-Lecture Assessments</h3>
+<p>After completing the reading for each chapter — and <strong>before attending lecture</strong> — you will take a short online quiz. Questions are drawn at random from a bank, so every attempt is different.</p>
+<blockquote>
+<p><strong>How to prepare:</strong> Use an AI tool to work through the checklist below. Ask it to explain each item, give you an example, then quiz you on it. When you can answer without looking, you are ready.  ou will have <strong>30 minutes</strong> to complete the assessment.</p>
+</blockquote>
+<h4>Chapter 8: The Imaginary Made Useful — 10 questions</h4>
+<ul>
+<li>Identify the real and imaginary parts of a complex number written in rectangular form and plot it on the complex plane</li>
+<li>Explain what multiplying a complex number by j does geometrically and state the resulting angle change</li>
+<li>Define a phasor and explain what information it encodes about a sinusoidal signal</li>
+</ul>
+<h4>Chapter 9: Impedance and Filters — 10 questions</h4>
+<ul>
+<li>Define impedance and explain how it generalizes resistance to AC circuits</li>
+<li>Explain what the −3 dB point means physically and state what ratio of V_out/V_in it corresponds to</li>
+</ul>
+<hr/>
 <h3>Phasors: Making AC Analysis Algebraic</h3>
 <p>Analyzing circuits with time-varying signals normally requires solving differential equations. Phasors let you sidestep the calculus. A phasor encodes a signal's amplitude and phase as a single complex number. The key geometric insight is that multiplying by the imaginary unit j rotates a phasor by 90 degrees, which is exactly how a capacitor shifts the phase of a signal passing through it.</p>
 <h3>Impedance: Ohm's Law for AC</h3>
@@ -180,11 +197,32 @@
 <p>By combining a resistor and a capacitor as an impedance voltage divider, you create a circuit whose gain changes with frequency. A low-pass filter passes low frequencies and attenuates high ones. A high-pass filter does the opposite. The cutoff frequency marks the boundary between the passband and the stopband, defined as the point where output power is reduced by half.</p>
 <hr/>
 <h3>Hands-On: Lab 5</h3>
+<h3>Before the Lab</h3>
+<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab5Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 5 Instructions</a></p>
 <p>In Lab 5, you will characterize RC filters using two complementary methods and compare the results.</p>
 <ul>
 <li><strong>Time-Domain Measurement:</strong> Use the oscilloscope to measure amplitude and phase shift at specific frequencies.</li>
 <li><strong>Network Analyzer:</strong> Use the M2K Network Analyzer to automatically sweep frequencies and generate Bode plots of magnitude and phase.</li>
 <li><strong>MATLAB Analysis:</strong> Overlay manual measurements, automated data, and theoretical predictions in a single composite graph to analyze real-world discrepancies.</li>
+</ul>
+<hr/>
+<h3>Post-Lecture Assessments</h3>
+<p>After completing the lecture and lab, you will take a post-lecture assessment for each chapter. These questions require you to work with phasors and impedances, calculate filter responses, and reason about frequency-dependent behavior. Questions are drawn at random from a bank; each quiz is <strong>6 questions · 15 minutes</strong>.</p>
+<blockquote>
+<p><strong>How to prepare:</strong> For each topic below, ask your AI tool for a worked example, then solve it yourself. If you can explain your reasoning out loud, you are ready.</p>
+</blockquote>
+<h4>Chapter 8: The Imaginary Made Useful</h4>
+<ul>
+<li><strong>Complex numbers</strong> — rectangular and polar forms; converting between them; what magnitude and angle represent; plotting on the complex plane</li>
+<li><strong>The j operator</strong> — what multiplying by j does geometrically (90° rotation); Euler's formula and how it connects polar form to sinusoids</li>
+<li><strong>Phasors</strong> — definition and what amplitude and phase a phasor encodes; converting between time-domain expressions and phasors; adding phasors; determining leading vs lagging; why differentiation becomes multiplication by jω</li>
+</ul>
+<h4>Chapter 9: Impedance and Filters</h4>
+<ul>
+<li><strong>Impedance</strong> — how it generalizes resistance; the impedance of a capacitor (Z = 1/jωC) at DC and high frequency; the impedance of an inductor (Z = jωL) at DC and high frequency</li>
+<li><strong>Impedance voltage divider</strong> — applying the voltage divider formula with complex impedances to find output voltage as a function of frequency</li>
+<li><strong>Decibels</strong> — calculating transfer function magnitude in dB; the −3 dB point and what it means; the corresponding V_out/V_in ratio</li>
+<li><strong>RC filters</strong> — identifying low-pass and high-pass topologies; predicting output at DC and high frequency; calculating cutoff frequency f_c = 1/(2πRC); the phase shift at the cutoff frequency</li>
 </ul>
   </main>
 </body>

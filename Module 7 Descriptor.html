@@ -165,8 +165,23 @@
 * Real-world limits: output saturation and gain-bandwidth product</p>
 <h3>Before the Lecture</h3>
 <p><strong>Pre-Lecture Reading:</strong><br/>
-* Chapter 10 (Op-Amps: How Op-Amps Hide Complexity in Plain Sight)</p>
-<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab7Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 7 Instructions</a></p>
+* Chapter 10 (Op-Amps: How Op-Amps Hide Complexity in Plain Sight) Section 2: Amplifier Configurations and Real-Device Limits</p>
+<hr/>
+<blockquote>
+<p><strong>How to prepare:</strong> Use an AI tool to work through the checklist below. Ask it to explain each item, give you an example, then quiz you on it. When you can answer without looking, you are ready. ou will have <strong>15 minutes</strong> to complete the assessment.</p>
+</blockquote>
+<h4>Chapter 10.2: Amplifier Configurations and Real-Device Limits</h4>
+<ul>
+<li>Identify the non-inverting amplifier topology and state which elements form the feedback network</li>
+<li>Show that the voltage follower is a special case of the non-inverting amplifier with R_f = 0 and R_1 = ∞</li>
+<li>Identify the inverting amplifier topology and explain why the non-inverting input is grounded</li>
+<li>Explain physically why the inverting amplifier output is 180° out of phase with the input</li>
+<li>Write the output voltage formula for a two-input inverting summing amplifier with different input resistors</li>
+<li>Describe how the summing amplifier can be used as a level shifter: adding a DC offset to an AC signal</li>
+<li>Explain what causes an op-amp output to saturate and state the relationship between supply voltage and saturation voltage</li>
+<li>Explain what happens to the output waveform when the ideal output would exceed the saturation voltage</li>
+<li>State the gain-bandwidth product relationship and explain what it implies about the bandwidth available at a given closed-loop gain</li>
+</ul>
 <hr/>
 <h3>The Summing Amplifier</h3>
 <p>The inverting amplifier from Module 6 can be extended to accept multiple input signals at once. Each input contributes to the output independently, scaled by its own resistor ratio. The output is the weighted sum of all inputs, inverted in sign. The key to understanding this circuit is the virtual ground node at the inverting input, which ensures that each input signal is isolated from the others.</p>
@@ -175,7 +190,9 @@
 <h3>Real-World Limits</h3>
 <p>Two physical limits become important as amplifier gain increases. Saturation occurs when the output tries to exceed the supply rails; the output "clips" and the circuit no longer behaves linearly. The gain-bandwidth product is a fixed property of the op-amp: as gain increases, the usable frequency range decreases. Both limits must be understood before committing to a design.</p>
 <hr/>
-<h3>Hands-On: Lab 7</h3>
+<h2>Hands-On: Lab 7</h2>
+<h3>Before the Lab</h3>
+<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab7Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 7 Instructions</a></p>
 <p>In Lab 7, you will design and build a summing amplifier that adds a DC offset to shift a signal into a target voltage range.</p>
 <ul>
 <li><strong>Summing Amplifier:</strong> Build an inverting summing amplifier, verify that each input contributes independently to the output, and confirm the expected gain for each channel.</li>
