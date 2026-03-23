@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 7: Instrumentation and Signal Chains</title>
+  <title>Module 7: Applied Op-Amp Circuits</title>
   <style>
     /* ── Skip navigation (ADA requirement) ── */
     .skip-link {
@@ -156,27 +156,27 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <main id="main-content" role="main">
-    <h1>Module 7: Instrumentation and Signal Chains</h1>
-<p>Module 7 is the pivot point of the course. The lecture introduces instrumentation amplifiers and precision measurement system design. The lab builds the summing amplifier that will serve as the level-shifting stage of your capstone scale project.</p>
+    <h1>Module 7: Applied Op-Amp Circuits</h1>
+<p>Module 7 puts the Golden Rules to work. Building on the amplifier fundamentals from Module 6, you will extend the op-amp toolkit to include circuits that combine multiple signals and shift DC levels, skills that are essential for the capstone scale project.</p>
 <p><strong>This module covers:</strong><br/>
-* The Wheatstone bridge and differential voltage measurement<br/>
-* The instrumentation amplifier (INA125) and common-mode rejection<br/>
-* The summing amplifier as a level shifter for ADC range optimization<br/>
-* Signal chain design: connecting sensor, amplifier, level shifter, and ADC</p>
+* The summing amplifier: adding and scaling multiple input signals simultaneously<br/>
+* Virtual ground and how the inverting configuration enables the summing operation<br/>
+* DC level shifting: using a summing amplifier to move a signal into a desired voltage range<br/>
+* Real-world limits: output saturation and gain-bandwidth product</p>
 <hr/>
-<h3>Measuring Small Signals in a Noisy World</h3>
-<p>Real sensor signals are often tiny and ride on a large common-mode voltage that appears equally on both signal leads. A simple difference amplifier can cancel this background in principle, but its finite input impedance distorts the sensor signal. The three-op-amp instrumentation amplifier solves this by presenting nearly infinite input impedance while rejecting common-mode interference with high precision.</p>
-<h3>The INA125 Instrumentation Amplifier</h3>
-<p>The INA125 is a complete instrumentation amplifier in a single package, with gain set by one external resistor. For the scale project, the Wheatstone bridge load cell produces only about 10 mV at full load, riding on a 2.5 V common-mode voltage. The INA125 amplifies the differential signal by approximately 400 times while rejecting the common-mode background, leaving a clean signal ready for the next stage.</p>
-<h3>Signal Chain Design</h3>
-<p>Amplification alone is not enough. To get the best resolution from the ADC, the conditioned signal must fill the full ADC input range. The summing amplifier acts as a level shifter, mapping the amplifier output to the ADC's input window. Every design decision in the chain, from gain to offset to signal polarity, exists to maximize the fraction of the ADC range occupied by the signal of interest.</p>
+<h3>The Summing Amplifier</h3>
+<p>The inverting amplifier from Module 6 can be extended to accept multiple input signals at once. Each input contributes to the output independently, scaled by its own resistor ratio. The output is the weighted sum of all inputs, inverted in sign. The key to understanding this circuit is the virtual ground node at the inverting input, which ensures that each input signal is isolated from the others.</p>
+<h3>DC Level Shifting</h3>
+<p>A signal that swings between 0 V and 4 V cannot fill an ADC input range of -2.5 V to +2.5 V without adjustment. By treating a fixed reference voltage as one input to the summing amplifier, you can add a precise DC offset to any signal. This level-shifting technique maps a signal from one voltage window to another, and it is a central requirement of the capstone scale design.</p>
+<h3>Real-World Limits</h3>
+<p>Two physical limits become important as amplifier gain increases. Saturation occurs when the output tries to exceed the supply rails; the output "clips" and the circuit no longer behaves linearly. The gain-bandwidth product is a fixed property of the op-amp: as gain increases, the usable frequency range decreases. Both limits must be understood before committing to a design.</p>
 <hr/>
 <h3>Hands-On: Lab 7</h3>
-<p>In Lab 7, you will design and build the summing amplifier stage that connects the instrumentation amplifier output to the ADC input.</p>
+<p>In Lab 7, you will design and build a summing amplifier that adds a DC offset to shift a signal into a target voltage range.</p>
 <ul>
-<li><strong>Summing Amplifier:</strong> Build an inverting summing amplifier that adds a DC offset to scale and shift the signal to fill the ADC input range.</li>
-<li><strong>Level Shifting:</strong> Verify that the circuit maps the expected input range to the expected output range.</li>
-<li><strong>Signal Chain Integration:</strong> Connect your understanding of the full chain from bridge sensor through INA125 through summing amplifier to ADC, in preparation for the capstone project in the modules ahead.</li>
+<li><strong>Summing Amplifier:</strong> Build an inverting summing amplifier, verify that each input contributes independently to the output, and confirm the expected gain for each channel.</li>
+<li><strong>Level Shifting:</strong> Apply a DC reference to one input and verify that the circuit shifts the signal into the required output range.</li>
+<li><strong>Saturation and Gain-Bandwidth:</strong> Observe output clipping when the signal exceeds the supply rails and measure how the amplifier's frequency response changes with gain.</li>
 </ul>
   </main>
 </body>
