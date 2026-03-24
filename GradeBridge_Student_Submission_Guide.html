@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submitting Assignments with GradeBridge</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Submitting Assignments with GradeBridge</h1>
+<h2>What You Will Do</h2>
+<p>Submitting an assignment through GradeBridge takes four steps:</p>
+<ol>
+<li><strong>Download</strong> the assignment file from Canvas.</li>
+<li><strong>Open</strong> the GradeBridge app and enter your answers.</li>
+<li><strong>Download</strong> your completed solution files.</li>
+<li><strong>Upload</strong> your solution to Canvas.</li>
+</ol>
+<p>Each step is explained below. Read through the whole guide once before you start so nothing comes as a surprise.</p>
+<hr/>
+<h2>Before You Begin</h2>
+<p>You will use two tools:</p>
+<div aria-label="Before You Begin" class="table-wrapper" role="region" tabindex="0"><table><caption>Before You Begin</caption>
+<thead>
+<tr>
+<th scope="col">Tool</th>
+<th scope="col">What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Canvas</strong></td>
+<td>Your course website — where you pick up and turn in assignments.</td>
+</tr>
+<tr>
+<td><strong>GradeBridge Student Submission App</strong></td>
+<td>A web app at <code>https://veriqai.github.io/GradeBridge-Student-Submission/</code> — where you enter and export your answers.</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Note on file locations:</strong> The app works the same on any computer (Windows, Mac, or Linux). On Windows, downloaded files will appear in your <code>Downloads</code> folder (<code>C:\Users\YourName\Downloads</code>). On a Mac they appear in <code>~/Downloads</code>. This guide uses Windows paths in the examples.</p>
+</blockquote>
+<hr/>
+<blockquote>
+<p><strong>Before you open the app — get organized first.</strong></p>
+<p>Read through your assignment carefully and identify everything you will need to submit (written answers, screenshots, data files, images, etc.). Collect <strong>all of these materials into a single folder</strong> on your computer before you open GradeBridge.  For example, <code>Documents\EEC1\Lab1_Submission\</code>. Your assignment file will list exactly what is required.</p>
+<p>Once you are in the app, you will not be able to pause and go looking for files without risking losing your progress. Having everything in one place before you start will make the process smooth and uninterrupted. You will also save your output files to this same folder at the end.</p>
+</blockquote>
+<hr/>
+<h2>Step 1 — Download the Assignment File from Canvas</h2>
+<ol>
+<li>Log in to Canvas and go to the assignment you want to complete.</li>
+<li>Download the assignment file. It will be a <strong>JSON file</strong>.  The filename will look something like <code>Lab1_Lab_Report_Assignment.json</code>.</li>
+<li>The file will save to your <code>Downloads</code> folder. Leave it there for now; you will need it in the next step.</li>
+</ol>
+<hr/>
+<h2>Step 2 — Open GradeBridge and Enter Your Answers</h2>
+<ol>
+<li>
+<p>Open a web browser and go to the GradeBridge Student Submission App:<br/>
+<strong><code>https://veriqai.github.io/GradeBridge-Student-Submission/</code></strong></p>
+</li>
+<li>
+<p>Enter your <strong>full name</strong> (exactly as it appears in Canvas) and your <strong>Student ID</strong>.</p>
+</li>
+<li>
+<p>Upload the assignment JSON file you downloaded in Step 1.</p>
+</li>
+<li>
+<p>Work through the assignment: Type your answers into the text boxes provided and upload any required screenshots or images into the image fields.</p>
+</li>
+<li>
+<p><strong>Save your progress before closing the browser.</strong><br/>
+   Click the <strong><code>Save Backup</code></strong> button. This downloads a backup JSON file to your computer containing everything you have entered so far.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Important:</strong> The app does not save automatically. If you close the browser without clicking <code>Save Backup</code>, your work will be lost.  </p>
+<p>To pick up where you left off another time: return to the app (Step 4), re-enter your name and Student ID (Step 5), and upload your <strong>backup JSON file</strong> instead of the original assignment file (Step 6).</p>
+</blockquote>
+<hr/>
+<h2>Step 3 — Download Your Completed Solution Files</h2>
+<ol>
+<li>
+<p>When you have finished entering all your answers, click the green <strong><code>Preview and Download</code></strong> button.</p>
+</li>
+<li>
+<p>Scroll through the preview to check that you have answered every question. If something is missing or incorrect, click <strong><code>Back to Edit</code></strong> (bottom-left of the screen) to return and make corrections.</p>
+</li>
+<li>
+<p>Once you are satisfied, click the blue <strong><code>Download JSON</code></strong> button. This saves your completed solution as a JSON file — <strong>this is the file you will submit to Canvas</strong>.</p>
+</li>
+<li>
+<p>Click the green <strong><code>Download PDF</code></strong> button to save a PDF copy of your submission for your own records. You do <strong>not</strong> need to turn in the PDF.</p>
+</li>
+</ol>
+<p>Both files will appear in your <code>Downloads</code> folder.</p>
+<hr/>
+<h2>Step 4 — Submit Your Solution on Canvas</h2>
+<ol>
+<li>
+<p>Find the solution JSON file in your <code>Downloads</code> folder. </p>
+<blockquote>
+<p><strong>Tip:</strong> Move the file to the folder you set up before starting (e.g., <code>Documents\EEC1\Lab1_Submission\</code>) and rename it to something easy to identify, such as <code>Lab1_Submission_YourLastName.json</code>. Keeping all your submission materials (inputs, backup, and outputs) in one folder makes it easy to find everything later.</p>
+</blockquote>
+</li>
+<li>
+<p>Return to Canvas and submit <strong>only the solution JSON file</strong>.</p>
+<blockquote>
+<p><strong>Important:</strong> Make sure you are uploading the <strong>solution file you just generated</strong> .  Not the original assignment file you downloaded in Step 1. The two files have similar names; double-check before you submit.</p>
+</blockquote>
+</li>
+</ol>
+<hr/>
+<h2>Quick Reference</h2>
+<div aria-label="Quick Reference" class="table-wrapper" role="region" tabindex="0"><table><caption>Quick Reference</caption>
+<thead>
+<tr>
+<th scope="col">What</th>
+<th scope="col">Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assignment JSON (input)</td>
+<td>Downloaded from Canvas in Step 1</td>
+</tr>
+<tr>
+<td>GradeBridge App</td>
+<td><code>https://veriqai.github.io/GradeBridge-Student-Submission/</code></td>
+</tr>
+<tr>
+<td>Backup JSON</td>
+<td>Generated by <code>Save Backup</code> — upload this to resume work</td>
+</tr>
+<tr>
+<td>Solution JSON</td>
+<td>Generated by <code>Download JSON</code> — <strong>submit this to Canvas</strong></td>
+</tr>
+<tr>
+<td>Solution PDF</td>
+<td>Generated by <code>Download PDF</code> — for your records only</td>
+</tr>
+</tbody>
+</table></div>
+  </main>
+</body>
+</html>
