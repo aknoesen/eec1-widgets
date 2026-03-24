@@ -163,12 +163,12 @@
 <li><strong>Download</strong> the assignment file from Canvas.</li>
 <li><strong>Open</strong> the GradeBridge app and enter your answers.</li>
 <li><strong>Download</strong> your completed solution files.</li>
-<li><strong>Upload</strong> your solution to Canvas.</li>
+<li><strong>Upload</strong> your solution to Gradescope (and Canvas if instructed).</li>
 </ol>
 <p>Each step is explained below. Read through the whole guide once before you start so nothing comes as a surprise.</p>
 <hr/>
 <h2>Before You Begin</h2>
-<p>You will use two tools:</p>
+<p>You will use three tools:</p>
 <div aria-label="Before You Begin" class="table-wrapper" role="region" tabindex="0"><table><caption>Before You Begin</caption>
 <thead>
 <tr>
@@ -179,28 +179,32 @@
 <tbody>
 <tr>
 <td><strong>Canvas</strong></td>
-<td>Your course website — where you pick up and turn in assignments.</td>
+<td>Your course website — where you pick up the assignment file.</td>
 </tr>
 <tr>
 <td><strong>GradeBridge Student Submission App</strong></td>
 <td>A web app at <code>https://veriqai.github.io/GradeBridge-Student-Submission/</code> — where you enter and export your answers.</td>
 </tr>
+<tr>
+<td><strong>Gradescope</strong></td>
+<td>Where you submit your completed solution files for grading.</td>
+</tr>
 </tbody>
 </table></div>
 <blockquote>
-<p><strong>Note on file locations:</strong> The app works the same on any computer (Windows, Mac, or Linux). On Windows, downloaded files will appear in your <code>Downloads</code> folder (<code>C:\Users\YourName\Downloads</code>). On a Mac they appear in <code>~/Downloads</code>. This guide uses Windows paths in the examples.</p>
+<p><strong>Note on file locations:</strong> The app works the same on any computer (Windows, Mac, or Linux). On Windows, downloaded files will appear in your <code>Downloads</code> folder (<code>C:\Users\YourName\Downloads</code>). On a Mac they appear in <code>~/Downloads</code>.</p>
 </blockquote>
 <hr/>
 <blockquote>
 <p><strong>Before you open the app — get organized first.</strong></p>
-<p>Read through your assignment carefully and identify everything you will need to submit (written answers, screenshots, data files, images, etc.). Collect <strong>all of these materials into a single folder</strong> on your computer before you open GradeBridge.  For example, <code>Documents\EEC1\Lab1_Submission\</code>. Your assignment file will list exactly what is required.</p>
-<p>Once you are in the app, you will not be able to pause and go looking for files without risking losing your progress. Having everything in one place before you start will make the process smooth and uninterrupted. You will also save your output files to this same folder at the end.</p>
+<p>Read through your assignment carefully and identify everything you will need to submit (written answers, screenshots, images, etc.). Collect <strong>all of these materials into a single folder</strong> on your computer before you open GradeBridge. For example, <code>Documents\EEC1\Lab1_Submission\</code>. Your assignment file will list exactly what is required.</p>
+<p>Having everything in one place before you start will make the process smooth and uninterrupted.</p>
 </blockquote>
 <hr/>
 <h2>Step 1 — Download the Assignment File from Canvas</h2>
 <ol>
 <li>Log in to Canvas and go to the assignment you want to complete.</li>
-<li>Download the assignment file. It will be a <strong>JSON file</strong>.  The filename will look something like <code>Lab1_Lab_Report_Assignment.json</code>.</li>
+<li>Download the assignment file. It will be a <strong>JSON file</strong>. The filename will look something like <code>EEC1_Lab_1_Prelab_assignment_spec.json</code>.</li>
 <li>The file will save to your <code>Downloads</code> folder. Leave it there for now; you will need it in the next step.</li>
 </ol>
 <hr/>
@@ -211,54 +215,84 @@
 <strong><code>https://veriqai.github.io/GradeBridge-Student-Submission/</code></strong></p>
 </li>
 <li>
-<p>Enter your <strong>full name</strong> (exactly as it appears in Canvas) and your <strong>Student ID</strong>.</p>
+<p>Enter your <strong>full name</strong> (exactly as it appears in Canvas) and your <strong>Student ID</strong> in the left panel.</p>
 </li>
 <li>
-<p>Upload the assignment JSON file you downloaded in Step 1.</p>
+<p>Click <strong><code>Upload JSON</code></strong> and select the assignment file you downloaded in Step 1.</p>
 </li>
 <li>
-<p>Work through the assignment: Type your answers into the text boxes provided and upload any required screenshots or images into the image fields.</p>
-</li>
-<li>
-<p><strong>Save your progress before closing the browser.</strong><br/>
-   Click the <strong><code>Save Backup</code></strong> button. This downloads a backup JSON file to your computer containing everything you have entered so far.</p>
+<p>Work through the assignment: type your answers into the text boxes provided and upload any required screenshots or images into the image fields.</p>
 </li>
 </ol>
 <blockquote>
-<p><strong>Important:</strong> The app does not save automatically. If you close the browser without clicking <code>Save Backup</code>, your work will be lost.  </p>
-<p>To pick up where you left off another time: return to the app (Step 4), re-enter your name and Student ID (Step 5), and upload your <strong>backup JSON file</strong> instead of the original assignment file (Step 6).</p>
+<p><strong>Math equations:</strong> You can type mathematical expressions using LaTeX notation. Wrap inline math in <code>$...$</code> and display math in <code>$$...$$</code>. A live preview appears below the text box as you type. Click <strong><code>Math Equation Format Help</code></strong> in the sidebar for examples.</p>
+</blockquote>
+<ol>
+<li><strong>Your work saves automatically.</strong> The app saves your progress to your browser every few seconds — you will see a green "Saved" timestamp at the bottom of the left panel. You can safely close the browser and return later without losing your work.</li>
+</ol>
+<blockquote>
+<p><strong>Switching computers or browsers?</strong> The auto-save only works in the same browser on the same computer. If you need to continue your work elsewhere, click <strong><code>Save Backup</code></strong> in the left panel. This downloads a backup JSON file you can reload on any computer or browser. To restore: return to the app, re-enter your name and Student ID, then click <strong><code>Load Work</code></strong> and select your backup file.</p>
 </blockquote>
 <hr/>
 <h2>Step 3 — Download Your Completed Solution Files</h2>
 <ol>
+<li>When you have finished entering all your answers, the bottom bar shows:</li>
+</ol>
+<div aria-label="Step 3 — Download Your Completed Solution Files" class="table-wrapper" role="region" tabindex="0"><table><caption>Step 3 — Download Your Completed Solution Files</caption>
+<thead>
+<tr>
+<th scope="col">Button</th>
+<th scope="col">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Save Backup</strong></td>
+<td>Saves a backup of your work-in-progress (not for submission)</td>
+</tr>
+<tr>
+<td><strong>Download for Gradescope</strong> <em>(blue)</em></td>
+<td>Downloads your submission file — <strong>submit this to Gradescope</strong></td>
+</tr>
+<tr>
+<td><strong>Download PDF</strong> <em>(green)</em></td>
+<td>Downloads a PDF copy for your records</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>Shows a formatted view of your submission before downloading</td>
+</tr>
+</tbody>
+</table></div>
+<ol>
 <li>
-<p>When you have finished entering all your answers, click the green <strong><code>Preview and Download</code></strong> button.</p>
+<p>Click <strong><code>Preview</code></strong> if you want to review your submission first. Scroll through to check that you have answered every question. Click <strong><code>Back</code></strong> to return and make corrections.</p>
 </li>
 <li>
-<p>Scroll through the preview to check that you have answered every question. If something is missing or incorrect, click <strong><code>Back to Edit</code></strong> (bottom-left of the screen) to return and make corrections.</p>
+<p>Click the blue <strong><code>Download for Gradescope</code></strong> button. This saves your submission as a JSON file named:<br/>
+<code>{StudentID}_{YourName}_{CourseCode}_submission.json</code><br/>
+    For example: <code>123456789_Jane_Doe_EEC1_submission.json</code><br/>
+<strong>This is the file you will submit to Gradescope.</strong></p>
 </li>
 <li>
-<p>Once you are satisfied, click the blue <strong><code>Download JSON</code></strong> button. This saves your completed solution as a JSON file — <strong>this is the file you will submit to Canvas</strong>.</p>
-</li>
-<li>
-<p>Click the green <strong><code>Download PDF</code></strong> button to save a PDF copy of your submission for your own records. You do <strong>not</strong> need to turn in the PDF.</p>
+<p>Click the green <strong><code>Download PDF</code></strong> button to save a PDF copy for your own records.</p>
 </li>
 </ol>
 <p>Both files will appear in your <code>Downloads</code> folder.</p>
 <hr/>
-<h2>Step 4 — Submit Your Solution on Canvas</h2>
+<h2>Step 4 — Submit Your Solution on Gradescope</h2>
 <ol>
 <li>
-<p>Find the solution JSON file in your <code>Downloads</code> folder. </p>
+<p>Log in to Gradescope and navigate to the assignment.</p>
+</li>
+<li>
+<p>Upload the <strong><code>_submission.json</code></strong> file you downloaded in Step 11.</p>
 <blockquote>
-<p><strong>Tip:</strong> Move the file to the folder you set up before starting (e.g., <code>Documents\EEC1\Lab1_Submission\</code>) and rename it to something easy to identify, such as <code>Lab1_Submission_YourLastName.json</code>. Keeping all your submission materials (inputs, backup, and outputs) in one folder makes it easy to find everything later.</p>
+<p><strong>Important:</strong> Make sure you are uploading the submission file ending in <code>_submission.json</code>, <strong>not</strong> the original assignment file you downloaded from Canvas in Step 1, and <strong>not</strong> a backup file. The files have similar names — double-check before you submit.</p>
 </blockquote>
 </li>
 <li>
-<p>Return to Canvas and submit <strong>only the solution JSON file</strong>.</p>
-<blockquote>
-<p><strong>Important:</strong> Make sure you are uploading the <strong>solution file you just generated</strong> .  Not the original assignment file you downloaded in Step 1. The two files have similar names; double-check before you submit.</p>
-</blockquote>
+<p>If your instructor also requires a Canvas submission, upload the same <code>_submission.json</code> file there as well.</p>
 </li>
 </ol>
 <hr/>
@@ -280,19 +314,35 @@
 <td><code>https://veriqai.github.io/GradeBridge-Student-Submission/</code></td>
 </tr>
 <tr>
+<td>Auto-save</td>
+<td>Happens automatically every few seconds in the same browser</td>
+</tr>
+<tr>
 <td>Backup JSON</td>
-<td>Generated by <code>Save Backup</code> — upload this to resume work</td>
+<td>Generated by <code>Save Backup</code> in the sidebar — use to resume on a different computer</td>
 </tr>
 <tr>
-<td>Solution JSON</td>
-<td>Generated by <code>Download JSON</code> — <strong>submit this to Canvas</strong></td>
+<td>Submission JSON</td>
+<td>Generated by <code>Download for Gradescope</code> — <strong>submit this to Gradescope</strong></td>
 </tr>
 <tr>
-<td>Solution PDF</td>
-<td>Generated by <code>Download PDF</code> — for your records only</td>
+<td>PDF</td>
+<td>Generated by <code>Download PDF</code> — for your records</td>
 </tr>
 </tbody>
 </table></div>
+<hr/>
+<h2>Troubleshooting</h2>
+<p><strong>My work disappeared when I reopened the browser.</strong><br/>
+Auto-save stores your work in the browser you used. If you opened a different browser or cleared your browser data, the auto-saved session will not be there. Always use <code>Save Backup</code> if you plan to close the browser, switch computers, or use a different browser.</p>
+<p><strong>The app says "Invalid assignment file."</strong><br/>
+You may have uploaded a backup file instead of the assignment file, or a file from a different course. Re-download the assignment JSON from Canvas and try again.</p>
+<p><strong>I accidentally uploaded the wrong assignment.</strong><br/>
+Click <code>Upload JSON</code> again in the left panel and select the correct file. Your answers will be cleared when a new assignment loads.</p>
+<p><strong>The math preview is not showing.</strong><br/>
+Check that you have closed your <code>$</code> delimiters correctly — every opening <code>$</code> needs a matching closing <code>$</code>. Refer to <strong>Math Equation Format Help</strong> in the sidebar for correct syntax.</p>
+<p><strong>I submitted the wrong file to Gradescope.</strong><br/>
+Contact your instructor as soon as possible. Gradescope allows resubmission before the deadline in most cases.</p>
   </main>
 </body>
 </html>
