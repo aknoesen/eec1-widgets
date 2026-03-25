@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with AI in ENG6: Engineering Problem Solving with Applied AI</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Working with AI in ENG6: Engineering Problem Solving with Applied AI</h1>
+<hr/>
+<h2>What This Course Expects of You</h2>
+<p>ENG6 is built on the premise that generative AI is now a standard part of the engineering toolkit. The course does not ask you to avoid it — it asks you to use it well. That distinction matters more than it might seem.</p>
+<p>AI tools are extraordinarily good at one thing: generating fluent, plausible-sounding text and code. They are unreliable at another: knowing when they are wrong. A model will give you an incorrect formula in the same helpful tone it uses to give you the right one. In a course built around real sensor data and real physics, code that looks right but contains a subtle error will produce results that look plausible but are wrong — and you will not know unless you understand what the code is actually doing.</p>
+<p>The practical test is this: <strong>after any AI interaction, can you explain what was produced in your own words?</strong> If not, the AI did your thinking, not you. You have satisfied a submission requirement while undermining your own preparation for everything that follows.</p>
+<hr/>
+<h2>AI Tools Available to You</h2>
+<p>You have access to two AI environments in this course.</p>
+<h3>MATLAB AI Assistant (built into MATLAB Online)</h3>
+<p>MATLAB Online includes a built-in AI assistant accessible directly from the interface. Its key advantage for this course is context: it already knows you are working in MATLAB, it can see your code and error messages, and it is aware of MATLAB syntax and functions. Use it for:<br/>
+- Debugging error messages in your current script<br/>
+- Asking about MATLAB-specific syntax (<code>cumtrapz</code>, <code>subplot</code>, <code>xline</code>, etc.)<br/>
+- Getting explanations of MATLAB functions without having to specify the language</p>
+<p>When the MATLAB AI assistant generates code for you, the same rules apply as everywhere else: read it, trace through it, and make sure you understand what it does before running it on your data.</p>
+<h3>Gemini (UC Davis campus access)</h3>
+<p>UC Davis provides students with access to Google Gemini. Gemini is a general-purpose AI — it has no idea, at the start of a conversation, that you are a student working in MATLAB on sensor data. Without that context, responses may default to Python, pseudocode, or generic explanations that do not map onto your actual environment.</p>
+<p><strong>Always open a Gemini conversation by establishing your context.</strong> The following is a generic context-setting prompt you can paste at the start of any session:</p>
+<hr/>
+<blockquote>
+<p><em>I am a first-year engineering student at UC Davis in a course called ENG 6: Engineering Problem Solving with Applied AI. I am working in MATLAB Online (not Python, not R). My work involves smartphone accelerometer data — arrays of time-series sensor readings — and I use MATLAB functions such as <code>mobiledev</code>, <code>accellog</code>, <code>save</code>/<code>load</code>, <code>subplot</code>, <code>cumtrapz</code>, and <code>exportgraphics</code>. When you give me code examples, use MATLAB syntax. When you explain concepts, assume I am building toward an understanding I will apply by writing my own code — do not write the solution for me unless I explicitly ask you to review code I have already written.</em></p>
+</blockquote>
+<hr/>
+<p>After pasting this context, state your specific question. You do not need to repeat the context in later turns of the same conversation — Gemini retains it within the session. Start a new session (and re-paste the context) if you switch to a different topic or a different mini-project.</p>
+<h3>Choosing Between the Two</h3>
+<div aria-label="Choosing Between the Two" class="table-wrapper" role="region" tabindex="0"><table><caption>Choosing Between the Two</caption>
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col">MATLAB AI Assistant</th>
+<th scope="col">Gemini</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best for</td>
+<td>MATLAB syntax, debugging specific errors, in-environment help</td>
+<td>Conceptual explanations, the reflective AI exercise prompts, understanding physical principles</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Automatic — knows you are in MATLAB</td>
+<td>Must be set manually using the context prompt above</td>
+</tr>
+<tr>
+<td>Sees your code</td>
+<td>Yes (in-environment)</td>
+<td>Only if you paste it</td>
+</tr>
+<tr>
+<td>Generates runnable MATLAB code</td>
+<td>Yes</td>
+<td>Yes, if context is set correctly</td>
+</tr>
+</tbody>
+</table></div>
+<p>For the structured pre-lab AI explorations in each mini-project, either tool works. The provided prompt templates in the lab manuals are written to work with any general-purpose AI — paste the context prompt first if using Gemini, then paste the lab's exploration prompt.</p>
+<hr/>
+<h2>What an LLM Is (and Isn't)</h2>
+<p>An LLM is trained to predict the most plausible continuation of any text it receives. This gives it two properties that matter here:</p>
+<p><strong>Useful:</strong> It is an exceptionally patient explanation engine. It will explain a concept six different ways until one clicks, check your reasoning step by step, and quiz you on demand without judgment.</p>
+<p><strong>Dangerous:</strong> It is confident even when wrong. It does not feel uncertainty the way a knowledgeable person does. It will not flag its own errors.</p>
+<p>Use it to help you think. Do not use it to think for you.</p>
+<hr/>
+<h2>The Right Sequence</h2>
+<p>The most important practice in this course is also the most tempting to skip: <strong>attempt the problem before you ask the AI.</strong></p>
+<p>This is not an arbitrary rule. The struggle of working on a problem — even partially and incorrectly — prepares your mind to receive an explanation in a way that going straight to the explanation does not. A concept explained before you have wrestled with it slides off. The same concept explained after you have identified exactly where your reasoning broke down tends to stick.</p>
+<p>The sequence:</p>
+<ol>
+<li>Read the relevant lab manual section or zyBook material</li>
+<li>Attempt the problem or work through the concept on your own</li>
+<li>Identify <strong>specifically</strong> where you are stuck</li>
+<li>Bring that specific question to the AI</li>
+</ol>
+<p>Step 3 is the most important and the most frequently skipped. "I don't understand peak detection" is not a productive question. "I understand that <code>max</code> returns the largest value, but I don't see how to use the index it returns to look up the corresponding timestamp in a different array" is a question the AI can engage with precisely. The specificity of your question reflects how much work you did before asking.</p>
+<hr/>
+<h2>How to Ask Well</h2>
+<h3>Ask for explanation, not answers</h3>
+<p><em>Less useful:</em> "Write a MATLAB function that detects rapid acceleration events."</p>
+<p><em>More useful:</em> "I'm trying to write a function that finds all indices in an array where values exceed a threshold. I think I should use logical indexing, but I'm not sure how to extract the timestamps at those indices from a separate array. Is my approach right, and what am I missing?"</p>
+<p>The first prompt produces code you do not understand. The second produces understanding you can then code.</p>
+<h3>Ask for the "why," not just the "what"</h3>
+<p>The lab manuals include formulas and code patterns. What they cannot do interactively is respond to your specific confusion about why something works. Ask for that.</p>
+<p><em>Less useful:</em> "What is the resultant acceleration formula?"</p>
+<p><em>More useful:</em> "I understand the formula <code>sqrt(Ax² + Ay² + Az²)</code> combines the three axes. What I don't understand is why this combination is independent of how my phone is oriented — if I rotate the phone, all three values change, so why doesn't the resultant change too?"</p>
+<h3>Ask it to quiz you</h3>
+<p>After studying a concept, ask the AI to pose scenario-based questions rather than summarize the topic. Tell it what you studied, ask for a question, answer in your own words, and ask it to identify what is missing or incorrect. This converts the AI from an information source into a practice partner. The pre-lab self-test in each mini-project formalizes this practice.</p>
+<h3>Use your own data as the verification anchor</h3>
+<p>In this course, your code runs on data you collected from your own phone. This is not accidental. When your resultant acceleration plot looks wrong, no AI can tell you whether the problem is your formula, your array indexing, your axis choice, or the fact that you didn't move the phone during collection. Only you can inspect your data and trace through your code. The AI can help you generate a list of things to check — the investigation is yours to do.</p>
+<hr/>
+<h2>Verification Is Not Optional</h2>
+<p>After any AI interaction that produced a technical claim, verify it before acting on it. For this course, the verification sources are:</p>
+<ul>
+<li>The lab manual (the authoritative source for what the code must do)</li>
+<li>The zyBook (the authoritative source for MATLAB syntax and concepts)</li>
+<li>Your own independent test (run the code on a simple case where you know the correct answer)</li>
+<li>MATLAB Grader feedback (the autograder will tell you whether your output is correct)</li>
+<li>A TA or the instructor</li>
+</ul>
+<p>A practical technique: after an AI explains something, close the conversation, write what you understood in your own words, and check it against the lab manual. The gaps identify what you still need to work on.</p>
+<p>When AI-generated code fails on MATLAB Grader, do not ask the AI to fix it without understanding why it failed. Read the error message, trace through the logic yourself, and then use the AI to check your diagnosis — not to produce a new version to try blindly.</p>
+<hr/>
+<h2>What AI Cannot Do for You in This Course</h2>
+<p><strong>Physical intuition comes from collecting and seeing your own data.</strong> When you watch your resultant acceleration plot spike during a jump and flatten when you stand still, something is built in your understanding that reading about it cannot build. When your dead reckoning displacement estimate drifts in exactly the direction your pre-lab prediction said it would, you have confirmed a causal model against physical evidence. No AI conversation produces that.</p>
+<p><strong>The pre-lab is preparation, not a deliverable.</strong> Each mini-project includes a pre-lab AI exploration that is due before the lab session. Its purpose is to send you into the lab with a mental model you can test against your data. If you use AI to generate a summary you paste into your submission without engaging with it, you will arrive at the lab without the understanding the pre-lab was designed to build — and you will notice.</p>
+<p><strong>The AI has never seen your sensorData.mat.</strong> When your <code>detectRapidAcceleration</code> function returns an empty array, the AI cannot tell you whether your threshold is too high for your specific data, whether you accidentally zeroed your timestamps incorrectly, or whether you were standing still during collection. Diagnosing your specific output requires examining your specific data.</p>
+<p><strong>Code that runs is not the same as code that is correct.</strong> MATLAB Grader tests your function on reference data with known correct outputs. Code that works on your own data by accident — because your data happens not to exercise the edge cases — may still fail the autograder. Understanding your code is the only reliable protection against this.</p>
+<hr/>
+<h2>The Structured Reflective AI Exercise</h2>
+<p>Each mini-project includes a structured AI exercise with three parts. The format is the same every lab.</p>
+<h3>Part 1: AI Exploration</h3>
+<p>Before the lab session, use an AI assistant to explore a designated concept using the provided prompt template in the lab manual. The prompts are written to focus you on a specific conceptual gap — not to retrieve information you could Google, but to build a mental model you will test with your own hands during the session.</p>
+<p>Write a 3–5 sentence summary of what you learned <strong>in your own words</strong>. This is submitted as a text field. Do not paste AI output directly — the rubric specifically evaluates whether the summary reflects your own articulation of the concept.</p>
+<h3>Part 2: The Self-Test</h3>
+<p>Write your own quiz prompt targeting the lab's key concept, then use the AI to test yourself. Your prompt must:</p>
+<ol>
+<li>Establish your role and context ("I am a first-year engineering student preparing for...")</li>
+<li>Constrain the question type to scenario-based prediction, not simple recall</li>
+<li>Name the specific concept the questions must involve</li>
+<li>Prevent the AI from revealing answers before you respond</li>
+</ol>
+<p>Before running the quiz with your draft prompt, submit it to the AI with the following meta-prompt to refine it:</p>
+<blockquote>
+<p><em>"Here is a prompt I wrote to generate a self-quiz to help me prepare for an engineering lab. Please evaluate it against these four criteria: (1) does it establish my role and context clearly, (2) does it constrain the question type to scenario-based rather than simple recall, (3) does it prevent the AI from revealing answers before I have responded, (4) does it scope the content precisely enough to be useful for a specific lab topic. Then rewrite it to address any weaknesses."</em></p>
+<p><em>My draft prompt: [paste your draft here]</em></p>
+</blockquote>
+<p>What you submit for Part 2:<br/>
+1. Your original draft prompt<br/>
+2. The AI's critique (copy-paste in full)<br/>
+3. Your revised prompt after incorporating the feedback<br/>
+4. The quiz transcript: the AI's questions and your responses</p>
+<p>Part 2 is introduced as optional in Mini-Project 2 and required from Mini-Project 3 onward.</p>
+<h3>Part 3: The Formal Reflection</h3>
+<p>A 150–200 word reflection written after the lab session, submitted as continuous prose (not a bulleted list). Every reflection must address three things, in order:</p>
+<p><strong>The Link</strong> — Connect the lab's key concept to the specific task you were performing. Not "I learned about X" but "X matters for this task because..."</p>
+<p><strong>The Technical Why</strong> — Explain the underlying mechanism or principle. Not "the formula combines the axes" but why that combination has the property it has.</p>
+<p><strong>The Lab Application</strong> — Describe a specific scenario — in this lab or a future one — where misunderstanding the concept would lead to a concrete, nameable error. Name the task, the mistake, and the consequence.</p>
+<p>Include your word count at the end.</p>
+<p><strong>What a strong reflection looks like:</strong></p>
+<blockquote>
+<p>The resultant acceleration gives a direction-independent measure of total motion intensity — so when I use it for peak detection, I catch the largest acceleration event regardless of which physical direction it occurred in, which is what I care about when flagging intense motion rather than characterizing direction.<br/>
+<strong>[The Link: direction-independence is connected to the specific peak detection use case.]</strong><br/>
+The formula <code>sqrt(Ax² + Ay² + Az²)</code> is the Pythagorean theorem applied to three dimensions: it gives the length of the acceleration vector in 3D space. Rotating the phone changes which components are large and which are small, but the total length of the vector is unchanged — that is what "direction-independent" means geometrically.<br/>
+<strong>[The Technical Why: geometric mechanism stated, not just the formula.]</strong><br/>
+If I had used only the X-axis for peak detection, a peak that occurred during diagonal motion — distributed across X and Y — would appear smaller on X alone and might be missed entirely, while the resultant would still detect it correctly.<br/>
+<strong>[The Lab Application: specific scenario, specific mistake, specific consequence.]</strong></p>
+</blockquote>
+<p>The three points are not three separate paragraphs. They build a single argument.</p>
+<hr/>
+<h2>Documentation of AI Use</h2>
+<p>Any AI conversation that materially contributed to your submitted work should be noted briefly in your submission. This is not bureaucratic overhead — it is an emerging professional norm.</p>
+<p>The standard: a reader of your submission should be able to tell what you did and what the AI contributed.</p>
+<ul>
+<li>If AI helped you understand a concept you then applied: "I used [AI tool] to clarify my understanding of cumulative integration before working through this step."</li>
+<li>If AI identified an error in your reasoning: "I used [AI tool] to review my peak detection logic. It pointed out I was using the wrong index variable, which I then traced and corrected."</li>
+<li>If AI-generated text or code appears directly in your submission: cite it as you would any other source.</li>
+</ul>
+<p>If you cannot write clearly about the boundary between your contribution and the AI's, that boundary became unclear during the work itself. That is the moment to close the window, re-engage with the problem yourself, and return to the AI only after you can articulate specifically where you are stuck.</p>
+<hr/>
+<h2>Quick Reference</h2>
+<div aria-label="Quick Reference" class="table-wrapper" role="region" tabindex="0"><table><caption>Quick Reference</caption>
+<thead>
+<tr>
+<th scope="col">Situation</th>
+<th scope="col">What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You don't understand a concept</td>
+<td>Articulate specifically what you do and don't understand; bring the specific gap to the AI</td>
+</tr>
+<tr>
+<td>You want to check your code</td>
+<td>Show the AI your logic and what you expected vs. what you got; ask it to identify where the reasoning breaks down</td>
+</tr>
+<tr>
+<td>Your MATLAB Grader submission fails</td>
+<td>Read the error message yourself first; diagnose the likely cause; then use AI to check your diagnosis</td>
+</tr>
+<tr>
+<td>The AI gives you code that runs</td>
+<td>Trace through it manually on a simple case before trusting it</td>
+</tr>
+<tr>
+<td>You're preparing for the lab session</td>
+<td>Use the provided Part 1 prompt template; write your summary in your own words</td>
+</tr>
+<tr>
+<td>You're writing your formal reflection</td>
+<td>Ensure The Link, The Technical Why, and The Lab Application are all present as a single coherent argument</td>
+</tr>
+<tr>
+<td>You're tempted to ask the AI for the answer</td>
+<td>Attempt the problem first; identify specifically where you get stuck; then return</td>
+</tr>
+</tbody>
+</table></div>
+  </main>
+</body>
+</html>
