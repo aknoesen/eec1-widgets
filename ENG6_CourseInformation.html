@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENG6: Problem-Solving and Engineering Computing</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>ENG6: Problem-Solving and Engineering Computing</h1>
+<hr/>
+<h2>Navigating the Course</h2>
+<p>This course is organized by week using Canvas Modules. Each module contains <br/>
+that week's readings, assignments, and lab materials in the order you should <br/>
+work through them. To get started, click <strong>Modules</strong> in the left sidebar. <br/>
+Begin with the Week 1 module and work forward from there.</p>
+<h2>Course Description</h2>
+<p>Problem-solving methodology, engineering computing, and visualization, emphasizing the responsible application of generative AI to enhance coding, testing, and algorithmic thinking. Students develop foundational programming skills for data analysis while learning future-ready engineering workflows.</p>
+<hr/>
+<h2>Instructor</h2>
+<p><strong>Andre Knoesen</strong></p>
+<p>Office: 2115 Kemper Hall</p>
+<p>aknoesen@ucdavis.edu</p>
+<hr/>
+<h2>Lecture</h2>
+<p>Tuesday / Thursday — 9:00–10:20 AM<br/>
+194 Peter Rock Hall</p>
+<hr/>
+<h2>Office Hours and Lab Schedule</h2>
+<p><strong>Instructor office hours (Andre):</strong> TBD — Kemper 2115<br/>
+<strong>TA office hours:</strong> TBD — Academic Surge 1116<br/>
+<strong>Lab sections:</strong> Academic Surge 1116</p>
+<p>The lab section for each module starts on Tuesday.</p>
+<div aria-label="Office Hours and Lab Schedule" class="table-wrapper" role="region" tabindex="0"><table><caption>Office Hours and Lab Schedule</caption>
+<thead>
+<tr>
+<th scope="col">Section</th>
+<th scope="col">Day</th>
+<th scope="col">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>Wednesday</td>
+<td>7:10–8:00 PM</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>Thursday</td>
+<td>7:10–8:00 PM</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>Monday</td>
+<td>6:10–7:00 PM</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>Wednesday</td>
+<td>4:10–5:00 PM</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>Monday</td>
+<td>3:10–4:00 PM</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>Monday</td>
+<td>7:10–8:00 PM</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>Wednesday</td>
+<td>7:10–8:00 PM</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>Thursday</td>
+<td>12:10–1:00 PM</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>Wednesday</td>
+<td>8:10–9:00 AM</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Monday</td>
+<td>9:00–9:50 AM</td>
+</tr>
+<tr>
+<td>A11</td>
+<td>Wednesday</td>
+<td>5:10–6:00 PM</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Textbook</h2>
+<p>The course textbook is provided through ZyBooks via equitable access. To access it, navigate to the <strong>Assignments</strong> tab and click the link for the first reading assignment.</p>
+<hr/>
+<h2>MATLAB</h2>
+<ul>
+<li><a href="https://servicehub.ucdavis.edu/servicehub?id=content_details&amp;sys_id=fc3cc9fa1bd804103f4286ae6e4bcb87">Installation instructions (undergraduates)</a> MATLAB is free for all UC Davis undergraduates and, onced installed, can be accessed locally or accessed via <a href="https://matlab.mathworks.com/">matlab.mathworks.com</a>.  If you not an undergraduate student, contact instructor. </li>
+<li>
+<p><a href="https://www.mathworks.com/videos/how-to-install-matlab-1525083586145.html">Installation instructions (non-undergraduates)</a></p>
+</li>
+<li>
+<p>Graduate students are required to purchase a personal license: <a href="https://www.mathworks.com/videos/how-to-install-matlab-1525083586145.html">Installation instructions (graduate students)</a></p>
+</li>
+</ul>
+<p><strong>Getting started:</strong><br/>
+- <a href="https://www.mathworks.com/videos/working-in-the-development-environment-69021.html">Working in the MATLAB Development Environment</a> (start here, this skill is essential)<br/>
+- <a href="https://www.mathworks.com/videos/using-the-live-editor-117940.html">Using the MATLAB Live Editor</a> (use if need to document your work)</p>
+<hr/>
+<h2>Course Expectations</h2>
+<p>See the <strong>Course Orientation</strong> on the corse home page.  Read it before the course starts. </p>
+<h2>Assesment Category Details</h2>
+<h3>1. ZyBooks Reading Assignments</h3>
+<p><em>Due before noon before every lecture.</em></p>
+<p>ZyBooks is an interactive textbook — readings involve working through examples, answering embedded questions, and completing participation activities.</p>
+<p>Pre-lecture readings introduce general terminology so that lecture can focus on depth. You are not expected to arrive with full understanding, but you are expected to have worked through the material and identified where your understanding breaks down. That effort is what makes lecture useful.</p>
+<h3>2. Class Participation</h3>
+<p>Lectures include interactive questions and in-class programming exercises, completed individually or in groups. These are graded primarily on participation.</p>
+<h3>3. Homework</h3>
+<p><em>Due Monday at 11:00 PM.</em></p>
+<p>Homework consists of ZyBooks Creative Activities covering the previous two lectures. These are point-accumulating and serve as practice for the Mini-Quizzes — the closest thing to evaluation-style work in a low-stakes setting.</p>
+<h3>4. Mini-Projects</h3>
+<p><em>Due Monday at 11:00 PM.</em></p>
+<p>Each Mini-Project runs across three phases: preparation before the lab session, in-person data collection and coding during the session, and a written submission afterward. Success depends on doing each phase in order.</p>
+<p><strong>Pre-Lab</strong> — completed before your lab session. Includes setup tasks and a structured AI exploration that prepares you to interpret what you will observe. Keep everything you produce — it feeds directly into your post-lab submission.</p>
+<p><strong>Lab Session</strong> — the in-person period where you collect data, run scripts, and generate plots. TAs are available here. Some tasks can only be done in this room: you need your phone, a working MATLAB connection, and physical space. Document as you go and save every plot. If you leave without your work saved, you cannot submit it later.</p>
+<p><strong>Post-Lab</strong> — completed after the session and due Monday at 11:00 PM. You compile your plots, observations, and written reflection into a structured submission. The post-lab is only possible if you documented your work during the session.</p>
+<h3>5. Mini-Quizzes</h3>
+<p>At intervals during the course, part of a lab session shifts to a proctored evaluation. See the Course Schedule for which weeks this occurs.</p>
+<p>The format is similar to the Creative Activities, with two differences: you work individually, and AI is not permitted. You do have access to MATLAB Online and its built-in documentation. These evaluations exist to verify that you have internalized the material, not that you can retrieve a working answer with a well-constructed prompt.</p>
+<p>Your lowest mini-quiz score will be dropped.</p>
+<blockquote>
+<p><strong>Important:</strong> There are no makeup quizzes. Be sure you can log in to Canvas from the lab room before the evaluation begins. Login problems are not grounds for a makeup.</p>
+</blockquote>
+<h3>6. Team Project</h3>
+<p>A group final project focused on an open-ended software development task. Two project descriptions will be provided with defined requirements for basic functionality. Groups must have three to four members; expectations scale with group size.</p>
+<h3>7. Comprehensive Assessment</h3>
+<p>This assessment has two stages. Stage 1 is required; Stage 2 is optional.</p>
+<p><strong>Stage 1 — Week 8 (Tuesday–Friday)</strong><br/>
+50-minute proctored session in MATLAB Grader. Two submission attempts per problem; use first-attempt feedback to refine your work. Full credit available.</p>
+<p><strong>Stage 2 — Finals Week (Optional Retake)</strong><br/>
+A different, cumulative exam covering the original 6 lectures plus Weeks 8–9 material in equal proportion. One submission attempt, no feedback. Maximum score: 80%. Sign-up required one week in advance.</p>
+<p><strong>Final grade = the higher of your two scores</strong> (80% cap applied to Stage 2 only). Taking the retake cannot lower your grade.</p>
+<div aria-label="7. Comprehensive Assessment" class="table-wrapper" role="region" tabindex="0"><table><caption>7. Comprehensive Assessment</caption>
+<thead>
+<tr>
+<th scope="col">Scenario</th>
+<th scope="col">Stage 1</th>
+<th scope="col">Stage 2</th>
+<th scope="col">Final Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Did well on Stage 1</td>
+<td>95%</td>
+<td>—</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>Strong comeback</td>
+<td>45%</td>
+<td>90% → capped</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>Slight boost</td>
+<td>72%</td>
+<td>85% → capped</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>Off day on retake</td>
+<td>75%</td>
+<td>60%</td>
+<td>75%</td>
+</tr>
+</tbody>
+</table></div>
+<p>An A requires a strong Week 8 performance. The retake exists so that one difficult day cannot prevent you from earning a B−; the single blind attempt ensures it measures genuine understanding, not trial-and-error. Prepare for Week 8. If it goes poorly, use Weeks 8–9 to solidify your understanding and sign up for the retake.</p>
+<p>There is no compulsary final. </p>
+<hr/>
+<h2>Course Grading Structure</h2>
+<p>The grading structure is intentionally scaffolded. Readings, participation, <br/>
+homework, and mini-quizzes are not independent checkboxes. They are <br/>
+progressive preparation for the Comprehensive Assessment and Team Project. <br/>
+Engaging consistently with the smaller components is the most reliable path <br/>
+to performing well on the two that matter most.</p>
+<p>Your final grade in ENG6 is calculated based on your performance across seven categories.</p>
+<div aria-label="Course Grading Structure" class="table-wrapper" role="region" tabindex="0"><table><caption>Course Grading Structure</caption>
+<thead>
+<tr>
+<th scope="col">Assessment Category</th>
+<th scope="col">Weight</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prelecture Readings</strong></td>
+<td><strong>10%</strong></td>
+<td>Interactive textbook assignments.  Due before noon before every lecture.</td>
+</tr>
+<tr>
+<td><strong>Class Participation</strong></td>
+<td><strong>5%</strong></td>
+<td>In-lecture questions and programming exercises, graded on participation.</td>
+</tr>
+<tr>
+<td><strong>Mini-Projects</strong></td>
+<td><strong>30%</strong></td>
+<td>Three-phase lab assignments: pre-lab preparation, in-person data collection, and a post-lab written submission. Due Monday at 11:00 PM.</td>
+</tr>
+<tr>
+<td><strong>Homework</strong></td>
+<td><strong>15%</strong></td>
+<td>ZyBooks Creative Activities covering the previous two lectures. Due Monday at 11:00 PM.</td>
+</tr>
+<tr>
+<td><strong>Mini-Quizzes</strong></td>
+<td><strong>10%</strong></td>
+<td>Proctored in-lab evaluations completed individually without AI access. Lowest score dropped.</td>
+</tr>
+<tr>
+<td><strong>Comprehensive Assessment</strong></td>
+<td><strong>20%</strong></td>
+<td>Two-stage proctored exam in MATLAB Grader. Stage 1 (Week 8) allows two attempts with feedback. Stage 2 (Finals Week) is optional, cumulative, blind, and capped at 80%.</td>
+</tr>
+<tr>
+<td><strong>Team Project</strong></td>
+<td><strong>15%</strong></td>
+<td>Open-ended group software development project completed in teams of three to four. Due:  TBD</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Grading follows a 90/80/70/60 scale with +/− grades. Final cutoffs will be determined by the instructor by the end of the quarter.</p>
+<hr/>
+<h2>Course Schedule</h2>
+<p>See the <strong>Course Schedule</strong> on the home page. </p>
+<hr/>
+<h2>Deadlines</h2>
+<p>Deadlines are strict and late work will generally not be accepted. Extensions are granted only for serious illness or family emergency, and only with documentation. Vague notes from health services do not qualify. Requests must be made promptly.</p>
+<p>Computer, internet, and device problems are not valid grounds for an extension. All assignments are posted on Canvas well before their deadline. Waiting until the last minute is a risk you take on your own.</p>
+<hr/>
+<h2>Regrading Policy</h2>
+<p>Most grading is automated. Subjective components (lab reflections and final projects) are graded at the discretion of course staff.</p>
+<p>If you believe there has been a concrete grading error, you may submit a regrade request — but note that a regrade can result in a lower score if the original was too generous. Requests based on subjective disagreement ("I feel I deserve more points because…") are very unlikely to be approved; consistent, fair grading across all students makes such accommodations impractical.</p>
+<p>Final grades are rounded to the nearest hundredth of a percent. Grade bump requests will not receive a response.</p>
+<hr/>
+<h2>Academic Honesty</h2>
+<p>All work is individual except the final project. You may discuss concepts and brainstorm approaches with classmates, but sharing code in any form — including letting someone view yours — is not permitted. When in doubt, ask an instructor.</p>
+<p>Using or uploading course material to contract cheating services (Chegg, CourseHero, etc.) is a serious academic integrity violation and will be reported to SJC automatically, without exception.</p>
+<hr/>
+<h2>Use of Artificial Intelligence</h2>
+<p>This course integrates generative AI explicitly and by design. You have access to two AI environments: the MATLAB AI Assistant built into MATLAB Online, and Google Gemini via the UC Davis campus license. The <strong>AI Partner Guide</strong>, posted on the course homepage, covers both in detail. Read it before your first lab.</p>
+<p><strong>AI is useful for:</strong><br/>
+- Explaining a concept multiple ways until one clicks<br/>
+- Identifying gaps in your reasoning when you show it your work<br/>
+- Generating practice questions on material you are consolidating<br/>
+- Explaining MATLAB syntax and functions in context<br/>
+- Helping you debug code you have already written and partially understand</p>
+<p><strong>AI cannot:</strong><br/>
+- Collect sensor data or make physical observations on your behalf<br/>
+- Tell you whether your specific plots are physically plausible<br/>
+- Diagnose problems in data it has never seen<br/>
+- Guarantee that the code it produces is correct — it generates plausible-looking output, including plausible-looking but wrong MATLAB, with equal confidence</p>
+<p><strong>The rule that matters most:</strong> Attempt the problem before you ask the AI. Working through a problem, even imperfectly, prepares you to receive an explanation. A concept explained before you have wrestled with it rarely sticks; the same concept explained after you have identified exactly where your reasoning broke down usually does.</p>
+<p>A practical check: after an AI interaction, can you close the conversation and explain what was produced in your own words? If not, the AI did your thinking. You have satisfied a submission requirement while undermining your preparation for what comes next.</p>
+<hr/>
+<h2>Communication</h2>
+<p>Important announcements will be made on Canvas or during class. You are expected to attend class and monitor Canvas.</p>
+<p>For administrative or confidential matters, use the Canvas email feature rather than emailing the instructor directly — this ensures a timely response.</p>
+<p>For short clarification questions about course material, use the course Slack. In-depth questions and debugging help should be brought to office hours.</p>
+<p>Slack join link: <em>(to be added — note: the link expires periodically; if it has expired, let the instructor know during class)</em></p>
+<hr/>
+<h2>Students Requiring Accommodations</h2>
+<p>If you have a disability that may affect your ability to participate in lectures, complete lab activities, or take the Comprehensive Assessment, please follow the official campus protocol below.</p>
+<p>All accommodation requests must be processed through the <strong><a href="https://sdc.ucdavis.edu/">UC Davis Student Disability Center (SDC)</a></strong>.</p>
+<ul>
+<li><strong>Documentation:</strong> Only the SDC can furnish the documentation required for the instructor to provide specific accommodations. Requests without official SDC documentation cannot be considered.</li>
+<li><strong>SDC-to-instructor contact:</strong> The SDC will contact the instructor directly with documentation and recommended accommodations. Do not contact the instructor first.</li>
+<li><strong>Act early:</strong> Contact the SDC before the course begins or as soon as possible. Requests submitted after the first week of the quarter may not be accommodatable given the lab schedule and universal deadlines.</li>
+</ul>
+<h2>Copyright Notice</h2>
+<p>All course materials — including lecture presentations, outlines, and assessments — are protected by U.S. copyright law. You may take notes and share materials with enrolled classmates. You may not reproduce, distribute, or post course materials elsewhere, whether or not a fee is charged, without written consent from the instructor. Violations may be subject to proceedings under the UC Davis Code of Academic Conduct.</p>
+<p>You retain copyright in your own original work submitted for this course.</p>
+  </main>
+</body>
+</html>
