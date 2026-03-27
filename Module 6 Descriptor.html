@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +152,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -195,7 +205,7 @@
 <hr/>
 <h2>Hands-On: Lab 6</h2>
 <h3>Before the Lab</h3>
-<p>Lab Assignment:** <a href="https://andreknoesen.github.io/eec1-widgets/Lab6Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 6 Instructions</a></p>
+<p>Lab Assignment:** <a href="https://andreknoesen.github.io/eec1-widgets/Lab6Instructions.html" rel="noopener noreferrer" target="_blank">Lab 6 Instructions</a></p>
 <p>In Lab 6, you will build and characterize op-amp circuits on your breadboard, moving from ideal analysis to real-world observation.</p>
 <ul>
 <li><strong>Voltage Follower:</strong> Demonstrate how a buffer prevents loading and observe the gap between ideal theory and real hardware behavior.</li>

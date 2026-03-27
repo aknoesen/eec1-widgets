@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +152,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -198,7 +208,7 @@
 <hr/>
 <h2>Hands-On: Lab 2</h2>
 <h3>Before the Lab</h3>
-<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab2Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 2 Instructions</a></p>
+<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab2Instructions.html" rel="noopener noreferrer" target="_blank">Lab 2 Instructions</a></p>
 <p>Read the Lab assignment and complete the prelab before attending the lab. In Lab 2, you will use the ADALM2000 (M2K) and the Keysight Bench Multimeter to verify DC circuit laws and capture your first periodic signals.</p>
 <ul>
 <li><strong>Verify the Laws:</strong> Build resistor networks and confirm that KCL and KVL hold on your breadboard.</li>

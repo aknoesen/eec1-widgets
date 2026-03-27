@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +152,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -197,7 +207,7 @@
 <hr/>
 <h3>Hands-On: Lab 5</h3>
 <h3>Before the Lab</h3>
-<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab5Instructions.pdf" rel="noopener noreferrer" target="_blank">Lab 5 Instructions</a></p>
+<p><strong>Lab Assignment:</strong> <a href="https://andreknoesen.github.io/eec1-widgets/Lab5Instructions.html" rel="noopener noreferrer" target="_blank">Lab 5 Instructions</a></p>
 <p>In Lab 5, you will characterize RC filters using two complementary methods and compare the results.</p>
 <ul>
 <li><strong>Time-Domain Measurement:</strong> Use the oscilloscope to measure amplitude and phase shift at specific frequencies.</li>
