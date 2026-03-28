@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 70%;
+      max-width: 100%;
       height: auto;
       display: block;
-      margin: 1rem auto;
+      margin: 1rem 0;
     }
 
     /* ── Horizontal rule ── */
@@ -152,16 +152,6 @@
       outline-offset: 2px;
     }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-    onload="renderMathInElement(document.body, {
-      delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$',  right: '$',  display: false}
-      ],
-      throwOnError: false
-    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -183,8 +173,10 @@
 <h2>Navigating this course</h2>
 <p>Access the weekly modules: <a href="https://canvas.ucdavis.edu/courses/1072443/modules/352312">Modules</a></p>
 <blockquote></blockquote>
-<h2>LAB SCHEDULE AND OFFICE HOUR</h2>
-<div aria-label="LAB SCHEDULE AND OFFICE HOUR" class="table-wrapper" role="region" tabindex="0"><table><caption>LAB SCHEDULE AND OFFICE HOUR</caption>
+<p>Here are the <strong>two separate tables</strong>, one for <strong>Office Hours</strong> and one for <strong>Labs</strong>, formatted cleanly in Markdown.</p>
+<hr/>
+<h2>Office Hours</h2>
+<div aria-label="Office Hours" class="table-wrapper" role="region" tabindex="0"><table><caption>Office Hours</caption>
 <thead>
 <tr>
 <th scope="col" style="text-align: left;">Name</th>
@@ -198,10 +190,46 @@
 <tr>
 <td style="text-align: left;"><strong>Office Hour</strong></td>
 <td style="text-align: left;">Andre Knoesen (instructor)</td>
-<td style="text-align: left;">TBC</td>
-<td style="text-align: left;">TBC</td>
+<td style="text-align: left;">TBD</td>
+<td style="text-align: left;">TBD</td>
 <td style="text-align: left;">Kemper 2115</td>
 </tr>
+<tr>
+<td style="text-align: left;"><strong>Office Hour</strong></td>
+<td style="text-align: left;">Peggy Zhu (TA)</td>
+<td style="text-align: left;">Tue</td>
+<td style="text-align: left;">12:00–1:00 PM</td>
+<td style="text-align: left;">Kemper 2161</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Office Hour</strong></td>
+<td style="text-align: left;">Parssa Alimadad (TA)</td>
+<td style="text-align: left;">Wed</td>
+<td style="text-align: left;">4:00–5:00 PM</td>
+<td style="text-align: left;">Kemper 2161</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Office Hour</strong></td>
+<td style="text-align: left;">Basheer Ammar (TA)</td>
+<td style="text-align: left;">Thu</td>
+<td style="text-align: left;">11:00–11:30 AM</td>
+<td style="text-align: left;">Kemper 2161</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Labs</h2>
+<div aria-label="Labs" class="table-wrapper" role="region" tabindex="0"><table><caption>Labs</caption>
+<thead>
+<tr>
+<th scope="col" style="text-align: left;">Name</th>
+<th scope="col" style="text-align: left;">Responsibility</th>
+<th scope="col" style="text-align: left;">Day</th>
+<th scope="col" style="text-align: left;">Time</th>
+<th scope="col" style="text-align: left;">Location</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><strong>Lab A01</strong></td>
 <td style="text-align: left;">Peggy Zhu (TA)</td>
@@ -239,6 +267,14 @@
 </tr>
 </tbody>
 </table></div>
+<hr/>
+<p>If you want, I can also:</p>
+<ul>
+<li>Order rows strictly <strong>chronologically</strong></li>
+<li>Collapse responsibility names into a <strong>TA column</strong></li>
+<li>Produce a <strong>student-facing version</strong> with less redundancy</li>
+</ul>
+<p>Just tell me your preference.</p>
 <p><em>While you are required to attend your assigned lab section, you are welcome to work in the adjacent lab during any of the scheduled lab sessions.</em></p>
 <h2>Communication</h2>
 <p>Important announcements will be made on Canvas or during class. You are expected to attend class regularly and to monitor Canvas for updates.<br/>
