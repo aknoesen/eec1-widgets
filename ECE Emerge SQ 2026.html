@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +152,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -280,8 +290,8 @@
 <p>Important announcements will be made on Canvas or during class. You are expected to attend class regularly and to monitor Canvas for updates.<br/>
 There is a Discord channel dedicated to this course where you can discuss course materials with your peers and contact the TAs outside of lectures, labs, and office hours.</p>
 <p>Join the course Discord server using the following link: https://discord.gg/3NWh8UvjQG</p>
-<p>After joining, please read the instructions in the #onboarding channel to learn how to use the server. You may post questions related to lecture notes, labs, and assignments.</p>
-<p>For administrative or confidential matters, use the Canvas email feature rather than emailing the instructor directly. This helps ensure a timely response.</p>
+<p>After joining, please read the instructions in the #onboarding channel to learn how to use the server. You may post questions related to lecture notes, labs, and assignments.  The Discord channel is monitored actively by TAs between 8 am - 5 pm business days. You should get a response within at least 3 hours. </p>
+<p>For administrative or confidential matters, use the Canvas email feature rather than emailing the instructor directly. This helps ensure a timely response,.  If it is an administrative matter that is not confidential, then ideally you should be using the Discord channel, or via Canvas , then send the message to the instructor and all the TAs</p>
 <blockquote>
 <p>"I am committed to creating a learning environment that is as accessible and inclusive as possible. I make every effort to ensure that course materials, activities, and technologies are accessible to all students. If you encounter any barriers to access in this course, or if you need course content in an alternative or remediated accessible format, please let me know as soon as possible. You may contact me directly at <a href="mailto:aknoesen@ucdavis.edu">aknoesen@ucdavis.edu</a> so I can address the issue. I welcome feedback and will work promptly to address accessibility needs. Students with disabilities who wish to request academic accommodations are encouraged to contact <a href="https://sds.ucdavis.edu">Student Disability Services</a> as early as possible in the semester to begin the accommodations process.” — Andre Knoesen</p>
 </blockquote>
