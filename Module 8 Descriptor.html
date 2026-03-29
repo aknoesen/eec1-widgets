@@ -83,7 +83,7 @@
 
     /* ── Images ── */
     img {
-      max-width: 70%;
+      max-width: 95%;   /* hard cap — inline style controls actual width */
       height: auto;
       display: block;
       margin: 1rem auto;
@@ -151,14 +151,38 @@
       outline: 3px solid #005a9c;
       outline-offset: 2px;
     }
+
+    /* ── CC license footer ── */
+    .cc-footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 2px solid #cccccc;
+      font-size: 0.85rem;
+      color: #555555;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .cc-footer img {
+      width: 88px;
+      height: auto;
+      display: inline;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .cc-footer a {
+      color: #00008B;
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
     onload="renderMathInElement(document.body, {
       delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$',  right: '$',  display: false}
+        {left: '$$',  right: '$$',  display: true},
+        {left: '$',   right: '$',   display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
       ],
       throwOnError: false
     });"></script>
@@ -174,8 +198,8 @@
 * Signal chain design: connecting sensor, instrumentation amplifier, level shifter, and ADC<br/>
 * Capstone bring-up: verifying each stage of the scale signal chain on the breadboard</p>
 <h3>Before the Lecture</h3>
-<p><strong>Pre-Lecture Reading:</strong> <a href="https://canvas.ucdavis.edu/courses/1072443/files/30492587?wrap=1" rel="noopener noreferrer" target="_blank"><strong>ECE Confidential: Cracking The Code</strong></a><br/>
-* Chapter 11 (The Signal in the Difference)</p>
+<p><strong>Pre-Lecture Reading:</strong> <a href="https://andreknoesen.github.io/ECE-Emerge/Reader/ECEConfidential.html" rel="noopener noreferrer" target="_blank"><strong>ECE Confidential: Cracking The Code</strong></a><br/>
+* <a href="https://andreknoesen.github.io/ECE-Emerge/Reader/InstrumentationAmplifiers.html" rel="noopener noreferrer" target="_blank">Chapter 11 — The Signal in the Difference</a></p>
 <hr/>
 <h3>Measuring Small Signals in a Noisy World</h3>
 <p>Real sensor signals are often tiny and ride on a large common-mode voltage that appears equally on both signal leads. A simple difference amplifier can cancel this background in principle, but its finite input impedance distorts the sensor signal. The three-op-amp instrumentation amplifier solves this by presenting nearly infinite input impedance while still rejecting common-mode interference with high precision.</p>
@@ -193,6 +217,15 @@
 <li><strong>Full Chain Integration:</strong> Connect the load cell, INA125, and summing amplifier, and confirm that a known weight produces the expected ADC output.</li>
 <li><strong>Capstone Launch:</strong> This lab has no step-by-step procedure. Your team follows the Design Document prepared in the pre-lab and documents every measurement and discrepancy found during bring-up.</li>
 </ul>
+<footer aria-label="License information" class="cc-footer" role="contentinfo">
+<img alt="Creative Commons Attribution-NonCommercial 4.0 International License badge" src="../media/by_nc.png"/>
+<span>
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="noopener noreferrer" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    Please attribute this work to André Knoesen.
+  </span>
+</footer>
+
   </main>
 </body>
 </html>
