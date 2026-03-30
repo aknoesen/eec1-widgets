@@ -74,6 +74,7 @@ The course textbook is provided through ZyBooks via equitable access. To access 
 
 - Graduate students are required to purchase a personal license: [Installation instructions (graduate students)](https://www.mathworks.com/videos/how-to-install-matlab-1525083586145.html)
 
+Important:  General computing support for technical issues is provided by COE IT. Please email coeithelp@ucdavis.edu to create a ticket to resolve or receive assistance for an inquiry or technology issue.  For questions specific to content of the course, use Slack channel. 
 
 **Getting started:**
 - [Working in the MATLAB Development Environment](https://www.mathworks.com/videos/working-in-the-development-environment-69021.html) (start here, this skill is essential)
@@ -256,12 +257,10 @@ A practical check: after an AI interaction, can you close the conversation and e
 
 Important announcements will be made on Canvas or during class. You are expected to attend class regularly and to monitor Canvas for updates.
 
-There is a Discord channel dedicated to this course where you can discuss course materials with your peers and contact the TAs outside of lectures, labs, and office hours.
+There is a Slack channel dedicated to this course where you can discuss course materials with your peers and contact the TAs outside of lectures, labs, and office hours.
 
-Join the course Discord server using the following link:  
-https://discord.gg/3NWh8UvjQG
+Join the course Slack server using the following link:  https://join.slack.com/t/eng6spring2026/shared_invite/zt-3tktvezoz-hvb5_xkfniXSAy61XXmL7g
 
-After joining, please read the instructions in the **#onboarding** channel to learn how to use the server. You may post questions related to lecture notes, labs, and assignments.
 
 For administrative or confidential matters, use the Canvas email feature rather than emailing the instructor directly. This helps ensure a timely response.
 
