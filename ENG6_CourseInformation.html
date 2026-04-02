@@ -83,10 +83,10 @@
 
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +152,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -176,9 +186,9 @@ Begin with the Week 1 module and work forward from there.</p>
 194 Peter Rock Hall</p>
 <hr/>
 <h2>Office Hours and Lab Schedule</h2>
-<p><strong>Instructor office hours (Andre):</strong> TBD — Kemper 2115<br/>
-<strong>TA office hours:</strong> TBD — Academic Surge 1116<br/>
-<strong>Lab sections:</strong> Academic Surge 1116</p>
+<p><strong>Instructor office hours:</strong> Thurday 12:00-1 pm — Kemper 2115</p>
+<p><strong>TA office hours:</strong> TBD — Academic Surge 1116</p>
+<p><strong>Lab sections:</strong> Academic Surge 1116</p>
 <p>The lab section for each module starts on Tuesday.</p>
 <div aria-label="Office Hours and Lab Schedule" class="table-wrapper" role="region" tabindex="0"><table><caption>Office Hours and Lab Schedule</caption>
 <thead>
@@ -215,11 +225,6 @@ Begin with the Week 1 module and work forward from there.</p>
 <td>3:10–4:00 PM</td>
 </tr>
 <tr>
-<td>A06</td>
-<td>Monday</td>
-<td>7:10–8:00 PM</td>
-</tr>
-<tr>
 <td>A07</td>
 <td>Wednesday</td>
 <td>7:10–8:00 PM</td>
@@ -233,11 +238,6 @@ Begin with the Week 1 module and work forward from there.</p>
 <td>A09</td>
 <td>Wednesday</td>
 <td>8:10–9:00 AM</td>
-</tr>
-<tr>
-<td>A10</td>
-<td>Monday</td>
-<td>9:00–9:50 AM</td>
 </tr>
 <tr>
 <td>A11</td>
@@ -260,6 +260,7 @@ Begin with the Week 1 module and work forward from there.</p>
 <p>Graduate students are required to purchase a personal license: <a href="https://www.mathworks.com/videos/how-to-install-matlab-1525083586145.html">Installation instructions (graduate students)</a></p>
 </li>
 </ul>
+<p>Important:  General computing support for technical issues is provided by COE IT. Please email coeithelp@ucdavis.edu to create a ticket to resolve or receive assistance for an inquiry or technology issue.  For questions specific to content of the course, use Slack channel. </p>
 <p><strong>Getting started:</strong><br/>
 - <a href="https://www.mathworks.com/videos/working-in-the-development-environment-69021.html">Working in the MATLAB Development Environment</a> (start here, this skill is essential)<br/>
 - <a href="https://www.mathworks.com/videos/using-the-live-editor-117940.html">Using the MATLAB Live Editor</a> (use if need to document your work)</p>
