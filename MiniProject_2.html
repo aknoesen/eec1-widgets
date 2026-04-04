@@ -189,11 +189,11 @@
 <p><strong>Step 3:</strong> Follow up with at least one of these questions to deepen your understanding:<br/>
 - <em>"Can you give me a concrete scenario where using X-axis acceleration alone would give me the wrong answer, but the resultant would give me the right one?"</em><br/>
 - <em>"Does the formula relate to the Pythagorean theorem? If so, how?"</em></p>
-<p><strong>Step 4:</strong> Continue until you can answer the following in your own words — write your answers in a notes document:<br/>
+<p><strong>Step 4:</strong> Continue until you can answer the following in your own words — these become Problems 2(a) and 2(b) of your pre-lab submission:<br/>
 - What physical quantity does the resultant represent?<br/>
 - Why is it direction-independent?<br/>
 - Give one situation where you would use the resultant, and one where you would need the individual axes instead.</p>
-<p><strong>Step 5:</strong> Write a 3–5 sentence summary of what you learned. Keep it — it becomes Field 1 of your post-lab submission.</p>
+<p><strong>Step 5:</strong> Write a 3–5 sentence summary of what you learned. This becomes Problem 2(c) of your pre-lab submission and Field 1 of your post-lab submission.</p>
 <blockquote>
 <p><strong>Why this matters now:</strong> In Lab Step 2 of this session, you will write the line of code that computes the resultant. You will also use it to find the peak acceleration event. If you understand what the resultant represents before you write the code, that step will be purposeful rather than mechanical.</p>
 </blockquote>
@@ -204,13 +204,49 @@
 <li>Identify a lab partner before your session (a classmate in the same lab section works best)</li>
 <li>Exchange contact details and agree on a file-sharing method (UC Davis Google Drive, email, or similar)</li>
 <li>You will exchange <code>sensorData.mat</code> files during or shortly after the lab session</li>
+<li>Submit your partner's name in Problem 1(a) of the pre-lab submission; if sharing data with more than one person, list all names</li>
 </ul>
 <hr/>
+<h3>Pre-Lab Submission</h3>
+<p>Open the course submission app, load the <strong>Mini-Project 2 Pre-Lab</strong> schema file, and complete all problems before your lab session. Upload the generated JSON file to Gradescope under the Mini-Project 2 Pre-Lab assignment.</p>
+<div aria-label="Pre-Lab Submission" class="table-wrapper" role="region" tabindex="0"><table><caption>Pre-Lab Submission</caption>
+<thead>
+<tr>
+<th scope="col">Problem</th>
+<th scope="col">Deliverable</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(a)</td>
+<td>Partner name(s)</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>2(a)</td>
+<td>Physical meaning and direction-independence (your own words)</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>2(b)</td>
+<td>Resultant vs. individual axes</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>2(c)</td>
+<td>3–5 sentence pre-lab summary</td>
+<td>AI-graded</td>
+</tr>
+</tbody>
+</table></div>
 <h3>Pre-Lab Checklist</h3>
 <ul>
-<li>[ ] AI Exploration completed; 3–5 sentence summary written and saved</li>
+<li>[ ] AI Exploration completed; answers to Step 4 questions written in notes</li>
+<li>[ ] 3–5 sentence summary written and saved (Problem 2(c))</li>
 <li>[ ] Can answer in your own words: what is the resultant and why is it direction-independent?</li>
 <li>[ ] Lab partner identified and file-sharing method agreed upon</li>
+<li>[ ] Pre-lab GradeBridge submission (Problems 1(a), 2(a), 2(b), 2(c)) completed and JSON uploaded to Gradescope</li>
 </ul>
 <hr/>
 <h2>LAB SESSION</h2>
@@ -379,11 +415,11 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 <p>Open the course submission app, load the <strong>Mini-Project 2</strong> schema file, and complete all fields. Upload the generated JSON file to Gradescope.</p>
 <hr/>
 <p><strong>Field 1 — Pre-Lab AI Exploration Summary</strong> <em>(reflective)</em></p>
-<p>In 3–5 sentences, summarize what you learned from your Pre-Lab AI Exploration in your own words. Your summary must address:<br/>
+<p>In 3–5 sentences, summarize what you now understand about resultant acceleration, drawing on both your Pre-Lab AI Exploration and what you observed during the lab session. You may revise or expand your pre-lab summary. Your summary must address:<br/>
 - What does the resultant acceleration represent physically?<br/>
 - Why is it direction-independent — what geometric principle explains this?<br/>
 - When would you use the resultant rather than an individual axis?</p>
-<p>Write this from your notes — do not paste AI output directly.</p>
+<p>Write in your own words — do not paste AI output directly.</p>
 <hr/>
 <p><strong>Field 2 — MATLAB Grader Submission</strong></p>
 <p>Confirm your <code>dataAnalysis.m</code> submission status on MATLAB Grader:<br/>
@@ -399,7 +435,7 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 <li>3c: Peak time — Z axis (seconds)</li>
 <li>3d: Peak time — Resultant (seconds)</li>
 </ul>
-<p>These values come from your notes document. They are a record of your specific dataset and are used to cross-check your submitted plot.</p>
+<p>These values come from your notes document. They are graded for completion.</p>
 <hr/>
 <p><strong>Field 4 — Your Annotated Plot</strong> <em>(image upload)</em></p>
 <p>Upload <code>accelerationPeaks.png</code> produced from your own data.</p>
@@ -418,6 +454,9 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 - Your partner's name in the figure title<br/>
 - Same four-panel format as Field 4<br/>
 - Generated by your own code — not provided by your partner</p>
+<hr/>
+<p><strong>Field 6c — Dataset Comparison</strong> <em>(reflective)</em></p>
+<p>Look at your own <code>accelerationPeaks.png</code> and your partner's side by side. Describe one notable difference you observe between the two datasets — for example in peak magnitudes, peak timing, or overall signal shape — and suggest a physical reason for that difference.</p>
 <hr/>
 <p><strong>Field 7 — Formal Reflection</strong> <em>(reflective)</em></p>
 <p>Write a reflection of <strong>150–200 words</strong> as continuous prose.</p>
@@ -438,6 +477,7 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 <li>[ ] Field 4: Your own annotated plot uploaded (name in title, annotations present)</li>
 <li>[ ] Field 5: Partner's name entered</li>
 <li>[ ] Field 6: Partner's annotated plot uploaded (partner's name in title)</li>
+<li>[ ] Field 6c: Dataset comparison written (specific difference + physical explanation)</li>
 <li>[ ] Field 7: Formal reflection, 150–200 words, continuous prose, word count included</li>
 <li>[ ] JSON file generated and uploaded to Gradescope</li>
 </ul>
@@ -453,19 +493,39 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 </thead>
 <tbody>
 <tr>
+<td>Pre-Lab 1(a): Partner name(s)</td>
+<td>Lab partner(s) identified and listed</td>
+<td>Conventional</td>
+</tr>
+<tr>
+<td>Pre-Lab 2(a): Physical meaning and direction-independence</td>
+<td>Correctly identifies resultant as vector magnitude; explains Pythagorean/direction-independence principle</td>
+<td>Custom AI grader</td>
+</tr>
+<tr>
+<td>Pre-Lab 2(b): Resultant vs. individual axes</td>
+<td>Concrete scenario for each case with correct reasoning</td>
+<td>Custom AI grader</td>
+</tr>
+<tr>
+<td>Pre-Lab 2(c): Pre-Lab summary</td>
+<td>Coherent 3–5 sentence summary covering resultant magnitude and direction-independence</td>
+<td>Custom AI grader</td>
+</tr>
+<tr>
 <td><code>dataAnalysis.m</code></td>
 <td>Runs without errors on reference data; <code>peakTimes</code> is 1×4 with correct values; annotated plot produced</td>
 <td>MATLAB Grader — automated</td>
 </tr>
 <tr>
 <td>Field 1: AI Exploration Summary</td>
-<td>Demonstrates understanding of resultant as direction-independent vector magnitude</td>
+<td>Demonstrates understanding of resultant as direction-independent vector magnitude; may incorporate lab observations</td>
 <td>Custom AI grader</td>
 </tr>
 <tr>
 <td>Fields 3a–3d: peakTimes</td>
-<td>Values consistent with submitted plot</td>
-<td>Cross-check (human)</td>
+<td>Completion</td>
+<td>Autograder</td>
 </tr>
 <tr>
 <td>Field 4: Own annotated plot</td>
@@ -481,6 +541,11 @@ sgtitle('Acceleration Analysis — Your Name Here')</code></p>
 <td>Field 6: Partner's plot</td>
 <td>Partner name in title; generated from student's own code; consistent with Field 5</td>
 <td>Human review</td>
+</tr>
+<tr>
+<td>Field 6c: Dataset comparison</td>
+<td>Specific observed difference identified; plausible physical explanation given</td>
+<td>Custom AI grader</td>
 </tr>
 <tr>
 <td>Field 7: Formal Reflection</td>
