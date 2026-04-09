@@ -26,6 +26,16 @@
       text-decoration: none;
     }
 
+    /* ── Course banner ── */
+    .course-banner {
+      background: #003366;
+      color: #ffffff;
+      padding: 0.45rem 1.25rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+
     /* ── Base typography ── */
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -155,22 +165,25 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header role="banner" class="course-banner">
+    ENG6 &nbsp;&bull;&nbsp; Spring 2026 &nbsp;&bull;&nbsp; UC Davis
+  </header>
   <main id="main-content" role="main">
     <h1>Mini-Project 4: OOP for Data Analysis / Dead Reckoning</h1>
 <hr/>
 <h2>Connecting to Prior Labs</h2>
-<p>In Labs 1 and 2 you wrote scripts that collected accelerometer data and computed derived quantities — resultant acceleration, peak detection. In Lab 3 you wrapped key logic into a reusable function. In this lab you take the next step: wrapping your entire data pipeline into a <strong>class</strong> — a MATLAB object that bundles the sensor connection, the stored data, and every processing step into one coherent unit.</p>
-<p>The experiment at the center of this lab is dead reckoning: estimating your walking displacement by integrating acceleration twice. You will see directly why this technique fails over time — and the pre-lab work asks you to predict why before you run the experiment.</p>
+<p>In Labs 1 and 2 you wrote scripts that collected accelerometer data and computed derived quantities (resultant acceleration, peak detection). In Lab 3 you wrapped key logic into a reusable function. In this lab you take the next step: wrapping your entire data pipeline into a <strong>class</strong>, a MATLAB object that bundles the sensor connection, the stored data, and every processing step into one coherent unit.</p>
+<p>The experiment at the center of this lab is dead reckoning: estimating your walking displacement by integrating acceleration twice. You will see directly why this technique fails over time, and the pre-lab work asks you to predict why before you run the experiment.</p>
 <p><code>PRE-LAB  →  LAB SESSION  →  POST-LAB
 (before)     (in person)     (after)</code></p>
-<p>The documentation principle from Labs 1–3 applies here without exception: <strong>if you did not save it during the lab session, you cannot submit it after.</strong> Save every plot with your name in the title. Write down your key observations — especially numerical values — before you close any plot window.</p>
+<p>The documentation principle from Labs 1–3 applies here without exception: <strong>if you did not save it during the lab session, you cannot submit it after.</strong> Save every plot with your name in the title. Write down your key observations (especially numerical values) before you close any plot window.</p>
 <hr/>
 <h2>Goals</h2>
 <p>By the end of this mini-project you will have:</p>
 <ul>
 <li>Built a multi-method MATLAB class that wraps a sensor connection and data pipeline</li>
 <li>Applied numerical integration using <code>cumtrapz</code> to estimate velocity and displacement from acceleration data</li>
-<li>Observed dead reckoning error accumulation firsthand — and explained it mechanistically</li>
+<li>Observed dead reckoning error accumulation firsthand and explained it mechanistically</li>
 <li>Connected your pre-lab prediction to your experimental result</li>
 </ul>
 <p><strong>Concepts applied:</strong> Object-oriented programming (classes, methods, properties), numerical integration, dead reckoning, error accumulation</p>
@@ -179,48 +192,112 @@
 <p><strong>Complete everything in this section before your lab session.</strong></p>
 <hr/>
 <h3>Pre-Lab Part 1: AI Exploration</h3>
-<p>This pre-lab has a specific goal: arrive at the lab session with a clear understanding of what you are attempting, so that what you observe during the experiment has meaning. You are not being asked to predict what will go wrong — that is for the lab session itself to reveal.</p>
+<p>This pre-lab has a specific goal: arrive at the lab session with a clear understanding of what you are attempting, so that what you observe during the experiment has meaning. You are not being asked to predict what will go wrong; that is for the lab session itself to reveal.</p>
 <p><strong>Step 1:</strong> Open an AI assistant of your choice.</p>
 <p><strong>Step 2:</strong> Use the following as your opening prompt. You do not need to use it word for word, but it should reflect your actual starting point:</p>
 <blockquote>
-<p><em>"I am a first-year engineering student about to estimate walking displacement by integrating smartphone accelerometer data twice — once to get velocity from acceleration, and again to get position from velocity. Before I do this, I want to understand what numerical integration means physically: if I have a signal that measures acceleration over time, what does integrating it once give me, and why? Please explain the connection between integration and accumulation — without assuming I know calculus beyond the basic idea that integration is the area under a curve."</em></p>
+<p><em>"I am a first-year engineering student about to estimate walking displacement by integrating smartphone accelerometer data twice (once to get velocity from acceleration, and again to get position from velocity). Before I do this, I want to understand what numerical integration means physically: if I have a signal that measures acceleration over time, what does integrating it once give me, and why? Please explain the connection between integration and accumulation, without assuming I know calculus beyond the basic idea that integration is the area under a curve."</em></p>
 </blockquote>
-<p><strong>Step 3:</strong> Follow up with at least two of these questions:</p>
+<p><strong>Step 3:</strong> Ask the AI the following question:</p>
+<blockquote>
+<p><em>"What does it mean in practice for a sensor to have a measurement bias (a small constant offset from the true value)? What happens to this bias when I integrate the signal once? What happens when I integrate it a second time?"</em></p>
+</blockquote>
+<p>In your notes, record the AI's explanation of how bias behaves under integration. This becomes Problem 1(a) of your pre-lab submission. <strong>At least 60 words.</strong></p>
+<p><strong>Step 4:</strong> Follow up with at least one of these questions to deepen your understanding:</p>
 <ul>
 <li><em>"Can you explain dead reckoning as a navigation technique? How has it been used historically, and what are the key assumptions it requires?"</em></li>
-<li><em>"What does it mean in practice for a sensor to have a measurement bias — a small constant offset from the true value?"</em></li>
 <li><em>"If I start integrating with the assumption that velocity is zero, but the phone is not perfectly still at the moment I start, what enters my calculation from that point on?"</em></li>
 </ul>
-<p><strong>Step 4:</strong> Continue until you can answer the following in your own words — write them in a notes document:</p>
+<p><strong>Step 5:</strong> Answer the following in your own words. These become Problems 1(b)–1(d) of your pre-lab submission. You will also need them during the lab session:</p>
 <ul>
-<li>What does integrating acceleration once give you, and what does integrating twice give you?</li>
-<li>What are the starting conditions (initial velocity, initial position) assumed by this approach?</li>
-<li>What is dead reckoning, and what does it depend on to work correctly?</li>
+<li>1(b): What does integrating acceleration once give you, and what does integrating it twice give you? (At least 30 words.)</li>
+<li>1(c): What are the starting conditions (initial velocity, initial position) assumed by this approach, and why do they matter? (At least 40 words.)</li>
+<li>1(d): What is dead reckoning, and what does it depend on to work correctly? (At least 40 words.)</li>
 </ul>
-<p><strong>Step 5:</strong> Write a 3–5 sentence summary of what you learned. Keep this — it becomes Field 1 of your post-lab submission (L4_F1).</p>
+<p><strong>Step 6:</strong> Write a 3–5 sentence summary of what you learned. This becomes Problem 1(e) of your pre-lab submission. Your summary must connect the integration concept, the starting conditions, and the role of sensor bias into a coherent explanation, not just list them.</p>
 <blockquote>
-<p><strong>Note:</strong> The experiment in Lab Step 3 will produce a result. Your pre-lab work here gives you the framework to understand what you are looking at when it appears — but what you actually observe, and why, is for the lab session to establish.</p>
+<p><strong>Note:</strong> The experiment in Lab Step 3 will produce a result. Your pre-lab work here gives you the framework to understand what you are looking at when it appears, but what you actually observe, and why, is for the lab session to establish.</p>
 </blockquote>
 <hr/>
-<h3>Written Prediction (required — submit with Part 1)</h3>
-<p>Before the lab session, write down your intuitive answer to the following question. Do not use AI to inform this prediction — it should reflect your own expectation before you have seen the result.</p>
-<p><strong>Question:</strong> You will walk forward several paces and return to exactly your starting point. The true final displacement is zero. Will your estimated final displacement also be zero? Write your intuitive answer in one or two sentences.</p>
-<p>This prediction is submitted as Field 2 (L4_F2). It is graded on whether you made a genuine prediction before the experiment — not on whether you were right.</p>
+<h3>Written Prediction</h3>
+<p>Before the lab session, write down your intuitive answer to the following question. Do not use AI to inform this prediction; it should reflect your own expectation before you have seen the result.</p>
+<p><strong>Question:</strong> You will walk forward several paces and return to exactly your starting point. The true final displacement is zero. Will your estimated final displacement also be zero? Write your intuitive answer in one or two sentences, with brief reasoning.</p>
+<p>This becomes Problem 2 of your pre-lab submission. It is graded on whether a genuine prediction with reasoning was made before the experiment, not on whether you were right.</p>
 <hr/>
 <h3>Pre-Lab Part 2: Self-Test</h3>
 <p>After your AI exploration, ask the AI to confirm your understanding of the starting conditions for numerical integration. Use this prompt or something equivalent:</p>
 <blockquote>
 <p><em>"For dead reckoning using an accelerometer, I plan to set the initial velocity and initial position both to zero and then integrate. What are the physical conditions that must be true at the start of the experiment for those starting assumptions to be valid?"</em></p>
 </blockquote>
-<p>Write down: (a) what conditions the AI identifies, and (b) whether you can achieve those conditions in practice during a real phone-based walking experiment. Note any complications. This record becomes Field 3 (L4_F3).</p>
+<p>Record the following. These become Problems 3(a) and 3(b) of your pre-lab submission:</p>
+<ul>
+<li>3(a): What physical conditions must be true at the start of the experiment for the zero-velocity and zero-position assumptions to be valid? Extract the conditions the AI identifies, then critically assess them in your own words: do you agree with each one? Does anything seem missing or surprising? (At least 60 words.)</li>
+<li>3(b): Can you achieve those conditions in practice during a real phone-based walking experiment? State your assessment and note any specific complications. (At least 40 words.)</li>
+</ul>
+<hr/>
+<h3>Pre-Lab Submission</h3>
+<p>Open the course submission app, load the <strong>Mini-Project 4 Pre-Lab</strong> input json file, and complete all problems before your lab session. Upload the generated JSON file to Gradescope under the Mini-Project 4 Pre-Lab assignment.</p>
+<div aria-label="Pre-Lab Submission" class="table-wrapper" role="region" tabindex="0"><table><caption>Pre-Lab Submission</caption>
+<thead>
+<tr>
+<th scope="col">Problem</th>
+<th scope="col">Deliverable</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(a)</td>
+<td>AI's explanation of how sensor bias behaves under single and double integration</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>1(b)</td>
+<td>What integrating acceleration once gives you, and what integrating it twice gives you</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>1(c)</td>
+<td>Starting conditions assumed and why they matter</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>1(d)</td>
+<td>What dead reckoning is and what it depends on to work correctly</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>1(e)</td>
+<td>3–5 sentence summary connecting integration, starting conditions, and sensor bias</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Written prediction: will estimated final displacement be zero? With reasoning, in own words, before experiment</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>3(a)</td>
+<td>Conditions the AI identified, with your own critical assessment: do you agree, and is anything missing?</td>
+<td>AI-graded</td>
+</tr>
+<tr>
+<td>3(b)</td>
+<td>Your assessment of whether those conditions are achievable in practice, with specific complications noted</td>
+<td>AI-graded</td>
+</tr>
+</tbody>
+</table></div>
 <hr/>
 <h3>Pre-Lab Checklist</h3>
 <p>Before leaving for your lab session, confirm:</p>
 <ul>
-<li>[ ] AI Exploration completed; 3–5 sentence summary written in your notes (for Field 1)</li>
-<li>[ ] Written prediction recorded in notes — your own intuitive answer before seeing any data (for Field 2)</li>
-<li>[ ] Self-Test completed; starting conditions and your assessment of their achievability written down (for Field 3)</li>
+<li>[ ] AI Exploration (Part 1) completed; sensor bias explanation and answers to Problems 1(b)–1(d) written in notes</li>
+<li>[ ] 3–5 sentence summary written and saved (Problem 1(e))</li>
+<li>[ ] Written prediction recorded in own words before seeing any data (Problem 2)</li>
+<li>[ ] Self-Test (Part 2) completed; starting conditions and achievability assessment recorded (Problems 3(a) and 3(b))</li>
 <li>[ ] You can explain in your own words what integrating acceleration once gives you, and what integrating it twice gives you</li>
+<li>[ ] Pre-lab GradeBridge submission (Problems 1(a)–1(e), 2, 3(a)–3(b)) completed and JSON uploaded to Gradescope</li>
 </ul>
 <hr/>
 <h2>LAB SESSION</h2>
@@ -228,21 +305,22 @@
 <p>Bring to the lab session:<br/>
 - Laptop with MATLAB Online accessible<br/>
 - Smartphone with MATLAB Mobile installed and signed in<br/>
-- Your written prediction from Pre-Lab Part 1<br/>
+- Your written prediction from Pre-Lab Part 2 (Written Prediction)<br/>
 - A notes document open and ready</p>
 <hr/>
 <h3>Documentation Reminder</h3>
 <p>Every time you generate a plot during this session:<br/>
 1. Add your name to the plot title before saving<br/>
-2. Save it as a PNG to your MATLAB Drive — use the filenames specified<br/>
+2. Save it as a PNG to your MATLAB Drive; use the filenames specified<br/>
 3. Write down key values (especially the final displacement reading) in your notes document immediately</p>
 <p>Do not save plots at the end of the session. Save each one as you generate it.</p>
 <hr/>
 <h3>Background: Object-Oriented Programming</h3>
-<p>Before you open the skeleton file, read this — it will make the code structure legible.</p>
-<p>A <strong>class</strong> is a template that bundles data (called <em>properties</em>) and operations (called <em>methods</em>) together into a single named object. When you create an instance of a class, you get an object that carries both its own data and the functions that operate on that data.</p>
-<p>Properties can be <strong>public</strong> (accessible and modifiable from outside the class) or <strong>private</strong> (<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/matlab.metadata.method-class.html#prop_Access"><code>Access</code> property attributes</a> — controlling visibility of class properties) (visible only inside the class). The <code>mobiledevConnection</code> property in <code>SensorDataAnalyzer</code> is private — this means you cannot accidentally overwrite or break the sensor connection from your script. The internal data (<code>TargetSignal</code>, <code>TargetSignalTs</code>) is public so your script can read results after calling a method.</p>
-<p>Why wrap <code>mobiledev</code> in a class at all? The class adds a consistent interface: every step in the pipeline has a named method with defined inputs and outputs. It also adds error checking — <code>setTargetSignal</code> throws a meaningful error if you call it before logging, rather than silently producing garbage. You are not expected to design OOP systems in this course; you are expected to read the structure, implement the methods in the skeleton, and understand why the structure is organized the way it is.</p>
+<p>Before you open the skeleton file, read this; it will make the code structure legible.</p>
+<p><strong>The core idea.</strong> A <strong>class</strong> is a blueprint or template. It defines what data a thing will hold (called <em>properties</em>) and what operations it can perform (called <em>methods</em>). A class by itself does nothing; it is just the definition. An <strong>instance</strong> is a specific, live copy of that class that you create and use in your script. Think of it this way: a class is like the blueprint for a house; an instance is an actual house built from that blueprint. When your script runs <code>analyzer = SensorDataAnalyzer()</code>, it is creating one instance of the <code>SensorDataAnalyzer</code> class and storing it in the variable <code>analyzer</code>. That instance holds its own sensor connection and its own data, separate from any other instance you might create.</p>
+<p><strong>What is <code>mobiledev</code>, and how does it relate to <code>SensorDataAnalyzer</code>?</strong> <code>mobiledev</code> is a MATLAB built-in class, a ready-made object provided by MATLAB that handles the phone connection for you. When you call <code>mobiledev()</code>, you are creating an instance of that built-in class. <code>SensorDataAnalyzer</code> is a class you build in this lab. One of its properties stores a <code>mobiledev</code> instance inside it, so <code>SensorDataAnalyzer</code> wraps <code>mobiledev</code> rather than replacing it. The phone connection still works through <code>mobiledev</code>; <code>SensorDataAnalyzer</code> just gives it a consistent interface and adds the processing steps on top.</p>
+<p><strong>Public and private properties.</strong> Properties can be <strong>public</strong> (readable and writable from your script) or <strong>private</strong> (<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/matlab.metadata.method-class.html#prop_Access"><code>Access</code> property attributes</a>: visible only inside the class). The <code>mobiledevConnection</code> property is private, meaning your script cannot accidentally overwrite or break the sensor connection. The data properties (<code>TargetSignal</code>, <code>TargetSignalTs</code>) are public so your script can read the results after calling a method.</p>
+<p><strong>Why wrap <code>mobiledev</code> in a class at all?</strong> The class adds a consistent interface: every step in the pipeline has a named method with defined inputs and outputs. It also adds error checking: <code>setTargetSignal</code> throws a meaningful error if you call it before logging, rather than silently producing garbage. You are not expected to design OOP systems in this course; you are expected to read the structure, implement the methods in the skeleton, and understand why the structure is organized the way it is.</p>
 <hr/>
 <h3>Lab Step 1: Build the SensorDataAnalyzer Class</h3>
 <p>Download the skeleton file <code>SensorDataAnalyzer.m</code> from Canvas. Place it in:</p>
@@ -251,7 +329,7 @@
     └── MiniProject4
         └── SensorDataAnalyzer.m</code></p>
 <p>Set your MATLAB working directory to <code>MiniProject4</code> before running anything.</p>
-<p>Implement each of the following methods in the skeleton. Each method stub is already present — you fill in the body.</p>
+<p>Implement each of the following methods in the skeleton. Each method stub is already present; you fill in the body.</p>
 <hr/>
 <h4>Constructor: <code>SensorDataAnalyzer</code></h4>
 <p>The constructor runs when you call <code>obj = SensorDataAnalyzer()</code>. It must:</p>
@@ -262,7 +340,7 @@
 <hr/>
 <h4><code>logSensorData(obj, timeSeconds, delaySeconds)</code></h4>
 <ul>
-<li>Waits <code>delaySeconds</code> before starting — use <code>pause(delaySeconds)</code> (<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/pause.html?overload=pause+false"><code>pause</code> docs</a> — suspend execution for a specified number of seconds) — to give you time to get the phone oriented and steady</li>
+<li>Waits <code>delaySeconds</code> before starting; use <code>pause(delaySeconds)</code> (<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/pause.html?overload=pause+false"><code>pause</code> docs</a>: suspend execution for a specified number of seconds) to give you time to get the phone oriented and steady</li>
 <li>Starts logging on <code>mobiledevConnection</code></li>
 <li>Waits <code>timeSeconds</code>, then stops logging</li>
 <li>Retrieves accelerometer data using <code>accellog(mobiledevConnection)</code></li>
@@ -282,7 +360,7 @@
 <li>Throws an error using <code>error()</code> if:</li>
 </ul>
 <blockquote>
-<p><strong>MathWorks Docs:</strong> <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/error.html"><code>error</code></a> — throw an error and display a formatted message<br/>
+<p><strong>MathWorks Docs:</strong> <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/error.html"><code>error</code></a>: throw an error and display a formatted message<br/>
   - <code>signalName</code> is not one of the four valid strings<br/>
   - No logging session has been run yet (raw data is empty)</p>
 </blockquote>
@@ -290,7 +368,7 @@
 <h4><code>plotTargetSignal(obj)</code></h4>
 <ul>
 <li>Plots <code>TargetSignal</code> vs. <code>TargetSignalTs</code></li>
-<li>Labels axes: time axis in seconds, signal axis in m/s² (or m/s or m depending on integration state — label what the signal actually is at the time of plotting)</li>
+<li>Labels axes: time axis in seconds, signal axis in m/s² (or m/s or m depending on integration state; label what the signal actually is at the time of plotting)</li>
 <li>Adds a descriptive title</li>
 <li>Throws an error if <code>TargetSignal</code> is empty</li>
 </ul>
@@ -302,8 +380,8 @@
 </ul>
 <hr/>
 <blockquote>
-<p><strong>MATLAB Grader Submission — <code>SensorDataAnalyzer.m</code> (Methods 1–5)</strong></p>
-<p>Once your class passes basic tests — the constructor creates an object without errors, <code>setTargetSignal</code> extracts the correct column from a reference dataset, and errors are thrown for invalid inputs — submit <code>SensorDataAnalyzer.m</code> to the <strong>Mini-Project 4</strong> assignment on MATLAB Grader.</p>
+<p><strong>MATLAB Grader Submission: <code>SensorDataAnalyzer.m</code> (Methods 1–5)</strong></p>
+<p>Once your class passes basic tests (the constructor creates an object without errors, <code>setTargetSignal</code> extracts the correct column from a reference dataset, and errors are thrown for invalid inputs), submit <code>SensorDataAnalyzer.m</code> to the <strong>Mini-Project 4</strong> assignment on MATLAB Grader.</p>
 <p>The autograder tests each method against reference behavior. You will receive immediate feedback. Fix any errors and resubmit before leaving the lab session if possible. TAs can help you interpret MATLAB Grader feedback during the session.</p>
 </blockquote>
 <hr/>
@@ -311,28 +389,28 @@
 <h4>Background: Dead Reckoning</h4>
 <p>Dead reckoning is a navigation technique: estimate your current position from a known starting point by accumulating measured changes over time. Ships used it for centuries before GPS; inertial navigation systems in aircraft and spacecraft still use it today.</p>
 <p>The chain works as follows: velocity is the integral of acceleration over time; position is the integral of velocity over time. If you measure acceleration continuously and integrate it twice from a known starting state, you get an estimate of displacement.</p>
-<p>In this lab, the starting conditions are: phone at rest (velocity = 0) at t = 0, starting position = 0. Any deviation from these conditions at the start — or any error in the acceleration measurement — enters the estimate and stays there. That is the core problem with dead reckoning: errors do not cancel, they accumulate. You will see this directly in your experiment.</p>
+<p>In this lab, the starting conditions are: phone at rest (velocity = 0) at t = 0, starting position = 0. Any deviation from these conditions at the start, or any error in the acceleration measurement, enters the estimate and stays there. That is the core problem with dead reckoning: errors do not cancel, they accumulate. You will see this directly in your experiment.</p>
 <hr/>
 <h4><code>integrate(obj)</code> method</h4>
 <p>Add this method to your <code>SensorDataAnalyzer</code> class:</p>
 <ul>
-<li>Numerically integrates <code>TargetSignal</code> with respect to <code>TargetSignalTs</code> using <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/cumtrapz.html"><code>cumtrapz</code></a> — consult the documentation for the two-argument form, which is required here to handle non-uniform timestamp spacing correctly:<br/>
+<li>Numerically integrates <code>TargetSignal</code> with respect to <code>TargetSignalTs</code> using <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/cumtrapz.html"><code>cumtrapz</code></a>; consult the documentation for the two-argument form, which is required here to handle non-uniform timestamp spacing correctly:<br/>
 <code>matlab
   cumtrapz(obj.TargetSignalTs, obj.TargetSignal)</code><br/>
-  This handles nonuniform timestamp spacing correctly — important because smartphone sensors do not sample at perfectly uniform intervals.</li>
+  This handles nonuniform timestamp spacing correctly, which is important because smartphone sensors do not sample at perfectly uniform intervals.</li>
 <li>Overwrites <code>TargetSignal</code> with the integrated result</li>
 <li>Throws an error if <code>TargetSignal</code> is empty</li>
 </ul>
 <p>Calling <code>integrate</code> once transforms acceleration → velocity. Calling it a second time transforms velocity → displacement. The timestamps remain unchanged between calls.</p>
 <hr/>
 <blockquote>
-<p><strong>MATLAB Grader Submission — <code>SensorDataAnalyzer.m</code> (complete, including <code>integrate</code>)</strong></p>
-<p>Submit the complete class file — all six methods — to MATLAB Grader. The autograder will verify that <code>integrate</code> produces correct numerical results on a reference signal.</p>
+<p><strong>MATLAB Grader Submission: <code>SensorDataAnalyzer.m</code> (complete, including <code>integrate</code>)</strong></p>
+<p>Submit the complete class file (all six methods) to MATLAB Grader. The autograder will verify that <code>integrate</code> produces correct numerical results on a reference signal.</p>
 <p>Submit this version before you leave the lab session.</p>
 </blockquote>
 <hr/>
 <h3>Lab Step 3: Dead Reckoning Experiment</h3>
-<p>Hold your phone with the positive X-axis pointing forward along your direction of travel. You identified which physical direction is positive X in Lab 1 — check your notes before proceeding.</p>
+<p>Hold your phone with the positive X-axis pointing forward along your direction of travel. You identified which physical direction is positive X in Lab 1; check your notes before proceeding.</p>
 <h4>Procedure</h4>
 <p>Run the following steps in your MATLAB script:</p>
 <ol>
@@ -382,7 +460,7 @@
 </li>
 </ol>
 <hr/>
-<h4>Observe and Record — Do This Now, Before Closing Any Plot</h4>
+<h4>Observe and Record: Do This Now, Before Closing Any Plot</h4>
 <p>Write the following in your notes document while the plots are on screen:</p>
 <ul>
 <li><strong>Velocity plot:</strong> What value do you expect at the end of the walk (you returned to rest)? What do you actually see at t = 15 s?</li>
@@ -392,18 +470,18 @@
 </ul>
 <p>These observations are required material for your formal reflection. If you do not record them now, you will be working from memory later.</p>
 <hr/>
-<h4>In-Lab AI Exploration — Complete After Observing the Displacement Plot</h4>
+<h4>In-Lab AI Exploration: Complete After Observing the Displacement Plot</h4>
 <p>Now that you have seen your results, open an AI assistant and use the following prompt:</p>
 <blockquote>
-<p><em>"I just ran a dead reckoning experiment using a smartphone accelerometer. I integrated X-axis acceleration twice to estimate displacement during a walk that returned to my starting point — so the true final displacement should be zero. My displacement plot drifted significantly from zero and did not return. Please explain the physical and mathematical reasons this happened. Why did the errors accumulate rather than cancel out?"</em></p>
+<p><em>"I just ran a dead reckoning experiment using a smartphone accelerometer. I integrated X-axis acceleration twice to estimate displacement during a walk that returned to my starting point, so the true final displacement should be zero. My displacement plot drifted significantly from zero and did not return. Please explain the physical and mathematical reasons this happened. Why did the errors accumulate rather than cancel out?"</em></p>
 </blockquote>
 <p>Follow up with at least one of these:</p>
 <ul>
 <li><em>"What specifically happens when a small constant offset in my acceleration measurement is integrated once? What happens when it is integrated a second time?"</em></li>
 <li><em>"Why does the drift grow over time rather than staying constant or averaging out?"</em></li>
 </ul>
-<p>Write down your answers in your notes document — in your own words. Then compare against your pre-lab prediction (Field 2): was your intuitive prediction correct? What did you not anticipate?</p>
-<p>This record becomes the basis for Fields 1, 3, and your formal reflection.</p>
+<p>Write down your answers in your notes document, in your own words. Then compare against your pre-lab prediction (Problem 2 of your pre-lab submission): was your intuitive prediction correct? What did you not anticipate?</p>
+<p>This record becomes the basis for Problem 1 and your formal reflection.</p>
 <hr/>
 <blockquote>
 <p><strong>Before leaving the lab session, confirm:</strong><br/>
@@ -418,8 +496,8 @@
 <p>If time permits:</p>
 <p>Brainstorm at least one improvement to the dead reckoning pipeline. Examples: subtract the resting baseline acceleration before integrating; account for the gravity component leaking into the X-axis if the phone is not perfectly level; use only the central portion of the walk (excluding the still periods at start and end); apply a high-pass filter to remove the DC bias.</p>
 <p>Implement your improvement in a modified version of your script and test it. Does the estimated final displacement get closer to zero?</p>
-<p>The top 5 most accurate implementations — measured by |estimated final displacement| after an out-and-back walk — will compete live in class.</p>
-<p><strong>Prize: Arduino Uno development kit.</strong></p>
+<p>The top 5 most accurate implementations, measured by |estimated final displacement| after an out-and-back walk, will compete live in class.</p>
+<p><strong>Prize: Provided by MathWorks.</strong></p>
 <p>This is not required for full marks on the lab submission.</p>
 <hr/>
 <h3>Lab Session Checklist</h3>
@@ -447,141 +525,65 @@
 <p>If you have not already done so, submit the complete <code>SensorDataAnalyzer.m</code> to the <strong>Mini-Project 4</strong> assignment on MATLAB Grader. Your submission must pass before the deadline.</p>
 <hr/>
 <h4>Part B: JSON App Submission</h4>
-<p>Open the course submission app, load the <strong>Mini-Project 4</strong> schema file, and complete all fields. Upload the generated JSON file to Gradescope under the Mini-Project 4 assignment.</p>
+<p>Open the course submission app, load the <strong>Mini-Project 4</strong> input json file, and complete all fields. Upload the generated JSON file to Gradescope under the Mini-Project 4 assignment.</p>
 <p>Complete the fields in order. All material you need was produced during the pre-lab and lab session.</p>
 <hr/>
-<p><strong>Field 1 — AI Exploration Summary</strong> <em>(reflective)</em></p>
-<p>In 3–5 sentences, summarize what you learned from your AI explorations — both the pre-lab exploration about numerical integration and dead reckoning, and the in-lab exploration after observing your displacement result. Your summary must address:<br/>
-- What does integrating acceleration once give you, and what does integrating it twice give you?<br/>
-- Where do errors come from in dead reckoning, and why do they grow rather than cancel?</p>
-<p>Write this from your notes. Do not paste AI output.</p>
+<p><strong>Problem 1: In-Lab AI Exploration Summary</strong> </p>
+<p>In 3–5 sentences, summarize what you learned from the in-lab AI exploration you completed after observing your displacement result. Write from your notes; do not paste AI output. Your summary must address:<br/>
+- Where do errors come from in dead reckoning, and why do they grow rather than cancel?<br/>
+- What specifically happens to a constant sensor bias when integrated once, and when integrated a second time?</p>
 <hr/>
-<p><strong>Field 2 — Written Prediction</strong></p>
-<p>What was your intuitive prediction before you ran the experiment — did you expect the estimated final displacement to be zero? Copy what you wrote in your notes during the pre-lab. This field is graded on whether a genuine prediction was made before you saw any data, not on whether you were right.</p>
+<p><strong>Problem 2: MATLAB Grader Confirmation</strong></p>
+<p>Report your submission status for <code>SensorDataAnalyzer.m</code> on MATLAB Grader: (a) Submitted and passing, (b) Submitted but still has errors I am working on, or (c) Not yet submitted. Briefly describe what the class was tested on or what errors remain, if any.</p>
 <hr/>
-<p><strong>Field 3 — Self-Test Record</strong></p>
-<p>Describe the starting conditions for dead reckoning that you identified during Pre-Lab Part 2: what physical conditions must be true at the start of the experiment for the zero-velocity and zero-position assumptions to be valid? In 2–4 sentences, also note whether those conditions were achievable in your actual experiment.</p>
-<hr/>
-<p><strong>Field 4 — MATLAB Grader Confirmation</strong></p>
-<p>Confirm your <code>SensorDataAnalyzer.m</code> submission status on MATLAB Grader:<br/>
-- (a) Submitted and passed<br/>
-- (b) Submitted but still has errors<br/>
-- (c) Not yet submitted</p>
-<hr/>
-<p><strong>Field 5 — Raw Acceleration Plot</strong> <em>(image upload)</em></p>
+<p><strong>Problem 3: Raw Acceleration Plot</strong> </p>
 <p>Upload <code>rawAcceleration.png</code> from Lab Step 3.</p>
 <p>Requirements:<br/>
 - Your name in the plot title<br/>
 - X-axis acceleration signal visible over the full 15-second window<br/>
 - Walk pattern visible (acceleration events during movement, near-zero at rest periods)</p>
 <hr/>
-<p><strong>Field 6 — Velocity Estimate Plot</strong> <em>(image upload)</em></p>
+<p><strong>Problem 4: Velocity Estimate Plot</strong> </p>
 <p>Upload <code>velocityEstimate.png</code> from Lab Step 3.</p>
 <p>Requirements:<br/>
 - Your name in the plot title<br/>
 - Velocity trace over the full 15-second window<br/>
-- Note: the final value at t = 15 s is discussed in Field 8 and your reflection</p>
+- Note: the final value at t = 15 s is discussed in Problem 6 and your reflection</p>
 <hr/>
-<p><strong>Field 7 — Displacement Estimate Plot</strong> <em>(image upload)</em></p>
+<p><strong>Problem 5: Displacement Estimate Plot</strong> </p>
 <p>Upload <code>displacementEstimate.png</code> from Lab Step 3.</p>
 <p>Requirements:<br/>
 - Your name in the plot title<br/>
 - Displacement trace over the full 15-second window<br/>
-- Cross-check: the value at the end of this plot should match what you enter in Field 8</p>
+- Cross-check: the value at the end of this plot should match what you enter in Problem 6</p>
 <hr/>
-<p><strong>Field 8 — Observation: Final Displacement Value</strong></p>
-<p>What was the estimated final displacement (in meters) read from your displacement plot at t = 15 s? Enter a number. This value must be consistent with the plot you uploaded in Field 7.</p>
+<p><strong>Problem 6: Observation: Final Displacement Value</strong></p>
+<p>What was the estimated final displacement (in meters) read from your displacement plot at t = 15 s? Enter a number. This value must be consistent with the plot you uploaded in Problem 5.</p>
 <hr/>
-<p><strong>Field 9 — Formal Reflection</strong> <em>(reflective)</em></p>
-<p>Write a reflection of <strong>150–200 words</strong> as continuous prose — not a bulleted list, not three separate paragraphs, but a single coherent argument.</p>
+<p><strong>Problem 7: Formal Reflection</strong> </p>
+<p>Write a reflection of <strong>150–200 words</strong> as continuous prose, not a bulleted list, not three separate paragraphs, but a single coherent argument.</p>
 <p>Your reflection must accomplish three things, in this order:</p>
-<p><strong>The Link:</strong> Connect the observed non-zero final displacement to the cumulative nature of numerical integration. Explain why errors accumulate — why they are never subtracted out — rather than canceling over time. This must be a causal explanation, not a description of the symptom.</p>
-<p><strong>The Technical Why:</strong> Name at least one specific physical source of error and explain mechanistically why it grows under integration. For example: a constant bias in the X-axis acceleration reading integrates to a linearly growing velocity, which integrates to a quadratically growing position. "Accelerometers aren't perfect" or "there is always some sensor error" are not sufficient — name the mechanism.</p>
+<p><strong>The Link:</strong> Connect the observed non-zero final displacement to the cumulative nature of numerical integration. Explain why errors accumulate (why they are never subtracted out) rather than canceling over time. This must be a causal explanation, not a description of the symptom.</p>
+<p><strong>The Technical Why:</strong> Name at least one specific physical source of error and explain mechanistically why it grows under integration. For example: a constant bias in the X-axis acceleration reading integrates to a linearly growing velocity, which integrates to a quadratically growing position. "Accelerometers aren't perfect" or "there is always some sensor error" are not sufficient; name the mechanism.</p>
 <p><strong>The Lab Application:</strong> Reference something you actually observed in your velocity or displacement plot. Identify at least one specific corrective action you could take to reduce the error, and explain why it would help.</p>
-<p><strong>Grading note:</strong> Writing "my result wasn't zero because of sensor errors" without explaining the accumulation mechanism will not satisfy The Link. Naming one mechanism without explaining the integration consequence will not satisfy The Technical Why. Saying "I would improve accuracy" without referencing your own data or naming a specific fix will not satisfy The Lab Application.</p>
 <p>Include your word count at the end of your response.</p>
 <hr/>
 <h3>Post-Lab Checklist</h3>
 <p>Before submitting, confirm:</p>
 <ul>
 <li>[ ] <code>SensorDataAnalyzer.m</code> submitted to MATLAB Grader and passing</li>
-<li>[ ] Field 1: AI Exploration summary written from notes (3–5 sentences, own words)</li>
-<li>[ ] Field 2: Written prediction entered — specific, written before the experiment</li>
-<li>[ ] Field 3: Self-test scenario and your answer written in own words</li>
-<li>[ ] Field 4: MATLAB Grader status selected</li>
-<li>[ ] Field 5: Raw acceleration plot uploaded (name in title, walk pattern visible)</li>
-<li>[ ] Field 6: Velocity estimate plot uploaded (name in title)</li>
-<li>[ ] Field 7: Displacement estimate plot uploaded (name in title)</li>
-<li>[ ] Field 8: Final displacement value entered (consistent with Field 7 plot)</li>
-<li>[ ] Field 9: Formal reflection, 150–200 words, continuous prose, word count included</li>
+<li>[ ] Problem 1: In-lab AI Exploration summary written from notes (3–5 sentences, own words)</li>
+<li>[ ] Problem 2: MATLAB Grader status reported with brief description</li>
+<li>[ ] Problem 3: Raw acceleration plot uploaded (name in title, walk pattern visible)</li>
+<li>[ ] Problem 4: Velocity estimate plot uploaded (name in title)</li>
+<li>[ ] Problem 5: Displacement estimate plot uploaded (name in title)</li>
+<li>[ ] Problem 6: Final displacement value entered (consistent with Problem 5 plot)</li>
+<li>[ ] Problem 7: Formal reflection, 150–200 words, continuous prose, word count included</li>
 <li>[ ] JSON file generated and uploaded to Gradescope</li>
 </ul>
 <hr/>
-<h2>Rubric</h2>
-<div aria-label="Rubric" class="table-wrapper" role="region" tabindex="0"><table><caption>Rubric</caption>
-<thead>
-<tr>
-<th scope="col">Component</th>
-<th scope="col">What is assessed</th>
-<th scope="col">Where graded</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SensorDataAnalyzer.m</code></td>
-<td>All methods run without errors; signal extraction correct for all four options; errors thrown correctly; <code>integrate</code> produces correct result using <code>cumtrapz</code></td>
-<td>MATLAB Grader — automated</td>
-</tr>
-<tr>
-<td>Field 1: AI Exploration Summary</td>
-<td>Demonstrates understanding of integration as accumulation and error growth in dead reckoning; references both pre-lab and in-lab explorations</td>
-<td>Custom AI grader</td>
-</tr>
-<tr>
-<td>Field 2: Written Prediction</td>
-<td>A genuine prediction made before the experiment; student's own intuition, not AI-informed</td>
-<td>Human review</td>
-</tr>
-<tr>
-<td>Field 3: Self-Test Record</td>
-<td>Starting conditions correctly identified; honest assessment of whether they were achievable</td>
-<td>Human review (reflective)</td>
-</tr>
-<tr>
-<td>Field 4: MATLAB Grader Confirmation</td>
-<td>Submission status reported</td>
-<td>Conventional</td>
-</tr>
-<tr>
-<td>Field 5: Raw Acceleration Plot</td>
-<td>Name in title; X-axis signal over 15 seconds; walk pattern visible</td>
-<td>Completion check</td>
-</tr>
-<tr>
-<td>Field 6: Velocity Estimate Plot</td>
-<td>Name in title; velocity trace visible; used for reflection cross-check</td>
-<td>Human review</td>
-</tr>
-<tr>
-<td>Field 7: Displacement Estimate Plot</td>
-<td>Name in title; displacement trace visible; consistent with Field 8 value</td>
-<td>Human review</td>
-</tr>
-<tr>
-<td>Field 8: Final Displacement Value</td>
-<td>Consistent with Field 7 plot; value in a plausible range given a 15-second walk</td>
-<td>Human cross-check</td>
-</tr>
-<tr>
-<td>Field 9: Formal Reflection</td>
-<td>The Link (accumulation, not cancellation), The Technical Why (specific mechanism + integration consequence), The Lab Application (own data + specific corrective action) — all three addressed substantively</td>
-<td>Custom AI grader</td>
-</tr>
-</tbody>
-</table></div>
-<hr/>
 <blockquote>
-<p><strong>Academic integrity:</strong> Your plots must come from data you collected yourself during the lab session using your own implementation of <code>SensorDataAnalyzer</code>. The autograder will run your submitted class against reference inputs. Submitted plots that are inconsistent with your code output will be investigated. The displacement value in Field 8 must match the plot in Field 7.</p>
+<p><strong>Academic integrity:</strong> Your plots must come from data you collected yourself during the lab session using your own implementation of <code>SensorDataAnalyzer</code>. The autograder will run your submitted class against reference inputs. Submitted plots that are inconsistent with your code output will be investigated. The displacement value in Problem 6 must match the plot in Problem 5.</p>
 </blockquote>
   </main>
 </body>
