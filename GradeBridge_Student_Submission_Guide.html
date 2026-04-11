@@ -81,12 +81,31 @@
       color: #1a1a1a;
     }
 
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +171,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -226,6 +255,7 @@
 </ol>
 <blockquote>
 <p><strong>Math equations:</strong> You can type mathematical expressions using LaTeX notation. Wrap inline math in <code>$...$</code> and display math in <code>$$...$$</code>. A live preview appears below the text box as you type. Click <strong><code>Math Equation Format Help</code></strong> in the sidebar for examples.</p>
+<p><strong>AI-graded questions</strong> are marked with a purple "AI Graded" badge. A word count is displayed below your answer as a guide to how much detail is expected — it is not enforced and will not prevent you from submitting. Focus on answering the question thoroughly rather than hitting a specific word count.</p>
 </blockquote>
 <ol>
 <li><strong>Your work saves automatically.</strong> The app saves your progress to your browser every few seconds — you will see a green "Saved" timestamp at the bottom of the left panel. You can safely close the browser and return later without losing your work.</li>
@@ -330,13 +360,13 @@ You may have uploaded a backup file instead of the assignment file, or a file fr
 <p><strong>I accidentally uploaded the wrong assignment.</strong><br/>
 Click <code>Upload JSON</code> again in the left panel and select the correct file. Your answers will be cleared when a new assignment loads.</p>
 <p><strong>The math preview is not showing.</strong><br/>
-Check that you have closed your <code>$</code> delimiters correctly — every opening <code>$</code> needs a matching closing <code>$</code>. Refer to <strong>Math Equation Format Help</strong> in the sidebar for correct syntax.</p>
+Check that you have closed your <code>$` delimiters correctly — every opening `$</code> needs a matching closing <code>$</code>. Refer to <strong>Math Equation Format Help</strong> in the sidebar for correct syntax.</p>
 <p><strong>I submitted the wrong file to Gradescope.</strong><br/>
 Contact your instructor as soon as possible. Gradescope allows resubmission before the deadline in most cases.</p>
-<p><strong>I took photos with my iPhone and the upload is not working.</strong><br/>
-iPhone photos are saved in HEIC format by default, which is not yet supported by the app. You need to convert your photo to JPEG or PNG before uploading. The easiest way: open the photo in the iPhone Photos app, tap the <strong>Share</strong> button, and choose <strong>Mail</strong> or <strong>AirDrop</strong> to send it to your computer — iOS automatically converts to JPEG when sharing. Alternatively, on a Mac, open the file in Preview and export as JPEG (<code>File → Export → Format: JPEG</code>).</p>
+<p><strong>I took photos with my iPhone and the file is in HEIC format.</strong><br/>
+HEIC is now supported natively — just upload the file as-is. The app will automatically convert it to JPEG before saving. If for any reason the conversion fails (you will see an error message), send the photo to your computer via AirDrop or Mail — iOS converts to JPEG automatically during sharing — and upload that file instead.</p>
 <hr/>
-<p>Version 3</p>
+<p>Version 4</p>
   </main>
 </body>
 </html>
