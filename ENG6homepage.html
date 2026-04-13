@@ -81,12 +81,31 @@
       color: #1a1a1a;
     }
 
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +171,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -170,6 +199,7 @@
 <p>Ammar Basheer - Monday 5:00-6:00 PM (Academic Surge 1116)</p>
 <p>Rishad Joarder - Thursday 1:00-2:00 PM (Academic Surge 1116)</p>
 <p>Elnaz Hamdarsi - Wednesday 10:00-11:00 AM (Academic Surge 1116)</p>
+<h2><a href="https://aknoesen.github.io/eec1-widgets/GradeBridge_Student_Submission_Guide">GradeBridge Student Submission Guide</a></h2>
 <h2><a href="https://aknoesen.github.io/eec1-widgets/ENG6_CourseInformation.html">General Course Information</a></h2>
 <h2><a href="https://aknoesen.github.io/eec1-widgets/ENG6_StudentCourseOrientation.html">Course Orientation</a></h2>
 <h2><a href="https://aknoesen.github.io/eec1-widgets/ENG6_CourseSchedule_Spring2026.html">Course Schedule</a></h2>
