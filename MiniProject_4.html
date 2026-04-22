@@ -26,16 +26,6 @@
       text-decoration: none;
     }
 
-    /* ── Course banner ── */
-    .course-banner {
-      background: #003366;
-      color: #ffffff;
-      padding: 0.45rem 1.25rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-    }
-
     /* ── Base typography ── */
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -91,12 +81,31 @@
       color: #1a1a1a;
     }
 
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -162,20 +171,28 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header role="banner" class="course-banner">
-    ENG6 &nbsp;&bull;&nbsp; Spring 2026 &nbsp;&bull;&nbsp; UC Davis
-  </header>
   <main id="main-content" role="main">
     <h1>Mini-Project 4: OOP for Data Analysis / Dead Reckoning</h1>
 <hr/>
 <h2>Connecting to Prior Labs</h2>
 <p>In Labs 1 and 2 you wrote scripts that collected accelerometer data and computed derived quantities (resultant acceleration, peak detection). In Lab 3 you wrapped key logic into a reusable function. In this lab you take the next step: wrapping your entire data pipeline into a <strong>class</strong>, a MATLAB object that bundles the sensor connection, the stored data, and every processing step into one coherent unit.</p>
 <p>The experiment at the center of this lab is dead reckoning: estimating your walking displacement by integrating acceleration twice. You will see directly why this technique fails over time, and the pre-lab work asks you to predict why before you run the experiment.</p>
-<p><code>PRE-LAB  →  LAB SESSION  →  POST-LAB
-(before)     (in person)     (after)</code></p>
+<pre><code>PRE-LAB  →  LAB SESSION  →  POST-LAB
+(before)     (in person)     (after)
+</code></pre>
 <p>The documentation principle from Labs 1–3 applies here without exception: <strong>if you did not save it during the lab session, you cannot submit it after.</strong> Save every plot with your name in the title. Write down your key observations (especially numerical values) before you close any plot window.</p>
 <hr/>
 <h2>Goals</h2>
@@ -323,11 +340,12 @@
 <p><strong>Why wrap <code>mobiledev</code> in a class at all?</strong> The class adds a consistent interface: every step in the pipeline has a named method with defined inputs and outputs. It also adds error checking: <code>setTargetSignal</code> throws a meaningful error if you call it before logging, rather than silently producing garbage. You are not expected to design OOP systems in this course; you are expected to read the structure, implement the methods in the skeleton, and understand why the structure is organized the way it is.</p>
 <hr/>
 <h3>Lab Step 1: Build the SensorDataAnalyzer Class</h3>
-<p>Download the skeleton file <code>SensorDataAnalyzer.m</code> from Canvas. Place it in:</p>
-<p><code>MATLAB Drive
+<p>Download the skeleton file <a href="https://aknoesen.github.io/eec1-widgets/sensorDataAnalyzer.m"><code>SensorDataAnalyzer.m</code></a>. Place it in:</p>
+<pre><code>MATLAB Drive
 └── ENG6
     └── MiniProject4
-        └── SensorDataAnalyzer.m</code></p>
+        └── SensorDataAnalyzer.m
+</code></pre>
 <p>Set your MATLAB working directory to <code>MiniProject4</code> before running anything.</p>
 <p>Implement each of the following methods in the skeleton. Each method stub is already present; you fill in the body.</p>
 <hr/>
