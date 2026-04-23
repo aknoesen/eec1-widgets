@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Project Track A: Kemper Hall Indoor and Outdoor Tracker</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;  /* dark red — passes 4.5:1 contrast on white */
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Final Project Track A: Kemper Hall Indoor and Outdoor Tracker</h1>
+<h2>Project Description</h2>
+<p><strong>You will build an activity tracker that works across the GPS-to-indoor boundary.</strong> Starting outdoors on the UC Davis campus, you track a walk using GPS and phone sensors. As you approach and enter Kemper Hall, the GPS signal degrades and your app must switch to an indoor mode that uses accelerometer-derived information to continue tracking the walk across all four floors. At the end of the walk, your app uploads a summary of the route to a shared cloud database (ThingSpeak), which the app can read back later to display and replay past walks.</p>
+<p>This project builds directly on your Mini-Projects. Your Mini-Project 4 class <code>SensorDataAnalyzer</code> is the starting point for the analysis layer; your Mini-Project 5 app <code>SensorDashboard</code> is the starting point for the GUI. Do not rebuild either from scratch; extend them.</p>
+<p>In addition to App Designer skills from MP5, this project will expose you to the following additional topics:</p>
+<ul>
+<li>Visualizing geospatial data on a live map using <code>geoaxes</code> and <code>geoplot</code>.</li>
+<li>Running a live-updating GUI during continuous sensor acquisition.</li>
+<li>Detecting physical events (stair climbing, elevator use) from accelerometer signatures.</li>
+<li>Uploading structured data to a cloud platform (ThingSpeak) and reading it back.</li>
+<li>Characterizing sensor error against ground truth in a known environment.</li>
+</ul>
+<h2>Why This Project</h2>
+<p>In Mini-Project 4 you watched dead reckoning fail. You walked forward and back, expecting a final displacement near zero, and your integrated accelerometer estimate drifted off instead. The optional challenge at the end of MP4 invited improvements, but no pure-accelerometer fix makes the drift go away in principle. Real fitness trackers and car navigation systems solve this by pairing accelerometer data with an absolute position source. In this project you do exactly that: GPS outdoors, honest accelerometer-based indoor handling once GPS is no longer available, and error measurement against a known route so you learn to report engineering results with numbers rather than adjectives.</p>
+<h2>Project Requirements</h2>
+<p>Your project is divided into required <strong>core functionality</strong>, a required <strong>reach feature</strong>, and a team-chosen <strong>reach feature</strong>.</p>
+<h3>Core Functionality (Must-Have)</h3>
+<p>The following functionality is required:</p>
+<ol>
+<li>
+<p><strong>A reasonably attractive user interface</strong> that extends <code>SensorDashboard.mlapp</code> from Mini-Project 5. You may rename, rearrange, and add components freely. The MP5 separation-of-concerns principle must be preserved: data acquisition, analysis, and cloud communication live in classes, not in callback bodies. Callbacks may be brief orchestration only.</p>
+</li>
+<li>
+<p><strong>Start and Stop controls.</strong> A <strong>Start Activity</strong> button begins acquiring GPS (latitude, longitude, altitude, speed, horizontalAccuracy) and accelerometer data simultaneously from <code>mobiledev</code>. A corresponding <strong>Stop Activity</strong> button ends data collection and finalizes the workout.</p>
+</li>
+<li>
+<p><strong>Live outdoor view.</strong> While GPS is reporting a good fix, the app displays a map (using <code>geoaxes</code> and <code>geoplot</code>) with the walk path drawn as new GPS points arrive. The user's current position is kept visible in the view.</p>
+</li>
+<li>
+<p><strong>Automatic regime switch.</strong> The app monitors the GPS horizontal accuracy returned by <code>poslog</code>. When the reported accuracy degrades past a threshold your team chooses (typical indoor values are 30 meters or worse), the app switches its main display from the outdoor map to an indoor floor-plan view. When outdoor accuracy returns, the app switches back. The current regime (Outdoor GPS, Indoor Sensors) is visible to the user at all times.</p>
+</li>
+<li>
+<p><strong>Floor detection indoors.</strong> The app reports which floor of Kemper Hall the user is currently on (1 through 4). Floor changes are detected from accelerometer patterns: stair climbing and elevator rides each leave distinctive signatures (see Appendix A). You start the walk on the floor the user selects; the floor counter increments or decrements as transitions are detected.</p>
+</li>
+<li>
+<p><strong>Indoor position estimate.</strong> While indoors, the app overlays an estimated (x, y) position on a floor-plan image of the current floor. The estimate may be as simple as a step counter combined with a fixed stride length and the phone's orientation (azimuth). You are not expected to achieve commercial-grade accuracy; you are expected to produce a functional estimate and characterize its error (see required reach below).</p>
+</li>
+<li>
+<p><strong>Live time-series chart.</strong> One chart updates continuously during the walk. Your team chooses the signal: speed from GPS, resultant acceleration, step cadence, or altitude. Only one chart is required in core.</p>
+</li>
+<li>
+<p><strong>Live summary panel.</strong> A small panel updates continuously with at least three numbers: current regime, elapsed workout time, and total distance (sum of GPS-segment distances outdoors plus step-count times stride-length indoors).</p>
+</li>
+<li>
+<p><strong>ThingSpeak upload.</strong> At the end of a workout, the app pushes a decimated summary of the walk to a team ThingSpeak channel. Appendix C describes the field layout. At a minimum the channel stores one record per 15 seconds of wall-clock time containing position, regime, floor, speed, and accelerometer magnitude.</p>
+</li>
+<li>
+<p><strong>Load and replay.</strong> The app can read a past walk from ThingSpeak (by selecting from a list of recorded walks) and replay the path on the map and floor plan.</p>
+</li>
+</ol>
+<h3>Required Reach Feature: Error Characterization Report</h3>
+<p>Your team walks the standard Kemper Hall Evaluation Route (Appendix B) once, then uses your own app to record and analyze the walk. Your report documents:</p>
+<ul>
+<li><strong>Return-to-start error.</strong> The walk returns to the same outdoor starting point. What does your app estimate the final displacement to be?</li>
+<li><strong>Floor detection accuracy.</strong> At each of the route's indoor checkpoints, what floor did your app report? How many were correct?</li>
+<li><strong>GPS handoff location.</strong> Where, geographically, did your app's regime switch occur? Was the handoff clean or ambiguous?</li>
+<li><strong>One concrete improvement you did not implement.</strong> Describe an engineering change that would reduce one of the errors above, and explain mechanistically why it would help.</li>
+</ul>
+<p>The deliverable is a short technical memo (2 to 3 pages) with at least one figure showing your app's recorded path overlaid on the actual route.</p>
+<h3>Chosen Reach Feature: Pick One</h3>
+<p>You select one additional reach feature in addition to core and the error report. Your choice should give your project its individual flavor. We will consider the creativity and complexity of your reach goal when evaluating your project. Some suggestions:</p>
+<ul>
+<li><strong>Live streaming to ThingSpeak.</strong> The app pushes a new record every 15 seconds during the walk, not only at the end. Anyone with the channel URL can watch the walk on the ThingSpeak web view.</li>
+<li><strong>Accelerometer bias subtraction.</strong> Before the walk begins, the app samples the phone at rest for 2 seconds and computes the mean accelerometer reading. During the walk, that mean is subtracted before further processing. Document whether step detection and indoor position estimation improve measurably.</li>
+<li><strong>Activity classifier.</strong> The app classifies each moment of the walk into one of four states (stationary, walking, stairs, elevator) using accelerometer features (variance, peak rate). Classifications are displayed on the live panel and saved with the walk record.</li>
+<li><strong>Pause and Resume.</strong> The user can pause a walk mid-route; paused intervals do not contribute to path, distance, or statistics. Resuming continues the walk from the current sensor state.</li>
+<li><strong>Route replay animation.</strong> When a saved walk is loaded, a marker moves along the path at adjustable playback speed (for example, 1x, 2x, 5x) with synchronized updates to the summary panel.</li>
+<li><strong>GPX export.</strong> Completed walks export to a standard <code>.gpx</code> file that Strava or Garmin Connect can import. Demonstrate the export by successfully importing one of your walks.</li>
+<li><strong>Weather snapshot.</strong> At the start of each walk, the app queries a public weather API (Open-Meteo requires no API key) and records temperature, wind, and air quality to the walk record. The history view displays weather alongside other stats.</li>
+<li><strong>Splits.</strong> The walk is subdivided automatically at user-defined intervals (every 500 m, or every 2 minutes). Per-split time, distance, mean speed, and floor changes appear in a dynamically generated panel.</li>
+</ul>
+<h3>Optional Stretch Challenge (Ungraded)</h3>
+<p>For teams that finish the required work early and want to address the MP4 drift problem directly: implement <strong>GPS-anchored correction.</strong> Every time a new GPS fix arrives with good accuracy, snap the indoor position estimate back to the GPS position; between fixes, the indoor estimate uses the accelerometer-derived offsets. This is not a Kalman filter; it is "trust GPS when available, use accelerometer to fill gaps." Teams that complete this challenge may demo it in class. A MathWorks-provided prize may be available for the most accurate implementation.</p>
+<h2>Testing Protocol</h2>
+<p>Your team is required to perform at least one complete Kemper Hall Evaluation Route walk (Appendix B) before your final demonstration. You may perform additional walks during development and reach-feature testing. Record the date, time, and team members present for every walk.</p>
+<h2>Deliverables</h2>
+<ol>
+<li>A working App Designer app plus the classes it depends on. The app must launch without errors, complete a walk, upload to ThingSpeak, and read back a past walk. Submit as a folder containing all <code>.mlapp</code> and <code>.m</code> files.</li>
+<li>Your team's ThingSpeak channel URL (read access).</li>
+<li>The Error Characterization Report as a PDF (2 to 3 pages, minimum one figure).</li>
+<li>A short video (3 to 5 minutes) of your team walking the Kemper Evaluation Route with the app running and the screen (or a screen capture) visible. The video is a backup in case live demo logistics fail.</li>
+<li>A live in-class demonstration by your team of approximately 10 minutes.</li>
+</ol>
+<h2>Notes on Scope</h2>
+<ul>
+<li><strong>Outdoor testing is required.</strong> Plan multiple Kemper walks during development. Do not schedule your first walk the week of the demo.</li>
+<li><strong>Keep the UI responsive.</strong> Acquiring two sensor streams plus uploading to ThingSpeak plus live plotting stresses the MATLAB single-threaded event loop. Use a <code>timer</code> object (Appendix D) that fires once per second or less, batches the sensor reads, and redraws the plots. Do not try to plot at raw sensor rates.</li>
+<li><strong>Assume GPS accuracy of 3 to 10 meters outdoors on open campus.</strong> Design around that. Do not set internal acceptance criteria that require sub-meter GPS.</li>
+<li><strong>Indoor position will drift.</strong> This is not a bug; it is a consequence of the sensors you have. The required reach feature asks you to measure the drift, not eliminate it.</li>
+<li><strong>ThingSpeak rate limits apply even on the paid subscription.</strong> Plan around one update per second per channel. Decimate on the app side before uploading.</li>
+</ul>
+<h2>Academic Integrity</h2>
+<p>All code must be written by your team. You may use AI assistants as learning aids consistent with prior mini-projects. Final submitted code, the report, and the demonstration must reflect your own work. External libraries or reference sources must be cited in the report's appendix.</p>
+<hr/>
+<h2>Appendix A: Sensor Reality</h2>
+<h3>GPS on a smartphone</h3>
+<p>Typical horizontal accuracy is 3 to 10 meters outdoors under open sky on a modern phone. Under trees, near tall buildings, or near a Kemper Hall entrance, accuracy degrades to 20 meters or worse. Indoors, GPS is effectively unusable; the phone falls back to Wi-Fi and cell-tower trilateration, which on campus typically reports 50 meters or more of error. The field <code>poslog</code> returns named <code>horizontalAccuracy</code> is the phone's own estimate of its accuracy in meters; it is the right quantity to threshold on for your regime switch.</p>
+<h3>Accelerometer signatures indoors</h3>
+<p><strong>Stair climbing.</strong> Walking up or down stairs produces vertical acceleration peaks at roughly 1 to 2 Hz (one peak per step), superimposed on a slight sustained vertical offset from the body's lifting motion. Compared to flat walking, the vertical peaks are larger and the horizontal peaks are smaller. Counting vertical peaks during stair climbing gives you stair count; dividing by the stairs-per-floor count for Kemper gives you floor transitions.</p>
+<p><strong>Elevator rides.</strong> An elevator starting, cruising, and stopping has a very distinctive vertical acceleration profile: a brief sustained non-zero acceleration (about 0.5 to 1 m/s² for 1 to 3 seconds) when starting, near-zero during cruise (gravity only), and a matching opposite deceleration at the end. The sign of the start acceleration tells you up or down. The duration of the cruise is roughly proportional to the number of floors traveled.</p>
+<p><strong>Flat walking.</strong> Vertical acceleration oscillates around gravity with peaks at step cadence (1.5 to 2.5 Hz for normal walking). Net vertical acceleration averaged over time is approximately zero.</p>
+<p>Threshold-based detection of these three patterns is within reach for a first-year implementation. See Mini-Project 3 for the pattern.</p>
+<h3>Magnetometer indoors</h3>
+<p>Kemper Hall has structural steel, electrical wiring, and mounted equipment. All three distort the magnetic field. Do not be surprised if the phone's reported azimuth is 20 to 45 degrees off from true north in parts of the building. This is one of the reasons your indoor position estimate will drift. The error is not your code; it is the physics.</p>
+<h2>Appendix B: Kemper Hall Evaluation Route</h2>
+<p>Every team walks the same route at least once during the project. The route:</p>
+<ol>
+<li>Start outdoors at a marked location outside Kemper Hall's main entrance. Record your starting coordinates.</li>
+<li>Walk into the building through the main entrance.</li>
+<li>Take the stairs to the third floor.</li>
+<li>Walk to a designated landmark on the third floor (to be announced).</li>
+<li>Take the elevator to the first floor.</li>
+<li>Walk to a second designated landmark on the first floor.</li>
+<li>Exit the building through the main entrance.</li>
+<li>Return to the marked starting location outside.</li>
+</ol>
+<p>Landmarks will be designated with floor-plan coordinates and visible markers during the project period. Teams report their app's estimated position at each landmark, at the two floor transitions, and at the final outdoor return point.</p>
+<h2>Appendix C: ThingSpeak Field Layout (Suggested)</h2>
+<p>A team channel with the following field layout satisfies core functionality. Teams may extend this with additional fields as their reach features require.</p>
+<div aria-label="Appendix C: ThingSpeak Field Layout (Suggested)" class="table-wrapper" role="region" tabindex="0"><table><caption>Appendix C: ThingSpeak Field Layout (Suggested)</caption>
+<thead>
+<tr>
+<th scope="col">Field</th>
+<th scope="col">Contents</th>
+<th scope="col">Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Latitude</td>
+<td>degrees</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Longitude</td>
+<td>degrees</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Altitude (GPS outdoors, 0 indoors)</td>
+<td>meters</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Floor (1 to 4, or 0 outdoors)</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Speed</td>
+<td>meters per second</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Acceleration magnitude (resultant)</td>
+<td>meters per second squared</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Regime (0 indoor, 1 outdoor)</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Walk ID (increments per workout)</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table></div>
+<p>The eighth field lets your history view filter by walk when reading back the channel.</p>
+<h2>Appendix D: Timer Pattern for a Live UI</h2>
+<p>Your app needs to update plots and cloud uploads continuously during a walk. The clean MATLAB pattern is a <code>timer</code> object created in your app's Start callback and stopped in your Stop callback.</p>
+<pre><code class="language-matlab">% In the Start Activity callback:
+app.UpdateTimer = timer( ...
+    'ExecutionMode', 'fixedRate', ...
+    'Period', 1.0, ...                 % fires once per second
+    'TimerFcn', @(~,~) app.updateLoop());
+start(app.UpdateTimer);
+
+% In the Stop Activity callback:
+stop(app.UpdateTimer);
+delete(app.UpdateTimer);
+</code></pre>
+<p>The <code>updateLoop</code> method reads the latest sensor samples, computes derived quantities, updates the plots and summary panel, and (if the reach feature is chosen) pushes a decimated record to ThingSpeak. Keeping <code>updateLoop</code> short matters; if one iteration takes longer than the timer period, updates will pile up.</p>
+<p>Consult the MathWorks documentation for <a href="https://www.mathworks.com/help/matlab/ref/timer.html"><code>timer</code></a>; the "Callback function execution time" section is particularly relevant.</p>
+<h2>Appendix E: Mini-Project Cross-Reference</h2>
+<p>Every element of this project builds on prior work. Where to look:</p>
+<ul>
+<li><strong>Mini-Project 1</strong> taught you the physical axes of your phone and what a stationary accelerometer reports. You will need that when reasoning about "is the phone moving" versus "gravity is being measured."</li>
+<li><strong>Mini-Project 2</strong> taught you resultant acceleration and file I/O. Resultant acceleration is central to step detection; file I/O generalizes to the ThingSpeak upload.</li>
+<li><strong>Mini-Project 3</strong> taught you threshold detection with custom functions. Your stair-climb detector, elevator detector, and step counter are all threshold-detection problems with different features.</li>
+<li><strong>Mini-Project 4</strong> gave you <code>SensorDataAnalyzer</code>. Extend or compose on top of it; do not rewrite it. MP4 also showed you why naive dead reckoning fails; that is the problem this project works around.</li>
+<li><strong>Mini-Project 5</strong> gave you <code>SensorDashboard</code> and taught you separation of concerns. This project's scope makes that separation mandatory, not optional. Keep sensor acquisition, analysis, cloud I/O, and GUI in distinct classes.</li>
+</ul>
+  </main>
+</body>
+</html>
