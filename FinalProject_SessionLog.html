@@ -213,13 +213,13 @@
 </tr>
 <tr>
 <td><code>FinalProject_Assessment.md</code></td>
-<td>Shared assessment guide (what students submit, video format, peer review process, teammate evaluation form, rubric summary, self-assessment form).</td>
-<td>1.1</td>
+<td>Shared assessment guide (what students submit, video format, peer review process, teammate evaluation form via Qualtrics, rubric summary, self-assessment form).</td>
+<td>1.2</td>
 </tr>
 <tr>
 <td><code>Project_StudentMemo_TeamFormation.md</code></td>
-<td>Student-facing memo announcing the project, the two track options (with links to the GitHub Pages drafts), the three complementary team roles, the ThingSpeak primer, Week 1 required workshops, the team declaration process, and the end-of-project teammate evaluation form.</td>
-<td>1.2</td>
+<td>Student-facing memo announcing the project, the two track options (with links to the GitHub Pages drafts), the three complementary team roles, the ThingSpeak primer, Week 1 required workshops, the team declaration process, and the end-of-project teammate evaluation form (delivered via Qualtrics).</td>
+<td>1.3</td>
 </tr>
 </tbody>
 </table></div>
@@ -254,9 +254,14 @@
 <td>1.0</td>
 </tr>
 <tr>
+<td><code>FinalProject_RefDataset_Procedure.md</code></td>
+<td>Step-by-step recording procedure for Basheer to produce both reference dataset packages (Track A Kemper golden walk and Track B gesture streams). Includes pre-walk setup, walk procedure, post-processing, file formats, and timeline.</td>
+<td>1.0</td>
+</tr>
+<tr>
 <td><code>FinalProject_SessionLog.md</code></td>
 <td>This file.</td>
-<td>1.0</td>
+<td>1.4</td>
 </tr>
 </tbody>
 </table></div>
@@ -414,7 +419,7 @@
 <p><strong>Team declaration survey instrument.</strong> Not yet built. Needs fields for: student's own name, other two teammates' names, track ranking (A-first vs. B-first), lab section.</p>
 </li>
 <li>
-<p><strong>Reference dataset recording logistics</strong> (Basheer's complementary task). Needs decisions on: who holds the phone, who walks the route, who annotates ground truth, equipment, date.</p>
+<p><strong>Reference dataset recording logistics</strong> (Basheer's complementary task). Procedure now documented in <code>FinalProject_RefDataset_Procedure.md</code>. Open items remaining: recruit a companion for the Track A walk, schedule the actual walk date (recommended weekend May 23-24), confirm exact format expectations with Rishad for the test harness (variable names inside the .mat files).</p>
 </li>
 <li>Track A: <code>golden_gps.mat</code>, <code>golden_accel.mat</code>, <code>golden_truth.json</code></li>
 <li>
@@ -436,7 +441,7 @@
 <p><strong>Canvas page posting plan</strong> for all docs. When each doc goes up, which section, etc.</p>
 </li>
 <li>
-<p><strong>Teammate evaluation form rating scale and delivery mechanism.</strong> Decision made: the form is a hard requirement separate from the 25-point Cat 1 structure (option b). Both grading rubrics now contain a "Teammate Evaluation Handling (Instructor Use)" section explaining how forms feed into individual grade adjustments. Still pending: rating scale for the six statements (1-to-5 or 0-to-3, currently described in the Assessment Guide as "to be confirmed") and the actual form delivery mechanism (Canvas survey, Google Form, Qualtrics, etc.).</p>
+<p><strong>Teammate evaluation form: delivery mechanism and grading integration.</strong> Resolved. The form is a hard requirement separate from the 25-point Cat 1 structure (option b). Both grading rubrics now contain a "Teammate Evaluation Handling (Instructor Use)" section explaining how forms feed into individual grade adjustments. Delivery mechanism: the existing course Qualtrics teammate-evaluation survey (reused from prior offerings). Rating scale is whatever the existing Qualtrics survey uses; no additional spec needed in the project docs.</p>
 </li>
 </ol>
 <hr/>
@@ -484,6 +489,8 @@
 <li>Inserted GitHub Pages links to the published draft track docs into the student memo (bumped to v1.1)</li>
 <li>Added the teammate evaluation form to the student memo and Assessment Guide as required submission item 7 (student memo bumped to v1.2; Assessment Guide bumped to v1.1)</li>
 <li>Updated both grading rubrics with a Teammate Evaluation Handling section explaining how the form feeds into individual grade adjustments (Track A and Track B grading rubrics bumped to v1.1)</li>
+<li>Confirmed the teammate evaluation form is delivered through the existing course Qualtrics survey; updated the Assessment Guide and student memo to reference the Qualtrics instrument explicitly</li>
+<li>Created <code>FinalProject_RefDataset_Procedure.md</code> (v1.0): step-by-step recording guide for Basheer covering both Track A (Kemper walk with companion + video annotation, Google Maps for landmark coordinates) and Track B (two gesture streams, planned shake schedule for stream 1, controlled non-shake motion for stream 2)</li>
 </ul>
 <hr/>
 <h2>How to Use This Log (Instructions for Future Claude)</h2>
@@ -496,7 +503,7 @@
 <li>Bump this file's version (at the bottom) when you update it. Increment the version on individual docs only when their content materially changes.</li>
 </ol>
 <hr/>
-<p><em>Version 1.2</em></p>
+<p><em>Version 1.4</em></p>
   </main>
 </body>
 </html>

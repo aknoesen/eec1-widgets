@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENG6 Final Project: Reference Dataset Recording Procedure</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>ENG6 Final Project: Reference Dataset Recording Procedure</h1>
+<p><strong>For:</strong> Basheer Ammar<br/>
+<strong>Purpose:</strong> Step-by-step guide for producing the reference datasets used in Category 2 automated grading for both tracks<br/>
+<strong>Delivery deadline:</strong> Monday, June 1, 2026 (to Rishad, for harness dry-run before student submissions arrive Jun 4)</p>
+<hr/>
+<h2>What You Are Producing</h2>
+<p>Two reference packages, one per track. Both feed into Rishad's automated Category 2 grading harness.</p>
+<h3>Track A package (Kemper Hall "golden walk")</h3>
+<div aria-label='Track A package (Kemper Hall "golden walk")' class="table-wrapper" role="region" tabindex="0"><table><caption>Track A package (Kemper Hall "golden walk")</caption>
+<thead>
+<tr>
+<th scope="col">File</th>
+<th scope="col">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>golden_gps.mat</code></td>
+<td><code>poslog</code> output from a single uninterrupted walk of the Kemper Evaluation Route</td>
+</tr>
+<tr>
+<td><code>golden_accel.mat</code></td>
+<td><code>accellog</code> output time-synchronized to the GPS log</td>
+</tr>
+<tr>
+<td><code>golden_truth.json</code></td>
+<td>Annotations of when events happened (entry, stairs, elevator, checkpoints, exit) and key landmark coordinates</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Track B package (gesture streams)</h3>
+<div aria-label="Track B package (gesture streams)" class="table-wrapper" role="region" tabindex="0"><table><caption>Track B package (gesture streams)</caption>
+<thead>
+<tr>
+<th scope="col">File</th>
+<th scope="col">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gesture_stream_1.mat</code></td>
+<td>90 seconds of accelerometer data with 12 deliberate shake events at known times, plus quiet periods between shakes</td>
+</tr>
+<tr>
+<td><code>gesture_stream_2.mat</code></td>
+<td>60 seconds of accelerometer data with mixed non-shake motion (typing, walking, phone handling) and zero intentional shakes</td>
+</tr>
+<tr>
+<td><code>gesture_truth.json</code></td>
+<td>Timestamps of all 12 intentional shake events in stream 1</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Why This Approach (Important Framing)</h2>
+<p>You do not need a parallel high-accuracy sensor system to build ground truth. The Track A grading rubric grades against <strong>annotations of when things happened</strong> plus a few <strong>fixed landmark coordinates</strong>, not a second independent GPS or position trace. The Track B grading rubric grades against <strong>annotated shake-event timestamps</strong> in a controlled recording, not anything fancier.</p>
+<p>The key tools are:</p>
+<ul>
+<li><strong>Google Maps</strong> to record fixed landmark lat/lon coordinates. Use the center of the traffic circle on the north-west corner of Kemper Hall. (1 to 3 m accuracy, well inside the 20 m tolerance the rubric uses).</li>
+<li><strong>Video</strong> of the Kemper walk so you can extract event timestamps after the fact at your desk.</li>
+<li><strong>A companion</strong> (TA, undergrad, anyone reliable) walking alongside you for the Kemper walk to operate the camera and call out events on the audio track.</li>
+<li><strong>A stopwatch app</strong> for the Track B gesture streams (you record alone for those).</li>
+</ul>
+<p>Total time estimate: about 60 minutes for the Kemper walk plus 2 to 3 hours of post-processing. About 30 minutes for the two gesture streams plus 30 minutes of annotation. Roughly half a day total.</p>
+<hr/>
+<h2>Track A: Kemper Hall Golden Walk</h2>
+<h3>Step 1: Pre-walk setup (do at your desk)</h3>
+<p><strong>Look up landmark coordinates on Google Maps.</strong> For each of the following, open Google Maps in satellite view, zoom in tight, right-click the spot, and copy the lat/lon:</p>
+<ol>
+<li>The marked starting point outside Kemper Hall's main entrance.</li>
+<li>The main entrance threshold (the door itself, looking down at the door from above).</li>
+<li>The exit threshold (if different from the entrance).</li>
+</ol>
+<p>Save these in a notes file. You will paste them into <code>golden_truth.json</code> later.</p>
+<p><strong>Pick the indoor landmarks for floor checkpoints.</strong> Per the Track A document Appendix B, the route hits a designated landmark on the third floor and a designated landmark on the first floor. If those are not yet announced, choose them now (a specific door, a specific wall sign, a specific corner of a corridor). Note them so the same landmarks can be communicated to teams later.</p>
+<p><strong>Place visible markers</strong> at each indoor checkpoint. A printed numbered sign (e.g., "Checkpoint 1: Floor 3") taped to the wall is fine. The marker just needs to be unambiguous in the video.</p>
+<p><strong>Equipment checklist:</strong></p>
+<ul>
+<li>[ ] Phone with MATLAB Mobile installed and signed in (data-collection phone)</li>
+<li>[ ] A second phone or a small camera for video recording (companion's)</li>
+<li>[ ] A watch (digital, with seconds visible) for the companion to wear</li>
+<li>[ ] Printed checkpoint signs and tape</li>
+<li>[ ] A notes document on your laptop (open before you leave the desk)</li>
+<li>[ ] Both phones charged to at least 80%</li>
+</ul>
+<p><strong>Recruit a companion.</strong> One person walks alongside you for about 60 minutes. They handle video and call out events. Anyone reliable works: another TA, an undergrad volunteer, a friend.</p>
+<h3>Step 2: The walk itself</h3>
+<p><strong>Roles:</strong></p>
+<ul>
+<li>You (Basheer): walk normally, hold the data-collecting phone the way a student would hold it (in hand, with screen visible, or in a pocket; document which you chose). Run MATLAB Mobile in the background, using <code>mobiledev</code> to log GPS and accelerometer.</li>
+<li>Companion: walks just behind or alongside, holding the camera in landscape orientation. Companion is responsible for narrating events out loud so the audio track captures timestamps. Examples: "We are entering the building now," "Stairs starting," "Reached checkpoint 1, third floor," "Stairs done," "Elevator starting," "Elevator stopped."</li>
+</ul>
+<p><strong>Procedure (Kemper Evaluation Route, per Track A Appendix B):</strong></p>
+<ol>
+<li>Stand at the marked outdoor starting point. Companion starts video recording. State the date, time of day, and weather aloud for the camera.</li>
+<li>On your phone, start MATLAB Mobile logging (<code>m.Logging = 1</code> or your script's Start Activity equivalent). Companion notes wall-clock time when this happens. Call this <code>walk_start_time</code>.</li>
+<li>Walk to the main entrance at a normal pace.</li>
+<li>Cross the entrance threshold. Companion calls out "entering now" exactly as you cross. Note the time. This is <code>entry_time</code>.</li>
+<li>Walk to the stairs. Companion calls "stairs starting" as you take the first step up. Note time.</li>
+<li>Climb to the third floor. Companion calls "stairs done" as you take the last step at the top. Note time. This is one entry in <code>stair_events</code>: (start, end, "up").</li>
+<li>Walk to the designated third-floor landmark (visible numbered sign). Companion calls "checkpoint 1, floor 3" when you reach it. Note time. This is one entry in <code>floor_checkpoint_times</code>: (time, 3).</li>
+<li>Walk to the elevator. Companion calls "elevator starting" as the doors close with you inside. Note time.</li>
+<li>Ride down to floor 1. Companion calls "elevator stopped" as the doors open. Note time. This is one entry in <code>elevator_events</code>: (start, end, "down", 2).</li>
+<li>Walk to the designated first-floor landmark. Companion calls "checkpoint 2, floor 1." Note time. This is one entry in <code>floor_checkpoint_times</code>: (time, 1).</li>
+<li>Walk to the main entrance. Cross the threshold going out. Companion calls "exiting now." Note time. This is <code>exit_time</code>.</li>
+<li>Return to the marked outdoor starting point. Stop MATLAB Mobile logging. Companion notes the time. This is <code>walk_end_time</code>.</li>
+<li>Companion stops video recording.</li>
+</ol>
+<p><strong>Tips during the walk:</strong></p>
+<ul>
+<li>Walk at a steady, normal pace. Do not pause artificially. The students will not.</li>
+<li>Hold the phone the same way throughout. If you switch from hand to pocket mid-walk, that is data the rubric does not anticipate.</li>
+<li>If something goes wrong (you trip, phone disconnects, you take the wrong stairs), restart the walk. One good walk is worth more than two confused walks.</li>
+</ul>
+<h3>Step 3: Post-walk processing</h3>
+<p><strong>Pull the data files off the phone.</strong></p>
+<p>In MATLAB:</p>
+<pre><code class="language-matlab">m = mobiledev;            % the same instance you logged with
+gps_data = poslog(m);     % returns position log
+accel_data = accellog(m); % returns acceleration log
+save('golden_gps.mat',   'gps_data');
+save('golden_accel.mat', 'accel_data');
+</code></pre>
+<p>If your script saved them differently, use whatever variable names the test harness expects. Coordinate with Rishad on the exact format the Category 2 harness consumes; it expects <code>analyzeReferenceWalk(referencePath)</code> to be runnable against these files.</p>
+<p><strong>Extract event timestamps from the video.</strong></p>
+<p>Open the video at your desk. Scrub to each event (entry, stairs start, stairs end, checkpoints, elevator start, elevator end, exit). Note the wall-clock time the companion called out, or the timestamp on the visible watch in the frame. Build <code>golden_truth.json</code> from these.</p>
+<p><strong>Format of <code>golden_truth.json</code></strong> (use exact field names, the grading harness depends on them):</p>
+<pre><code class="language-json">{
+  "walk_start_time": "2026-05-30T09:14:23",
+  "entry_time": "2026-05-30T09:15:08",
+  "stair_events": [
+    {"start": "2026-05-30T09:16:02", "end": "2026-05-30T09:16:38", "direction": "up"}
+  ],
+  "elevator_events": [
+    {"start": "2026-05-30T09:18:14", "end": "2026-05-30T09:18:42", "direction": "down", "floors_traveled": 2}
+  ],
+  "floor_checkpoint_times": [
+    {"time": "2026-05-30T09:17:21", "floor": 3},
+    {"time": "2026-05-30T09:19:05", "floor": 1}
+  ],
+  "exit_time": "2026-05-30T09:19:48",
+  "walk_end_time": "2026-05-30T09:20:15",
+  "landmarks": {
+    "starting_point":   {"lat": 38.5391, "lon": -121.7544},
+    "main_entrance":    {"lat": 38.5392, "lon": -121.7544},
+    "exit_threshold":   {"lat": 38.5392, "lon": -121.7544}
+  }
+}
+</code></pre>
+<p>(Coordinates above are placeholders. Use your Google Maps lookups.)</p>
+<p><strong>Step count.</strong> Watch the video and count steps from when you started walking forward until you stopped. Faster way: count the steps in a 30-second segment of normal walking and multiply by total walking time. Add this to <code>golden_truth.json</code> as <code>total_step_count</code>.</p>
+<p><strong>Sanity check.</strong> Open the GPS data in MATLAB and confirm the trace looks like the route. Open the accelerometer data and confirm you can see roughly the right pattern (walking signature, then stair steps, then quiet during elevator, then walking again). If anything looks off, redo the walk before annotation.</p>
+<hr/>
+<h2>Track B: Gesture Streams</h2>
+<p>You record both streams alone at your desk. No companion needed.</p>
+<h3>Stream 1: 90 seconds with 12 shake events</h3>
+<p><strong>Setup.</strong> Sit at a desk with the phone on the desk in front of you. Open MATLAB Mobile. Open a stopwatch or timer app on a second device (computer screen works).</p>
+<p><strong>Plan the shake schedule.</strong> Twelve shake events spread across 90 seconds means roughly one shake every 7 to 8 seconds. Plan exact target times before recording so you do not have to think during the run. Suggested:</p>
+<pre><code>Shake at: 6, 14, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94 seconds
+</code></pre>
+<p>(Note: that puts the 12th shake at 94 seconds. Adjust to fit within 90 if you want a margin.)</p>
+<p>Better plan: spread them irregularly to avoid teaching the detector a fixed cadence.</p>
+<pre><code>Shake at: 5, 12, 22, 30, 41, 50, 58, 67, 73, 80, 86, 89 seconds
+</code></pre>
+<p>Write your chosen schedule on a piece of paper next to your stopwatch.</p>
+<p><strong>Recording procedure:</strong></p>
+<ol>
+<li>Start MATLAB Mobile logging (<code>m.Logging = 1</code>).</li>
+<li>Start the stopwatch at the same moment.</li>
+<li>Pick up the phone, hold it in your dominant hand.</li>
+<li>At each scheduled time, perform a deliberate shake: a single sharp jerk of the wrist that students would recognize as a "shake gesture." Quiet hands between shakes (set the phone down, or hold it still).</li>
+<li>At 90 seconds, stop the stopwatch and stop logging (<code>m.Logging = 0</code>).</li>
+<li>Pull the data: <code>accel_data = accellog(m); save('gesture_stream_1.mat', 'accel_data');</code></li>
+</ol>
+<p>Note the actual times you shook on your paper schedule (not the planned times). Your reaction time means actual times may be off by 0.5 to 1 second from the plan.</p>
+<h3>Stream 2: 60 seconds with zero intentional shakes</h3>
+<p>The point of this stream is realistic non-shake motion that should NOT trigger a well-tuned detector.</p>
+<p><strong>Recording procedure:</strong></p>
+<ol>
+<li>Start MATLAB Mobile logging.</li>
+<li>For 60 seconds, do a mix of these activities, all without deliberately shaking:</li>
+<li>Type at a keyboard with the phone sitting on the desk nearby (vibrations from typing).</li>
+<li>Pick up the phone and set it down again, gently.</li>
+<li>Walk a few steps holding the phone in hand.</li>
+<li>Sit and have a quiet conversation, gesturing naturally with the hand holding the phone.</li>
+<li>Plug in or unplug a charger cable from the phone.</li>
+<li>At 60 seconds, stop logging and save: <code>save('gesture_stream_2.mat', 'accel_data');</code></li>
+</ol>
+<p><strong>Important:</strong> at no point should you do a motion that you would call "a shake." If accidentally you do something that feels like a shake, restart the recording. The point is zero intentional shakes for false-positive measurement.</p>
+<h3>Build <code>gesture_truth.json</code></h3>
+<pre><code class="language-json">{
+  "stream_1_shake_times": [5.1, 12.3, 22.0, 30.4, 41.2, 50.0, 58.6, 67.1, 73.5, 80.2, 86.4, 89.0],
+  "stream_1_duration_seconds": 90,
+  "stream_2_duration_seconds": 60,
+  "stream_2_shake_times": []
+}
+</code></pre>
+<p>Use the actual times you wrote down, not the planned schedule.</p>
+<h3>Sanity check (Track B)</h3>
+<p>In MATLAB, plot the resultant acceleration of stream 1 and visually confirm there are 12 visible spikes. If you only see 11, you missed one; redo. If you see 13, you accidentally added one; check your notes or redo. For stream 2, plot the resultant and confirm there are NO clear shake-magnitude spikes.</p>
+<hr/>
+<h2>Deliverables to Rishad</h2>
+<p>Drop into a shared folder by <strong>Monday, June 1, 2026</strong>:</p>
+<pre><code>ReferenceData/
+├── TrackA/
+│   ├── golden_gps.mat
+│   ├── golden_accel.mat
+│   └── golden_truth.json
+└── TrackB/
+    ├── gesture_stream_1.mat
+    ├── gesture_stream_2.mat
+    └── gesture_truth.json
+</code></pre>
+<p>Plus a short README in each folder noting:</p>
+<ul>
+<li>Date and time of recording</li>
+<li>Phone model and OS version</li>
+<li>Sampling rate (read from the data: <code>1 / mean(diff(timestamps))</code>)</li>
+<li>Anything unusual (a brief pause, a phone reorientation, weather conditions for Track A)</li>
+</ul>
+<hr/>
+<h2>Common Pitfalls and How to Avoid Them</h2>
+<ul>
+<li><strong>Companion forgets to call events out loud.</strong> Audio is the primary timestamp source. If they get quiet, the only fallback is the visible-watch-on-camera method, which is slower. Brief them before the walk.</li>
+<li><strong>Phone goes to sleep mid-walk.</strong> MATLAB Mobile must stay in the foreground. Put the phone in airplane mode if needed and disable auto-lock. Test for at least 5 minutes before the walk.</li>
+<li><strong>GPS not yet locked at start.</strong> Stand outside for 30 seconds at the starting point before starting logging, so the first GPS samples are accurate.</li>
+<li><strong>Indoor MATLAB Mobile disconnects.</strong> It uses MathWorks Cloud, which can be flaky on weak Wi-Fi. Test in Kemper Hall before the real walk so you know whether you need to enable mobile data.</li>
+<li><strong>Shaking the phone during Track B stream 2 by accident.</strong> If your detector would fire on it, the harness will count it as a false positive. Be deliberate: keep the recording short, and stop and restart if you slip.</li>
+<li><strong>Saving the data with the wrong variable names.</strong> Coordinate with Rishad on what <code>analyzeReferenceWalk</code> and <code>testGestureDetector</code> expect. Send him a small test file and confirm the harness reads it correctly before the real recording.</li>
+</ul>
+<hr/>
+<h2>Timeline Recommendation</h2>
+<div aria-label="Timeline Recommendation" class="table-wrapper" role="region" tabindex="0"><table><caption>Timeline Recommendation</caption>
+<thead>
+<tr>
+<th scope="col">When</th>
+<th scope="col">What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week of May 18 (Assessment Week)</td>
+<td>Pre-walk setup: Google Maps lookups, recruit companion, print signs</td>
+</tr>
+<tr>
+<td>Sat May 23 or Sun May 24</td>
+<td>Track A walk and post-processing</td>
+</tr>
+<tr>
+<td>Week of May 25</td>
+<td>Track B gesture streams (any afternoon)</td>
+</tr>
+<tr>
+<td>Fri May 29</td>
+<td>Hand draft datasets to Rishad for harness dry-run</td>
+</tr>
+<tr>
+<td>Mon Jun 1</td>
+<td>Final datasets locked, both tracks</td>
+</tr>
+</tbody>
+</table></div>
+<p>This gives Rishad three to four days to run the harness against your draft files and flag any format issues before you finalize.</p>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>
