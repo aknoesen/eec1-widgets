@@ -242,6 +242,7 @@
 </tbody>
 </table></div>
 <p>If any code file fails to parse, no further automated grading runs; team receives 0 on Category 2 and manual review notes the failure.</p>
+<p><strong>Teammate evaluation form (required, separate from Cat 1).</strong> Each student independently submits a confidential teammate evaluation form (see Assessment Guide for the six statements). Submission of this form is a hard requirement but is <strong>not scored within the 25-point Cat 1 structure</strong>. It feeds into individual grade adjustments per the "Teammate Evaluation Handling" section below.</p>
 <hr/>
 <h2>Category 2: Quantitative Performance Against Reference (30 points, Automated)</h2>
 <p>Each team's code is run against two reference scenarios. Team's code must expose a function <code>testGestureDetector(referenceStream)</code> that accepts an Nx3 accelerometer matrix and returns a boolean array of the same length indicating when the detector fires. Teams that do not provide the test harness receive zero on items requiring it.</p>
@@ -394,6 +395,20 @@
 </ul>
 <p>Maximum 5 points total.</p>
 <hr/>
+<h2>Teammate Evaluation Handling (Instructor Use)</h2>
+<p>The teammate evaluation form is a hard requirement (each team member submits one) but is not scored as part of the 100-point rubric. It is the instructor's primary input for deciding whether to adjust individual grades away from the team grade.</p>
+<p><strong>Default behavior.</strong> All three team members receive the same total score (sum of Cat 1 through Cat 5). No adjustments are made unless the teammate evaluation forms surface a clear contribution imbalance.</p>
+<p><strong>When to adjust.</strong></p>
+<ol>
+<li>After all submitted forms are received, review each team's set of three.</li>
+<li>If all team members rate each other comparably across the six statements (no significant outliers), no adjustment.</li>
+<li>If a clear pattern emerges (for example, two teammates independently rate the third low on multiple contribution-related statements such as #1, #2, #4, or #5), the instructor follows up. Corroborating evidence (commit history, presence in the video, response to peer review patterns) is consulted before any adjustment.</li>
+<li>Adjustment magnitude is at the instructor's discretion based on severity and corroborating evidence. Document the rationale in the master spreadsheet's Notes column.</li>
+<li>Symmetric upward adjustment is possible for an individual demonstrably contributing significantly above teammates, but the threshold is higher and corroborating evidence is required.</li>
+<li>If a team member fails to submit their teammate evaluation form, the instructor follows up with that student. Default team grading proceeds unless the missing submission obstructs review of a flagged imbalance.</li>
+</ol>
+<p><strong>Confidentiality.</strong> Forms are reviewed only by the instructor. Teammates do not see each other's ratings.</p>
+<hr/>
 <h2>Grader Workflow per Team</h2>
 <ol>
 <li>Open <code>grading_results.csv</code> for this team (Categories 1 and 2 populated by scripts).</li>
@@ -435,7 +450,7 @@
 <li><strong>Stub reach feature.</strong> A reach feature described in the memo but not actually working. Video review catches this; Category 3 and Category 4 both lose points.</li>
 </ul>
 <hr/>
-<p><em>Version 1.0</em></p>
+<p><em>Version 1.1</em></p>
   </main>
 </body>
 </html>

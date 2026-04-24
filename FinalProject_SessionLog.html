@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENG6 Final Project: Session Log</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>ENG6 Final Project: Session Log</h1>
+<p><strong>Purpose:</strong> Captures context, decisions, pending items, and open questions from planning sessions so that a new Cowork session can pick up where the last one left off. Read this first when resuming work on the final project.</p>
+<p><strong>How to use when resuming:</strong> At the start of a new session, tell Claude "read the ENG6 Final Project session log and bring me up to speed." Then hand Claude the specific thing you want to do next.</p>
+<hr/>
+<h2>Document Inventory (as of April 24, 2026)</h2>
+<p>All files live in <code>C:\Users\aknoesen\Documents\Knoesen\ENG6 Spring 2026\ENG6 Projects\</code>.</p>
+<h3>Student-facing</h3>
+<div aria-label="Student-facing" class="table-wrapper" role="region" tabindex="0"><table><caption>Student-facing</caption>
+<thead>
+<tr>
+<th scope="col">File</th>
+<th scope="col">Purpose</th>
+<th scope="col">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DraftProject_A_KemperTracker.md</code></td>
+<td>Track A project spec (Kemper Hall Indoor/Outdoor Tracker). Marked DRAFT. Published to GitHub Pages at <code>https://aknoesen.github.io/eec1-widgets/DraftProject_A_KemperTracker.html</code>.</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>DraftProject_B_SensorGame.md</code></td>
+<td>Track B project spec (Networked Sensor-Controlled Game). Marked DRAFT. Published to GitHub Pages at <code>https://aknoesen.github.io/eec1-widgets/DraftProject_B_SensorGame.html</code>.</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>FinalProject_Assessment.md</code></td>
+<td>Shared assessment guide (what students submit, video format, peer review process, teammate evaluation form, rubric summary, self-assessment form).</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td><code>Project_StudentMemo_TeamFormation.md</code></td>
+<td>Student-facing memo announcing the project, the two track options (with links to the GitHub Pages drafts), the three complementary team roles, the ThingSpeak primer, Week 1 required workshops, the team declaration process, and the end-of-project teammate evaluation form.</td>
+<td>1.2</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Instructor/TA-facing</h3>
+<div aria-label="Instructor/TA-facing" class="table-wrapper" role="region" tabindex="0"><table><caption>Instructor/TA-facing</caption>
+<thead>
+<tr>
+<th scope="col">File</th>
+<th scope="col">Purpose</th>
+<th scope="col">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FinalProject_A_Grading.md</code></td>
+<td>Track A instructor grading rubric (100 points across 5 categories) plus Teammate Evaluation Handling (instructor use, separate from rubric points).</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td><code>FinalProject_B_Grading.md</code></td>
+<td>Track B instructor grading rubric (100 points across 5 categories) plus Teammate Evaluation Handling (instructor use, separate from rubric points).</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td><code>FinalProject_TA_ScaffoldingPlan.md</code></td>
+<td>TA scaffolding plan: area assignments, workshop schedule, time budgets, grading split, key dates.</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>FinalProject_TA_TransmittalMemo.md</code></td>
+<td>Cover memo to TAs transmitting the scaffolding plan, with workshop prep deadlines.</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>FinalProject_SessionLog.md</code></td>
+<td>This file.</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Reference (not authored this session)</h3>
+<div aria-label="Reference (not authored this session)" class="table-wrapper" role="region" tabindex="0"><table><caption>Reference (not authored this session)</caption>
+<thead>
+<tr>
+<th scope="col">File/Folder</th>
+<th scope="col">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MiniProject Collection/</code></td>
+<td>Reference copies of MP1-5 descriptions. Canonical versions live at <code>C:\Users\aknoesen\Documents\Knoesen\ENG6 Spring 2026\MiniProjects\Descriptions\</code>.</td>
+</tr>
+<tr>
+<td><code>Fall 2025/</code></td>
+<td>PDFs from prior quarter (<code>Audio Sampler.pdf</code>, <code>Fitness Tracker.pdf</code>, <code>Sensor Game.pdf</code>). Flagged as stale candidates for deletion or archival.</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Key Decisions Made</h2>
+<ol>
+<li><strong>Three-area TA scaffolding structure.</strong> Each team of three designates one member per area. The role is lead-and-integrator, not sole implementer. All members attend all workshops.</li>
+<li>Rishad Joarder: Cloud &amp; Data Layer (ThingSpeak)</li>
+<li>Elnaz Hamdarsi: App Designer &amp; Live UI</li>
+<li>
+<p>Basheer Ammar: Sensor Signal Processing &amp; Event Detection</p>
+</li>
+<li>
+<p><strong>Two lecture slots repurposed for foundation workshops.</strong> Full lecture attendance, 100 minutes each, hands-on component required.</p>
+</li>
+<li>Tue May 12, 5:10 to 6:50 PM: Elnaz, Advanced GUI for both tracks (Lecture 13 slot; Data Viz II lecture moved)</li>
+<li>
+<p>Thu May 14, 5:10 to 6:50 PM: Rishad, ThingSpeak for both tracks (Lecture 14 slot; MATLAB Data Structures lecture moved)</p>
+</li>
+<li>
+<p><strong>No live in-class demonstration.</strong> Videos are the primary evaluation artifact. Peer and TA review of videos is the full assessment. All docs cleaned of live-demo references.</p>
+</li>
+<li>
+<p><strong>Two peer reviews per team</strong> (standardized; earlier drafts had inconsistent "two" vs "three" references that are now resolved).</p>
+</li>
+<li>
+<p><strong>Track rankings captured in the team declaration survey.</strong> Each student submits individually listing the other two team members; three matching submissions confirm the team. Students rank Track A vs. Track B; first choice usually granted but second may be assigned for balance.</p>
+</li>
+<li>
+<p><strong>Video format aligned</strong> across Track A, Track B, and Assessment Guide: unlisted YouTube, 6 minutes maximum, six required sections (intro / core functionality demo / reach feature demo / architecture walkthrough / quantitative results summary / one lesson learned), captions required, all three team members on camera or voiceover.</p>
+</li>
+<li>
+<p><strong>Complementary tasks</strong> balance the natural size asymmetry: Elnaz carries three workshops (largest intrinsic area, no additional task); Rishad runs the automated grading harness; Basheer records reference datasets.</p>
+</li>
+<li>
+<p><strong>Teammate evaluation form</strong> added as a required submission item (item 7 in the assessment list). Each student independently rates their teammates on six statements at the end of the project. Confidential, instructor-only, used to identify contribution imbalances that may warrant individual grade adjustments. Statements: contribution to discussions; leadership; respect and consensus; on-time task completion; team focus; would work with again. Distinct from the two peer review forms of other teams' videos.</p>
+</li>
+</ol>
+<hr/>
+<h2>Key Dates</h2>
+<div aria-label="Key Dates" class="table-wrapper" role="region" tabindex="0"><table><caption>Key Dates</caption>
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mon, May 4</strong></td>
+<td>Team declaration survey deadline (students); outline drafts due from Elnaz and Rishad</td>
+</tr>
+<tr>
+<td><strong>Fri, May 8</strong></td>
+<td>Outline draft due from Basheer</td>
+</tr>
+<tr>
+<td><strong>Tue, May 12</strong></td>
+<td>Project kickoff; Elnaz Workshop 1 (100 min, lecture slot); Elnaz ref doc v1 posted</td>
+</tr>
+<tr>
+<td><strong>Thu, May 14</strong></td>
+<td>Rishad Workshop 1 (100 min, lecture slot); Rishad ref doc v1 posted</td>
+</tr>
+<tr>
+<td><strong>Fri, May 15</strong></td>
+<td>Basheer Workshop 1 (60 min); Basheer ref doc posted</td>
+</tr>
+<tr>
+<td><strong>Mon, May 18</strong></td>
+<td>Basheer Workshop 2 (60 min)</td>
+</tr>
+<tr>
+<td><strong>May 19 to 21</strong></td>
+<td>Assessment Week (no project lab consultation)</td>
+</tr>
+<tr>
+<td><strong>Mon, May 25</strong></td>
+<td>Memorial Day, campus closed</td>
+</tr>
+<tr>
+<td><strong>Wed, May 27</strong></td>
+<td>Rishad Workshop 2 (60 min, advanced)</td>
+</tr>
+<tr>
+<td><strong>Thu, May 28</strong></td>
+<td>Elnaz Workshop 2 (60 min, advanced)</td>
+</tr>
+<tr>
+<td><strong>Fri, May 29</strong></td>
+<td>Grading harness dry run (Rishad)</td>
+</tr>
+<tr>
+<td><strong>Mon, Jun 1</strong></td>
+<td>Reference datasets delivered from Basheer to Rishad</td>
+</tr>
+<tr>
+<td><strong>Thu, Jun 4, 11:59 PM</strong></td>
+<td>Student submission deadline (all six items)</td>
+</tr>
+<tr>
+<td><strong>Fri, Jun 5</strong></td>
+<td>Category 1 automated check (Rishad); grading calibration meeting (candidate); peer review pairs assigned</td>
+</tr>
+<tr>
+<td><strong>Jun 5 to 7</strong></td>
+<td>Peer review window (Days 1 to 3)</td>
+</tr>
+<tr>
+<td><strong>Jun 8 to 11</strong></td>
+<td>Grader review window (Days 4 to 7)</td>
+</tr>
+<tr>
+<td><strong>Thu, Jun 11</strong></td>
+<td>Category 2 automated results posted</td>
+</tr>
+<tr>
+<td><strong>Fri, Jun 12</strong></td>
+<td>Grades posted to students</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Pending Work Items</h2>
+<ol>
+<li><strong>Workshop preparation assistance for TAs</strong> (committed; will happen after outline drafts arrive).</li>
+<li>Elnaz: Advanced GUI workshop content, reference doc, worked code examples drawn from MP5</li>
+<li>Rishad: ThingSpeak workshop content, reference doc, worked code examples</li>
+<li>
+<p>Basheer: Detector architecture workshop content, reference doc, worked code examples drawn from MP3 and MP4</p>
+</li>
+<li>
+<p><strong>Word (.docx) versions of memos</strong> if desired for email distribution. Markdown versions are current.</p>
+</li>
+<li>
+<p><strong>Team declaration survey instrument.</strong> Not yet built. Needs fields for: student's own name, other two teammates' names, track ranking (A-first vs. B-first), lab section.</p>
+</li>
+<li>
+<p><strong>Reference dataset recording logistics</strong> (Basheer's complementary task). Needs decisions on: who holds the phone, who walks the route, who annotates ground truth, equipment, date.</p>
+</li>
+<li>Track A: <code>golden_gps.mat</code>, <code>golden_accel.mat</code>, <code>golden_truth.json</code></li>
+<li>
+<p>Track B: <code>gesture_stream_1.mat</code> (90 s, 12 shake events), <code>gesture_stream_2.mat</code> (60 s quiet), <code>gesture_truth.json</code></p>
+</li>
+<li>
+<p><strong>Lab section TA assignments.</strong> Decide which of the 8 lab sections each TA covers during Module 7 (May 12 to 18) and Module 9 (May 26 to Jun 1).</p>
+</li>
+<li>
+<p><strong>Area-specific office hour slots</strong> for each TA, to post on Canvas alongside lab assignments.</p>
+</li>
+<li>
+<p><strong>Grading calibration meeting.</strong> Candidate dates: Thu Jun 4 afternoon or Fri Jun 5 morning. Purpose: review 3 videos together (strong/average/weak) to align Category 3 and 4 scoring.</p>
+</li>
+<li>
+<p><strong>Peer review assignment logic.</strong> Presumed to sit with Rishad as part of Cat 1 submission intake. Logic for pairing teams not yet specified.</p>
+</li>
+<li>
+<p><strong>Canvas page posting plan</strong> for all docs. When each doc goes up, which section, etc.</p>
+</li>
+<li>
+<p><strong>Teammate evaluation form rating scale and delivery mechanism.</strong> Decision made: the form is a hard requirement separate from the 25-point Cat 1 structure (option b). Both grading rubrics now contain a "Teammate Evaluation Handling (Instructor Use)" section explaining how forms feed into individual grade adjustments. Still pending: rating scale for the six statements (1-to-5 or 0-to-3, currently described in the Assessment Guide as "to be confirmed") and the actual form delivery mechanism (Canvas survey, Google Form, Qualtrics, etc.).</p>
+</li>
+</ol>
+<hr/>
+<h2>Open Questions Flagged but Not Resolved</h2>
+<ol>
+<li>
+<p><strong>100-min workshop format:</strong> single block with hands-on interleaved, or two shorter halves with a break? Asked of Elnaz and Rishad; awaiting their preference.</p>
+</li>
+<li>
+<p><strong>Reference document deadlines for May 12 and May 14:</strong> can v1 be slides plus code samples (with full doc to follow), or must it be a polished document on workshop day? Flagged as tight.</p>
+</li>
+<li>
+<p><strong>Basheer reference dataset recording:</strong> can it be done solo, or does he need a second person as ground-truth annotator walking alongside?</p>
+</li>
+<li>
+<p><strong>Lectures 17 and 18 (May 26, May 28):</strong> schedule lists them as "group project work sessions." Unclear whether these are TA-staffed consultation time or self-directed team time.</p>
+</li>
+<li>
+<p><strong>Escalation path</strong> for consultation questions that stump the area TA: direct to Andre, or route to another TA first?</p>
+</li>
+<li>
+<p><strong>Peer review assignment ownership:</strong> presumed Rishad as part of submission intake, but not formally confirmed.</p>
+</li>
+<li>
+<p><strong>Fall 2025 PDFs:</strong> three PDFs in <code>Fall 2025/</code> subfolder flagged as likely stale (especially <code>Audio Sampler.pdf</code>, which has no corresponding Spring 2026 track). Decision to delete or move to archive pending.</p>
+</li>
+</ol>
+<hr/>
+<h2>Session History</h2>
+<h3>April 24, 2026 (initial planning session)</h3>
+<ul>
+<li>Reviewed both Track A and Track B project specs</li>
+<li>Reviewed all five Mini-Project descriptions</li>
+<li>Designed the three-area TA scaffolding model (Rishad/Elnaz/Basheer)</li>
+<li>Produced <code>FinalProject_TA_ScaffoldingPlan.md</code> with week-by-week time budgets</li>
+<li>Produced <code>FinalProject_TA_TransmittalMemo.md</code> for the TA meeting</li>
+<li>Produced <code>Project_StudentMemo_TeamFormation.md</code> (now v1.1 with GitHub Pages links)</li>
+<li>Moved Elnaz's and Rishad's foundation workshops into the May 12 and May 14 lecture slots</li>
+<li>Made student-friendly edits to both track docs and marked them DRAFT</li>
+<li>Reviewed all three assessment/grading docs; resolved inconsistencies (peer review count, live demo, stale "17 videos" reference, track-agnostic self-assessment wording)</li>
+<li>Removed the live in-class demonstration from all docs</li>
+<li>Aligned video format specification across Track A, Track B, and Assessment Guide</li>
+<li>Flagged stale Fall 2025 PDFs</li>
+<li>Added <code>Version 1.0</code> stamps to all top-level docs</li>
+<li>Inserted GitHub Pages links to the published draft track docs into the student memo (bumped to v1.1)</li>
+<li>Added the teammate evaluation form to the student memo and Assessment Guide as required submission item 7 (student memo bumped to v1.2; Assessment Guide bumped to v1.1)</li>
+<li>Updated both grading rubrics with a Teammate Evaluation Handling section explaining how the form feeds into individual grade adjustments (Track A and Track B grading rubrics bumped to v1.1)</li>
+</ul>
+<hr/>
+<h2>How to Use This Log (Instructions for Future Claude)</h2>
+<p>If you are Claude in a new session, read this log top to bottom before doing anything else on the final project. Then:</p>
+<ol>
+<li>Confirm with the user which pending item they want to tackle first.</li>
+<li>When a pending item is completed, move it to the "Session History" section with a note on what was done.</li>
+<li>When a new decision is made, add it to "Key Decisions Made."</li>
+<li>When a new open question surfaces, add it to "Open Questions."</li>
+<li>Bump this file's version (at the bottom) when you update it. Increment the version on individual docs only when their content materially changes.</li>
+</ol>
+<hr/>
+<p><em>Version 1.2</em></p>
+  </main>
+</body>
+</html>
