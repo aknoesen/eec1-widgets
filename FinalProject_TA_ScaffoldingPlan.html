@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENG6 Final Project: TA Scaffolding Plan</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>ENG6 Final Project: TA Scaffolding Plan</h1>
+<p><strong>Audience:</strong> Rishad Joarder, Elnaz Hamdarsi, Basheer Ammar<br/>
+<strong>Project period:</strong> Tue May 12 through Thu Jun 4, 2026 (plus Jun 5 to 12 grading window)<br/>
+<strong>Appointments:</strong> 25% each (approximately 10 hours/week)</p>
+<hr/>
+<h2>Purpose</h2>
+<p>The final project spans two tracks (A: Kemper Hall Tracker, B: Networked Sensor Game). Across both tracks, three cross-cutting technical areas drive almost every team's hardest debugging time. Each TA owns one area end to end. Each team of three designates one member as area expert for each of the three areas. The expert is the team's area lead and designated integrator, not the sole implementer; all team members attend all workshops.</p>
+<p>This plan explains what each TA owns, how hours are budgeted against the actual course schedule, and how we split grading.</p>
+<hr/>
+<h2>Key Dates (anchored to the course schedule)</h2>
+<div aria-label="Key Dates (anchored to the course schedule)" class="table-wrapper" role="region" tabindex="0"><table><caption>Key Dates (anchored to the course schedule)</caption>
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Event</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tue, May 12</td>
+<td><strong>Project kickoff.</strong> Module 7 begins. <strong>Lecture 13 slot repurposed: Elnaz delivers the Advanced GUI workshop (100 min, 5:10 to 6:50 PM).</strong> Lecture on Data Visualization II moved to another slot.</td>
+<td>Lab sections begin "Group Project Workshop &amp; Consultation."</td>
+</tr>
+<tr>
+<td>Thu, May 14</td>
+<td><strong>Lecture 14 slot repurposed: Rishad delivers the ThingSpeak workshop (100 min, 5:10 to 6:50 PM).</strong> Lecture on MATLAB Data Structures moved to another slot.</td>
+<td>Whole class attends; this is the technical-foundation anchor for both tracks.</td>
+</tr>
+<tr>
+<td>May 12 to 17</td>
+<td>Week 1 (foundation). Two lecture-slot workshops plus Basheer's 60-min detector architecture workshop. All 8 lab sections in consultation mode.</td>
+<td>Every team member present at the two 100-min foundations.</td>
+</tr>
+<tr>
+<td>May 19 to 21</td>
+<td><strong>Assessment Week (Module 8).</strong> Labs are Assessment Period, not project consultation.</td>
+<td>No lab consultation available. Workshops still run, but attendance will be lower.</td>
+</tr>
+<tr>
+<td>Mon, May 25</td>
+<td><strong>Memorial Day.</strong> University closed.</td>
+<td>Lab Sections A03 and A05 shift their session to Mon, Jun 1.</td>
+</tr>
+<tr>
+<td>May 26 to Jun 1</td>
+<td>Week 3 (advanced integration). Lab sections resume project consultation.</td>
+<td>Lectures 17 and 18 (May 26, May 28) are group-project work sessions; possible workshop slots.</td>
+</tr>
+<tr>
+<td>Mon, Jun 1</td>
+<td><strong>Reference datasets due from Basheer.</strong></td>
+<td>Golden walk and gesture streams delivered to Rishad for harness testing.</td>
+</tr>
+<tr>
+<td>Jun 2 to 4</td>
+<td>Final days. Teams record videos, polish, submit.</td>
+<td>Consultation load peaks.</td>
+</tr>
+<tr>
+<td><strong>Thu, Jun 4, 11:59 PM</strong></td>
+<td><strong>Submission deadline.</strong></td>
+<td>All six items (code, ThingSpeak URL, PDF, video, self-assessment, peer review form IDs).</td>
+</tr>
+<tr>
+<td>Jun 5 to 7</td>
+<td>Peer review window (Days 1 to 3).</td>
+<td>Rishad runs Cat 1 automated check; assigns peer review pairs.</td>
+</tr>
+<tr>
+<td>Jun 5 to 11</td>
+<td>Grader review (Days 4 to 7).</td>
+<td>Cat 2 automated run; Cat 3, 4, 5 manual grading distributed across TAs.</td>
+</tr>
+<tr>
+<td>Jun 12</td>
+<td>Grades posted.</td>
+<td>Peer review feedback shared with reviewed teams.</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Area Assignments at a Glance</h2>
+<div aria-label="Area Assignments at a Glance" class="table-wrapper" role="region" tabindex="0"><table><caption>Area Assignments at a Glance</caption>
+<thead>
+<tr>
+<th scope="col">Area</th>
+<th scope="col">TA Lead</th>
+<th scope="col">Track A application</th>
+<th scope="col">Track B application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud &amp; Data Layer (ThingSpeak)</td>
+<td>Rishad Joarder</td>
+<td>Walk upload, channel history, replay read</td>
+<td>Move bus, automatic turn passing, spectator and leaderboard channels</td>
+</tr>
+<tr>
+<td>App Designer &amp; Live UI</td>
+<td>Elnaz Hamdarsi</td>
+<td><code>geoaxes</code>/<code>geoplot</code> map, floor plan swap, timer-driven redraw</td>
+<td>Live game state render (cards, dice, score), turn indicator, remote move UI update</td>
+</tr>
+<tr>
+<td>Sensor Signal Processing &amp; Event Detection</td>
+<td>Basheer Ammar</td>
+<td>Stair climb, elevator, and step detection; regime switch threshold</td>
+<td>Gesture detection (shake, tilt, flick) on moving window</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Area 1: Cloud &amp; Data Layer (Rishad Joarder)</h2>
+<h3>Scope</h3>
+<p>ThingSpeak channel design, field encoding, write patterns, polling reads using the newer-than-last-read-entry pattern, rate-limit-aware decimation, replay, and history queries. Both tracks depend on ThingSpeak; the patterns are the same but the data shapes differ. Track A's typical load is one channel per team with eight fields and roughly one record per 15 seconds. Track B's typical load is a game state channel with compact move strings plus possible secondary channels for chat or leaderboard.</p>
+<h3>Owns</h3>
+<ul>
+<li>Two workshops (see schedule below)</li>
+<li>Area-specific consultation hours (time budget below)</li>
+<li>Reference document "ThingSpeak for ENG6 Final Projects" posted on Canvas by Fri, May 15</li>
+<li><strong>Complementary task 1:</strong> submission intake and Category 1 automated check. Runs Jun 5 (day after submission): ThingSpeak URLs reachable, channels populated with the required minimum records, code folder parses.</li>
+<li><strong>Complementary task 2:</strong> automated grading harness for Category 2. Runs Jun 5 to 11 against each team's ThingSpeak channel and submitted code, using Basheer's reference datasets as inputs.</li>
+</ul>
+<h3>Deliverable checkpoints</h3>
+<div aria-label="Deliverable checkpoints" class="table-wrapper" role="region" tabindex="0"><table><caption>Deliverable checkpoints</caption>
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thu, May 14, 5:10 to 6:50 PM</strong></td>
+<td><strong>Workshop 1 delivered in Lecture 14 slot</strong> (ThingSpeak foundations + track-specific patterns, 100 min)</td>
+</tr>
+<tr>
+<td>Thu, May 14</td>
+<td>Reference document v1 posted (should support the workshop content)</td>
+</tr>
+<tr>
+<td>Wed, May 27</td>
+<td>Workshop 2 delivered (advanced: rate limits, decimation, replay, history queries, 60 min)</td>
+</tr>
+<tr>
+<td>Fri, May 29</td>
+<td>Grading harness dry-run against one test submission</td>
+</tr>
+<tr>
+<td>Fri, Jun 5</td>
+<td>Category 1 automated results posted to master spreadsheet</td>
+</tr>
+<tr>
+<td>Thu, Jun 11</td>
+<td>Category 2 automated results posted to master spreadsheet</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Area 2: App Designer &amp; Live UI (Elnaz Hamdarsi)</h2>
+<h3>Scope</h3>
+<p>App Designer architecture extending Mini-Project 5, timer-driven main loop, non-blocking callback orchestration, live-updating plot and map components, and the screen-capture workflow for the video deliverable. For Track A this includes <code>geoaxes</code> and <code>geoplot</code> embedded in App Designer, floor plan image swap on regime change, and keeping the UI responsive while two sensor streams and ThingSpeak upload are running. For Track B this includes game state rendering (cards, dice, score, turn indicator) and the automatic UI update when a remote move arrives.</p>
+<p>This is the largest intrinsic area of the three because it is where everything else integrates. Elnaz carries the highest workshop load (one 100-min lecture-slot workshop plus one 60-min advanced workshop) and higher consultation hours, with no additional complementary task.</p>
+<h3>Owns</h3>
+<ul>
+<li>Two workshops (one 100-min lecture-slot + one 60-min advanced; see schedule below)</li>
+<li>Area-specific consultation hours (time budget below)</li>
+<li>Reference document "App Designer Live UI for ENG6 Final Projects" posted on Canvas by Tue, May 12 (to support the lecture-slot workshop)</li>
+</ul>
+<h3>Deliverable checkpoints</h3>
+<div aria-label="Deliverable checkpoints" class="table-wrapper" role="region" tabindex="0"><table><caption>Deliverable checkpoints</caption>
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tue, May 12, 5:10 to 6:50 PM</strong></td>
+<td><strong>Workshop 1 delivered in Lecture 13 slot</strong> (Advanced GUI for both tracks: timer patterns, live view integration, <code>geoaxes</code> for A, game state for B, 100 min)</td>
+</tr>
+<tr>
+<td>Tue, May 12</td>
+<td>Reference document v1 posted (should support the workshop content)</td>
+</tr>
+<tr>
+<td>Thu, May 28</td>
+<td>Workshop 2 delivered (advanced: UI responsiveness under load, 60 min)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Area 3: Sensor Signal Processing &amp; Event Detection (Basheer Ammar)</h2>
+<h3>Scope</h3>
+<p>Threshold tuning, moving-window detection, resultant acceleration, and the sensitivity vs. specificity tradeoff from Mini-Project 3 applied to live streams. For Track A this is stair climb detection, elevator start and stop detection, step counting, and the GPS horizontal-accuracy threshold for regime switching. For Track B this is gesture detection on a moving window with <code>movmean</code> smoothing, plus optional per-player calibration for the calibration reach feature.</p>
+<h3>Owns</h3>
+<ul>
+<li>Two workshops (see schedule below)</li>
+<li>Area-specific consultation hours (time budget below)</li>
+<li>Reference document "Event Detection from Phone Sensors for ENG6 Final Projects" posted on Canvas by Fri, May 15</li>
+<li><strong>Complementary task:</strong> reference dataset recording and maintenance. Requires sensor expertise to record at correct sampling rates and annotate ground truth.</li>
+<li>Track A: the "golden walk" through the Kemper Evaluation Route (<code>golden_gps.mat</code>, <code>golden_accel.mat</code>, <code>golden_truth.json</code>)</li>
+<li>Track B: gesture streams (<code>gesture_stream_1.mat</code> with 12 annotated shakes over 90 seconds; <code>gesture_stream_2.mat</code> with 60 seconds of mixed motion and zero intentional shakes; <code>gesture_truth.json</code>)</li>
+</ul>
+<h3>Deliverable checkpoints</h3>
+<div aria-label="Deliverable checkpoints" class="table-wrapper" role="region" tabindex="0"><table><caption>Deliverable checkpoints</caption>
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fri, May 15</td>
+<td>Reference document posted</td>
+</tr>
+<tr>
+<td>Fri, May 15 (afternoon)</td>
+<td>Workshop 1 delivered (detector architecture, MP3/MP4 patterns adapted to live windows, 60 min)</td>
+</tr>
+<tr>
+<td>Mon, May 18</td>
+<td>Workshop 2 delivered (track-specific detectors, 60 min)</td>
+</tr>
+<tr>
+<td>Fri, May 29</td>
+<td>Draft reference datasets ready for Rishad's harness dry-run</td>
+</tr>
+<tr>
+<td><strong>Mon, Jun 1</strong></td>
+<td><strong>Final reference datasets delivered to Rishad</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Workshop Schedule</h2>
+<p>Six workshops total. Two are 100-minute lecture-slot workshops in Week 1, delivered in place of Lectures 13 and 14 (both lectures moved to other slots). The remaining four are 60-minute sessions scheduled around lab times. All workshops are open to every team member, recorded, and posted.</p>
+<div aria-label="Workshop Schedule" class="table-wrapper" role="region" tabindex="0"><table><caption>Workshop Schedule</caption>
+<thead>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Date</th>
+<th scope="col">Time</th>
+<th scope="col">Duration</th>
+<th scope="col">Workshop</th>
+<th scope="col">Lead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Tue, May 12</strong></td>
+<td><strong>5:10 to 6:50 PM (Lecture 13 slot)</strong></td>
+<td><strong>100 min</strong></td>
+<td><strong>Advanced GUI &amp; Live UI for both tracks</strong> (timer patterns, live view integration, <code>geoaxes</code> for A, game state for B)</td>
+<td><strong>Elnaz</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Thu, May 14</strong></td>
+<td><strong>5:10 to 6:50 PM (Lecture 14 slot)</strong></td>
+<td><strong>100 min</strong></td>
+<td><strong>ThingSpeak for both tracks</strong> (channel design, writes, newer-than reads, track-specific field layouts)</td>
+<td><strong>Rishad</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Fri, May 15</td>
+<td>3:00 to 4:00 PM</td>
+<td>60 min</td>
+<td>Detector architecture: MP3/MP4 patterns adapted to live windows</td>
+<td>Basheer</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mon, May 18</td>
+<td>4:00 to 5:00 PM</td>
+<td>60 min</td>
+<td>Track-specific detectors: stair/elevator/step for A, gesture for B</td>
+<td>Basheer</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Wed, May 27</td>
+<td>4:00 to 5:00 PM</td>
+<td>60 min</td>
+<td>Advanced ThingSpeak: rate limits, decimation, replay, history queries</td>
+<td>Rishad</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Thu, May 28</td>
+<td>3:00 to 4:00 PM</td>
+<td>60 min</td>
+<td>UI responsiveness under load: sensors + ThingSpeak + plotting concurrent</td>
+<td>Elnaz</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Why the lecture-slot placement matters.</strong> Workshops 1 and 2 are in full-lecture slots in Week 1, which means 100 minutes of instruction time, every student in the room, and the technical-foundation anchor laid before any team has to make commitments about architecture, channel design, or live-view strategy. Both Elnaz and Rishad should plan for a working hands-on component inside the 100 minutes, not just slides.</p>
+<p><strong>Basheer's foundation on Fri May 15.</strong> This sits two days after the two lecture-slot workshops, so teams have already seen ThingSpeak and the App Designer structure. Detector architecture builds on MP3/MP4 patterns and does not need to go first.</p>
+<p><strong>Week 3 advanced workshops.</strong> Both Rishad's and Elnaz's Week 3 workshops (May 27 and May 28) assume teams have a working end-to-end system and are tuning it. Lectures 17 and 18 on those days (5:10 to 6:50 PM) are listed as group-project work sessions; the workshops sit earlier in the afternoon, not in conflict.</p>
+<p><strong>No Basheer workshop in Week 3.</strong> Basheer's Week 3 hours shift to reference dataset annotation and the harness dry-run with Rishad (see time budget).</p>
+<h3>Workshop Preparation Support</h3>
+<p>Andre will provide preparation support for each workshop. This includes help with workshop outlines, worked code examples drawn from the Mini-Project series that map into the final project, and first-draft reference documents so none of you starts from a blank page. We will schedule prep sessions per TA before your first workshop. Plan on at least one prep session before your Week 1 workshop and a lighter check-in before your Week 3 workshop.</p>
+<hr/>
+<h2>Consultation Hours</h2>
+<p>Two categories:<br/>
+1. <strong>Lab section coverage.</strong> Each TA is assigned a subset of the 8 lab sections during Module 7 (May 12 to 18) and Module 9 (May 26 to Jun 1). This is general consultation: whichever team walks in, whatever question they have. Each TA likely covers 2 to 3 sections per week.<br/>
+2. <strong>Area-specific office hours.</strong> Each TA additionally holds 1 to 2 hours per week of dedicated area consultation. Teams post questions on the course forum first; area-tagged questions route to the corresponding TA's slot.</p>
+<p>Bring your preferred office-hours slots to today's meeting and we will finalize.</p>
+<hr/>
+<h2>Time Budget by Week (25% TA = approximately 10 hours/week)</h2>
+<p>The project is not evenly loaded. Week 2 (May 19 to 24) is Assessment Week with reduced project consultation. Week 5 (Jun 5 to 12) is grading. Each TA's 10-hour week flexes across activities as shown.</p>
+<h3>Rishad (ThingSpeak + grading harness)</h3>
+<div aria-label="Rishad (ThingSpeak + grading harness)" class="table-wrapper" role="region" tabindex="0"><table><caption>Rishad (ThingSpeak + grading harness)</caption>
+<thead>
+<tr>
+<th scope="col">Week</th>
+<th scope="col">Lab sections</th>
+<th scope="col">Area office hrs</th>
+<th scope="col">Workshops</th>
+<th scope="col">Ref doc</th>
+<th scope="col">Complementary</th>
+<th scope="col">Grading</th>
+<th scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1 (May 12–17)</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>4 (100-min lecture-slot workshop prep+deliver)</td>
+<td>3 (doc ready by May 14)</td>
+<td>0</td>
+<td>0</td>
+<td><strong>~10</strong></td>
+</tr>
+<tr>
+<td>Week 2 (May 18–24)</td>
+<td>0 (assessment)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4 (harness dev)</td>
+<td>0</td>
+<td><strong>~6</strong></td>
+</tr>
+<tr>
+<td>Week 3 (May 25–31)</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>2.5 (60-min advanced workshop)</td>
+<td>0.5</td>
+<td>2 (harness dry-run w/ Basheer)</td>
+<td>0</td>
+<td><strong>~8</strong></td>
+</tr>
+<tr>
+<td>Week 4 (Jun 1–4)</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>2 (submission intake prep)</td>
+<td>0</td>
+<td><strong>~6</strong></td>
+</tr>
+<tr>
+<td>Week 5 (Jun 5–12)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4 (Cat 1 + Cat 2 auto runs)</td>
+<td>6 (Cat 3, 4, 5)</td>
+<td><strong>~10</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Elnaz (App Designer + Live UI)</h3>
+<div aria-label="Elnaz (App Designer + Live UI)" class="table-wrapper" role="region" tabindex="0"><table><caption>Elnaz (App Designer + Live UI)</caption>
+<thead>
+<tr>
+<th scope="col">Week</th>
+<th scope="col">Lab sections</th>
+<th scope="col">Area office hrs</th>
+<th scope="col">Workshops</th>
+<th scope="col">Ref doc</th>
+<th scope="col">Complementary</th>
+<th scope="col">Grading</th>
+<th scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1 (May 12–17)</td>
+<td>1.5</td>
+<td>2</td>
+<td>4 (100-min lecture-slot workshop prep+deliver)</td>
+<td>3 (doc ready by May 12)</td>
+<td>0</td>
+<td>0</td>
+<td><strong>~10.5</strong></td>
+</tr>
+<tr>
+<td>Week 2 (May 18–24)</td>
+<td>0 (assessment)</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>~3</strong> (light week, by design)</td>
+</tr>
+<tr>
+<td>Week 3 (May 25–31)</td>
+<td>1.5</td>
+<td>2</td>
+<td>2.5 (60-min advanced workshop)</td>
+<td>0.5</td>
+<td>0</td>
+<td>0</td>
+<td><strong>~6.5</strong></td>
+</tr>
+<tr>
+<td>Week 4 (Jun 1–4)</td>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>~5</strong></td>
+</tr>
+<tr>
+<td>Week 5 (Jun 5–12)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8 (Cat 3, 4, 5)</td>
+<td><strong>~8</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Basheer (Sensor Processing + Reference Datasets)</h3>
+<div aria-label="Basheer (Sensor Processing + Reference Datasets)" class="table-wrapper" role="region" tabindex="0"><table><caption>Basheer (Sensor Processing + Reference Datasets)</caption>
+<thead>
+<tr>
+<th scope="col">Week</th>
+<th scope="col">Lab sections</th>
+<th scope="col">Area office hrs</th>
+<th scope="col">Workshops</th>
+<th scope="col">Ref doc</th>
+<th scope="col">Complementary</th>
+<th scope="col">Grading</th>
+<th scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1 (May 12–17)</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>2.5 (60-min W1 workshop, Fri May 15)</td>
+<td>3 (doc writing)</td>
+<td>0.5 (scout Kemper route)</td>
+<td>0</td>
+<td><strong>~9</strong></td>
+</tr>
+<tr>
+<td>Week 2 (May 18–24)</td>
+<td>0 (assessment)</td>
+<td>1</td>
+<td>2.5 (60-min W2 workshop, Mon May 18)</td>
+<td>1</td>
+<td>3 (record golden walk + gesture streams)</td>
+<td>0</td>
+<td><strong>~7.5</strong></td>
+</tr>
+<tr>
+<td>Week 3 (May 25–31)</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>0</td>
+<td>1</td>
+<td>3 (annotate datasets, dry-run w/ Rishad)</td>
+<td>0</td>
+<td><strong>~7</strong></td>
+</tr>
+<tr>
+<td>Week 4 (Jun 1–4)</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>1 (dataset final check)</td>
+<td>0</td>
+<td><strong>~5</strong></td>
+</tr>
+<tr>
+<td>Week 5 (Jun 5–12)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2 (help Cat 2 interpret sensor results)</td>
+<td>6 (Cat 3, 4, 5)</td>
+<td><strong>~8</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Total across all 5 weeks:<br/>
+- Rishad: ~40 hours<br/>
+- Elnaz: ~33 hours<br/>
+- Basheer: ~37 hours</p>
+<p>The lecture-slot workshops front-load Rishad's and Elnaz's Week 1 at or slightly above 10 hours; Elnaz's Week 2 drops to 3 hours because her foundation content is already delivered. Net totals are similar across TAs.</p>
+<p>If 25% is closer to 110 hours over the quarter, this 5-week project period accounts for roughly 35 to 40 of those hours per TA. The remaining hours in the quarter (before May 12 and after Jun 12) are for mini-project support and end-of-quarter cleanup.</p>
+<hr/>
+<h2>Grading Split</h2>
+<div aria-label="Grading Split" class="table-wrapper" role="region" tabindex="0"><table><caption>Grading Split</caption>
+<thead>
+<tr>
+<th scope="col">Category</th>
+<th scope="col">Points</th>
+<th scope="col">How graded</th>
+<th scope="col">Who</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1: Submission completeness</td>
+<td>25</td>
+<td>Automated</td>
+<td>Rishad runs the script Jun 5</td>
+</tr>
+<tr>
+<td>2: Quantitative performance</td>
+<td>30</td>
+<td>Automated</td>
+<td>Rishad runs the harness Jun 5 to 11 against Basheer's reference datasets; Basheer on-call for sensor-result interpretation</td>
+</tr>
+<tr>
+<td>3: YouTube video</td>
+<td>20</td>
+<td>Grader judgment</td>
+<td>Split across three TAs; each grades ~1/3 of videos, rotating across tracks</td>
+</tr>
+<tr>
+<td>4: PDF report or design memo</td>
+<td>20</td>
+<td>Grader judgment</td>
+<td>Split across three TAs; when possible, the memo grader is different from the video grader for the same team</td>
+</tr>
+<tr>
+<td>5: Excellence, polish, or stretch</td>
+<td>5</td>
+<td>Grader judgment</td>
+<td>Consensus in the calibration meeting</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Grading calibration meeting</h3>
+<p>Target: <strong>Thu, Jun 4 afternoon</strong> (before submission deadline that evening) or <strong>Fri, Jun 5 morning</strong> (right after submissions arrive). Review 3 videos together (expected-strong, expected-average, expected-weak) to align on Category 3 and Category 4 scoring. Specified in both track grading docs.</p>
+<p>Target time per team for grader-scored work: 15 minutes active grading (Categories 3 to 5) plus 2 minutes data entry.</p>
+<hr/>
+<h2>Success Criteria for TAs</h2>
+<p>At end of the grading window (Jun 12), each TA should be able to point to all of these:</p>
+<ol>
+<li>Reference document posted by Fri, May 15</li>
+<li>Workshops run on schedule with attendance records</li>
+<li>Complementary task completed (Rishad: Cat 1 and Cat 2 automated results; Basheer: reference datasets delivered by Jun 1)</li>
+<li>Consultation hours held; brief log of recurring question topics (feeds into next quarter's workshop planning)</li>
+<li>Grading completed by Jun 11 at the latest</li>
+</ol>
+<hr/>
+<h2>Meeting Agenda for Today (45 min)</h2>
+<ol>
+<li><strong>Walkthrough of this plan (10 min).</strong> Confirm area assignments and the expert-per-team structure. Confirm the two lecture-slot workshops on May 12 (Elnaz) and May 14 (Rishad), and the reference-doc deadlines those imply (Elnaz doc ready by May 12; Rishad doc ready by May 14).</li>
+<li><strong>Workshop content and prep (10 min).</strong> Elnaz and Rishad each outline what their 100-min workshop will cover (foundations + track-specific patterns + hands-on component). Basheer outlines his two 60-min workshops.</li>
+<li><strong>Lab section assignments (5 min).</strong> Decide who covers which of the 8 lab sections in Module 7 (May 12 to 18) and Module 9 (May 26 to Jun 1).</li>
+<li><strong>Reference dataset logistics (10 min).</strong> Basheer leads. Confirm: who records the golden walk and when? What equipment? Who holds the phone? Who annotates ground truth? Jun 1 delivery deadline.</li>
+<li><strong>Grading calibration meeting date (5 min).</strong> Pick Jun 4 afternoon or Jun 5 morning.</li>
+<li><strong>Open questions and load concerns (5 min).</strong> If any week's budget feels unrealistic, flag it now. Particular attention to Elnaz and Rishad's Week 1 at ~10 hours; Elnaz's Week 2 is light (~3 hours) by design.</li>
+</ol>
+<hr/>
+<h2>Open Questions to Surface Today</h2>
+<ul>
+<li>The two 100-min lecture-slot workshops (May 12, May 14): do Elnaz and Rishad want to split content between a lecture-style first half and a hands-on second half, or run it as two shorter lectures with a break?</li>
+<li>Reference docs for Elnaz (due May 12) and Rishad (due May 14) are on tight timelines. Are those deadlines realistic, or should v1 be a slide deck plus code samples, with a fuller document posted after the workshop?</li>
+<li>Reference dataset recording: can Basheer do this solo, or do we need a second person (volunteer student or another TA as ground-truth annotator walking alongside)?</li>
+<li>Lectures 17 and 18 on May 26 and May 28 are listed as "group project work sessions." Are these classroom sessions where TAs should be present, or self-directed team time with Andre present only?</li>
+<li>Who handles peer review assignment logistics (pairing teams to review each other's videos)? This probably sits with Rishad as part of his submission-intake task, but confirm.</li>
+<li>Escalation path when a consultation question stumps the area TA: direct to Andre, or route to one of the other two TAs first?</li>
+</ul>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>

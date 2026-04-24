@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memorandum</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Memorandum</h1>
+<p><strong>To:</strong> Rishad Joarder, Elnaz Hamdarsi, Basheer Ammar<br/>
+<strong>From:</strong> Andre Knoesen<br/>
+<strong>Date:</strong> April 24, 2026<br/>
+<strong>Subject:</strong> ENG6 Final Project TA Scaffolding Plan and Workshop Preparation Kickoff</p>
+<p><strong>Attached:</strong> FinalProject_TA_ScaffoldingPlan.md</p>
+<hr/>
+<p>The attached scaffolding plan details your roles and responsibilities for the ENG6 final project, which runs from May 12 through the grading window ending June 12. Please read it in full. It covers area assignments, workshop schedule, consultation hours, reference document deliverables, complementary tasks, grading split, and week-by-week time budgets against your 25% appointments.</p>
+<h2>Area Assignments</h2>
+<ul>
+<li><strong>Rishad Joarder:</strong> Cloud &amp; Data Layer (ThingSpeak)</li>
+<li><strong>Elnaz Hamdarsi:</strong> App Designer &amp; Live UI</li>
+<li><strong>Basheer Ammar:</strong> Sensor Signal Processing &amp; Event Detection</li>
+</ul>
+<p>Each team of three will designate one member as the area expert per area. The expert is the team's designated integrator, not the sole implementer. All team members attend all workshops.</p>
+<h2>Immediate Action: Workshop Preparation</h2>
+<p>Two of the project's foundation workshops will be delivered in the regular lecture slots during Week 1. Both are 100-minute sessions attended by the entire class. These workshops anchor the technical foundation every team relies on for the rest of the project, so the preparation window is tight and the stakes are higher than a typical optional workshop.</p>
+<p><strong>Elnaz, you are on first.</strong> Workshop 1 delivered in the Tuesday, May 12 lecture slot, 5:10 to 6:50 PM. Topic: Advanced GUI and Live UI for both tracks, including timer patterns, live view integration, <code>geoaxes</code> and <code>geoplot</code> for Track A, and game state rendering for Track B. Please begin drafting your workshop outline this week. Plan for 100 minutes of material with a working hands-on component, not pure lecture. Your reference document (v1 can be slides plus code samples) needs to be ready by the workshop day.</p>
+<p><strong>Rishad, you are on second.</strong> Workshop 2 delivered in the Thursday, May 14 lecture slot, 5:10 to 6:50 PM. Topic: ThingSpeak for both tracks, including channel design, write and read patterns, decimation, and the track-specific field layouts described in the project documents. Same expectations apply: begin drafting your outline this week, plan for 100 minutes with a hands-on component, reference document v1 ready by workshop day.</p>
+<p><strong>Basheer, your first workshop is Friday, May 15 (60 minutes).</strong> Topic: detector architecture and moving-window detection. You have an extra few days compared to Elnaz and Rishad, but please plan similarly.</p>
+<h2>Support Available</h2>
+<p>Once each of you has a first-draft workshop outline, send it to me. I will assist with refining the structure, supplying worked code examples drawn from the Mini-Project series that map cleanly into the final project, and drafting or reviewing the supporting reference document. We will schedule a short prep meeting per TA to finalize materials before your delivery day.</p>
+<p>The goal is that none of you starts from a blank page. The Mini-Project series already contains most of the patterns the final project uses, and my role on the prep side is to help you assemble those patterns into workshop form.</p>
+<h2>Requested Deadlines for Outline Drafts</h2>
+<div aria-label="Requested Deadlines for Outline Drafts" class="table-wrapper" role="region" tabindex="0"><table><caption>Requested Deadlines for Outline Drafts</caption>
+<thead>
+<tr>
+<th scope="col">TA</th>
+<th scope="col">Outline draft due (to Andre)</th>
+<th scope="col">Workshop delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elnaz</td>
+<td><strong>Mon, May 4</strong></td>
+<td>Tue, May 12</td>
+</tr>
+<tr>
+<td>Rishad</td>
+<td><strong>Mon, May 4</strong></td>
+<td>Thu, May 14</td>
+</tr>
+<tr>
+<td>Basheer</td>
+<td><strong>Fri, May 8</strong></td>
+<td>Fri, May 15</td>
+</tr>
+</tbody>
+</table></div>
+<p>These windows give us one to two working weeks between outline and delivery to refine content, build code examples, and finalize reference documents.</p>
+<h2>Additional Next Steps</h2>
+<ol>
+<li>Read the scaffolding plan in full before our next check-in.</li>
+<li>Confirm your area-specific office-hour slots so I can post them on Canvas alongside the lab-section assignments.</li>
+<li>Basheer: confirm the recording plan for the Kemper walk and the gesture streams. Reference datasets need to reach Rishad by Monday, June 1 so his grading harness has time for a dry run before submissions arrive on June 4.</li>
+<li>Raise any concerns about workload or deadlines now rather than in Week 2. The plan has Week 1 running at or slightly above 10 hours for Elnaz and Rishad because of the lecture-slot workshops; Week 2 compensates with a lighter load.</li>
+</ol>
+<p>Thank you all for taking these roles on. The scaffolding structure depends on each of you owning your area end to end, and I am confident in the assignments.</p>
+<p>Andre</p>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>

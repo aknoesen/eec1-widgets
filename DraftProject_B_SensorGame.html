@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Project Track B: Networked Sensor-Controlled Game</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Final Project Track B: Networked Sensor-Controlled Game</h1>
+<blockquote>
+<p><strong>DRAFT — for student review only.</strong> Requirements, deadlines, and rubric details may change before finalization. The overall scope and deliverables are stable enough for team formation and early planning.</p>
+</blockquote>
+<h2>At a Glance</h2>
+<p><strong>In one sentence.</strong> Build a multiplayer card or dice game (Blackjack, Yahtzee, or similar) where players control the action by shaking, tilting, or flicking their phones, and moves are exchanged between computers through a cloud channel so teammates can play across machines (even on different networks).</p>
+<p><strong>What stays from Mini-Projects 2 through 5.</strong> Resultant acceleration (MP2), threshold detection (MP3), the <code>SensorDataAnalyzer</code> class (MP4), App Designer and separation of concerns (MP5).</p>
+<p><strong>What is new.</strong> Live gesture detection on a moving window of sensor data, game state management, and automatic turn passing between computers through ThingSpeak.</p>
+<p><strong>Core deliverable.</strong> A working game played across two machines, with gestures replacing mouse clicks; a short Design Memo (2 to 3 pages) explaining your game rules, architecture, and tradeoffs; and a 6-minute YouTube video following the format in the Assessment Guide.</p>
+<h2>Project Description</h2>
+<p>You will design a multiplayer card or dice game in which players' actions are controlled by sensors on their smartphones and moves are exchanged between computers through a shared cloud channel on ThingSpeak. You will build the game's GUI using App Designer and its sensor input using the class-based approach from Mini-Projects 4 and 5. The game must be playable across two or more computers on the same network or different networks; players do not need to be in the same room.</p>
+<p>The project builds directly on your Mini-Projects. Your <code>SensorDataAnalyzer</code> class from MP4 is the starting point for sensor acquisition. Your gesture detection reuses the threshold-detection pattern from MP3 and the resultant-acceleration formula from MP2. Your GUI extends App Designer work from MP5 and is held together by the separation-of-concerns discipline that MP5 introduced.</p>
+<p>In addition to App Designer skills from MP5, this project will expose you to the following additional topics:</p>
+<ul>
+<li>Detecting meaningful events from live sensor data using threshold-based gesture recognition.</li>
+<li>Using a cloud message-passing platform (ThingSpeak) to coordinate state between independent machines.</li>
+<li>Designing an application with multiple clean concerns (sensor input, game rules, network communication, GUI) and keeping them decoupled.</li>
+<li>Handling automatic turn passing without direct connections between players' computers.</li>
+</ul>
+<h2>Why This Project</h2>
+<p>The mini-projects in this course taught you a specific engineering discipline: keep sensor acquisition, analysis, and user interface separate. Mini-Project 5 made the case in a single-user setting; the rule felt slightly abstract because a single-user app could plausibly have been written without it. In Track B the discipline becomes necessary. A networked game has four concerns: what the sensor is telling you, what the game rules say, what the other player's computer is telling you, and what the user sees on screen. Tangling any two of these together creates bugs that are very hard to fix. This project rewards students who took the MP5 lesson seriously.</p>
+<h2>How to Get Started</h2>
+<p>The project runs May 12 through June 4. Here is a recommended weekly rhythm. Do not try to do everything in the last week.</p>
+<p><strong>Week 1 (May 12 to 17).</strong> Attend both required workshops (Advanced GUI on May 12, ThingSpeak on May 14). Pick your game. <strong>Play it on paper first</strong> with real cards or dice; write down the rules; discover the edge cases (there are always edge cases) before any code is written. Copy your <code>SensorDataAnalyzer</code> from MP4 into your project folder.</p>
+<p><strong>Week 2 (May 18 to 24).</strong> Build a minimal end-to-end skeleton: one shake on Player 1's phone increments a counter on both Player 1's and Player 2's apps through a ThingSpeak channel, on two different machines. This is not the game yet. It is the proof that your turn-passing and your gesture detection both work. Do this before any game logic.</p>
+<p><strong>Week 3 (May 25 to 31).</strong> Wrap the real game around the working skeleton. Tune gesture thresholds on both phones. Draft your Design Memo. Do a practice run of your video.</p>
+<p><strong>Final days (June 1 to 4).</strong> Polish. Play a full game end to end on two machines with two team members. Record the video (6 minute hard limit). Submit by June 4 at 11:59 PM.</p>
+<p>The single biggest avoidable failure on this project is leaving "try it on two computers" for submission week.</p>
+<h2>Project Requirements</h2>
+<p>Your project is divided into required <strong>core functionality</strong>, a required <strong>reach feature</strong>, and a team-chosen <strong>reach feature</strong>.</p>
+<p>Your project should implement a card or dice game of your choosing. The game must be non-trivial and have some strategic component. Examples of acceptable complexity: <strong>Blackjack</strong>, <strong>Yahtzee</strong> (or a simplified version), or a scaled-down <strong>Boggle</strong>. The game <strong>War</strong> is too simple because there are no strategic choices; every turn is forced by the cards.</p>
+<h3>Core Functionality (Must-Have)</h3>
+<p>The following functionality is required:</p>
+<ol>
+<li>
+<p><strong>A reasonably attractive user interface</strong> built in App Designer. The UI shows the game state clearly (cards, dice, scores, turn indicator, whose turn it is) and updates automatically as the state changes.</p>
+</li>
+<li>
+<p><strong>Sensor-driven control.</strong> All in-game actions that a player takes must be controlled by smartphone sensors. Keystrokes and mouse input are allowed only to connect to ThingSpeak, to start the game, and to end the game. Examples of acceptable sensor controls:</p>
+</li>
+<li>Shake the phone to roll dice or deal cards.</li>
+<li>Tilt the phone forward to hit, backward to stand (Blackjack).</li>
+<li>
+<p>Flick the phone in a direction to select a choice.</p>
+</li>
+<li>
+<p><strong>Gesture detection must use threshold detection on resultant acceleration.</strong> Compute resultant acceleration using the formula from Mini-Project 2. Apply a threshold function modeled on Mini-Project 3's <code>detectRapidAcceleration</code>. Smoothing (MP5's <code>movmean</code>) is encouraged to reduce false triggers.</p>
+</li>
+<li>
+<p><strong>The gesture detector must live in its own class.</strong> Follow the Mini-Project 4 pattern. You may extend <code>SensorDataAnalyzer</code> with a <code>detectGesture</code> method, or compose a new class on top of it. The choice is yours; defend it in your design memo.</p>
+</li>
+<li>
+<p><strong>Automatic turn passing.</strong> When a player completes their turn, play passes to the next player without anyone clicking anything. In a networked session (see required reach) this means the other player's app notices the state change on ThingSpeak and updates its own UI automatically.</p>
+</li>
+<li>
+<p><strong>Separation of concerns.</strong> Your project must keep these four concerns in separate files or classes: sensor acquisition, gesture detection, game rules, and network communication. A GUI callback may orchestrate them but must not implement them. This is explicitly graded.</p>
+</li>
+</ol>
+<h3>Required Reach Feature: Remote Gameplay via ThingSpeak</h3>
+<p>The game must be playable by two or more players, each on a different computer. State changes pass through a shared ThingSpeak channel, not direct machine-to-machine connections. Players may sit next to each other in a classroom or be on different Wi-Fi networks. Turn passing remains automatic in remote mode: the other player's app polls the channel and updates when a new move appears.</p>
+<p>See Appendix A for the recommended message-bus pattern.</p>
+<h3>Chosen Reach Feature: Pick One</h3>
+<p>You select one additional reach feature in addition to core and the remote gameplay reach. We will consider the creativity and complexity of your reach goal when evaluating your project. Some suggestions:</p>
+<ul>
+<li><strong>Sound effects and animations.</strong> Provide sound and visual animation for at least three in-game events (for example, deal, roll, win). Animations must be visible; silent event logs do not count.</li>
+<li><strong>Multi-sensor input selection.</strong> Different players may independently select which sensor channel controls their play (for example, player 1 uses shake, player 2 uses tilt). The game logic does not change. This is where the MP5 separation-of-concerns lesson becomes visible: if your gesture detector is properly decoupled from the game rules, this reach feature is a two-line change; if not, it is a rewrite.</li>
+<li><strong>Non-trivial randomness.</strong> Incorporate randomness that materially affects play beyond a standard shuffle (for example, random event cards, dynamic rule modifiers, chance-based scoring multipliers). Document the mechanism in your design memo.</li>
+<li><strong>Spectator view.</strong> A third computer can connect and watch the game in progress without being able to play. Useful for demonstrations.</li>
+<li><strong>Persistent leaderboard.</strong> Game results are saved across sessions (either to a local <code>.mat</code> file or to a second ThingSpeak channel). The title screen shows a top-five leaderboard that updates automatically after each game.</li>
+<li><strong>Personal gesture calibration.</strong> At the start of a session, each player performs a short calibration routine (shake gently, shake hard) from which the app computes per-player thresholds. Document whether this reduces false triggers compared to a fixed threshold.</li>
+<li><strong>Chat channel.</strong> Players can send short preset messages (for example, "Your move", "Nice", "Good game") via a secondary ThingSpeak channel. Messages appear in both apps.</li>
+</ul>
+<h2>Deliverables</h2>
+<ol>
+<li>A working App Designer app plus the classes it depends on. Submitted as a folder; the app must launch on a grader's machine with only the included files.</li>
+<li>Your team's ThingSpeak channel URLs for game state (and for chat or leaderboard if used).</li>
+<li>A short design memo (2 to 3 pages) describing your game rules, your gesture mapping, your class architecture (specifically how sensor, game rules, network, and GUI are separated), and your chosen reach feature.</li>
+<li>An unlisted YouTube video (6 minutes maximum) following the format specified in the Assessment Guide (six required sections, captions, all team members on camera or in voiceover). Gameplay across two different computers must be visible during the core functionality section.</li>
+<li>Your team's self-assessment form.</li>
+<li>Two peer review forms (of other teams' videos), completed during the peer review window after the submission deadline.</li>
+</ol>
+<h2>Notes on Scope</h2>
+<ul>
+<li><strong>Play the game on paper first.</strong> Before writing any code, write the rules in full and play a round or two with real cards or dice. Games that look obvious are full of edge cases; discover them on paper, not in MATLAB.</li>
+<li><strong>Test turn passing before testing any game logic.</strong> Your first working version should be a trivial two-app demo where one phone's shake increments a counter on both apps via ThingSpeak. Once that works, wrap the real game around it.</li>
+<li><strong>ThingSpeak rate limits apply even on the paid subscription.</strong> Plan around one update per second per channel. Your game must tolerate a couple of seconds of turn latency. Do not design reaction-time or real-time-competitive games.</li>
+<li><strong>Keep the gesture thresholds tunable.</strong> During testing you will discover that your initial thresholds fire too much or too little. Build a slider or an edit field into a hidden developer panel so you can adjust without editing code.</li>
+<li><strong>Two team members must test on two machines during development.</strong> Do not leave "try it on two computers" for the demo.</li>
+</ul>
+<h2>Academic Integrity</h2>
+<p>All code must be written by your team. You may use AI assistants as learning aids consistent with prior mini-projects. Final submitted code, the memo, and the video must reflect your own work. External libraries or reference sources must be cited in the memo's appendix.</p>
+<hr/>
+<h2>Appendix A: ThingSpeak as a Message Bus</h2>
+<p>ThingSpeak is a publish-and-read platform, not a direct push one. The basic pattern for a two-player game:</p>
+<ol>
+<li>You create a single game-state channel (or a short-lived channel per game session).</li>
+<li>Each player's app holds a "last read entry ID" locally.</li>
+<li>When a player makes a move, the app writes the new move to the channel.</li>
+<li>Each app polls the channel on a timer (for example, once per second). On each poll, it asks ThingSpeak for entries newer than its last-read ID. If there are any, it updates its local game state from them and updates its last-read ID.</li>
+<li>Polling runs continuously; the game does not require a central "server" process.</li>
+</ol>
+<p>Because both apps are writing to and reading from the same channel, a shared convention about how to encode a move is important. A simple approach is a single field that carries a compact move string (for example, <code>"P1:hit"</code>, <code>"P1:stand"</code>, <code>"P2:deal"</code>). More sophisticated games use multiple fields (player ID, action, action argument) per write.</p>
+<p>For reading newer entries, consult the MathWorks documentation for <a href="https://www.mathworks.com/help/thingspeak/"><code>thingSpeakRead</code></a>; the <code>entries</code> and <code>outputFormat</code> arguments are the ones you want.</p>
+<h2>Appendix B: Recommended Architecture</h2>
+<p>A working, clean four-concern separation looks approximately like this. The specific class names are up to you.</p>
+<p><strong><code>SensorDataAnalyzer.m</code></strong> (from Mini-Project 4; extend it or leave it as-is).<br/>
+Acquires and exposes sensor data.</p>
+<p><strong><code>GestureDetector.m</code></strong> (new).<br/>
+Holds a <code>SensorDataAnalyzer</code> instance. Has a <code>detect</code> method that returns the gesture, if any, observed in the most recent sample window. Encodes your threshold logic.</p>
+<p><strong><code>GameState.m</code></strong> (new).<br/>
+Holds the full state of the game: whose turn it is, current hands or dice, scores, history. Exposes methods like <code>applyMove</code>, <code>isGameOver</code>, <code>legalMoves</code>. Has no knowledge of sensors or networking.</p>
+<p><strong><code>NetworkMessenger.m</code></strong> (new).<br/>
+Wraps your ThingSpeak read and write logic. Exposes methods like <code>sendMove</code> and <code>checkForRemoteMoves</code>. Has no knowledge of the game rules.</p>
+<p><strong><code>GameApp.mlapp</code></strong> (new).<br/>
+App Designer GUI. Owns instances of <code>GestureDetector</code>, <code>GameState</code>, and <code>NetworkMessenger</code>. Its callbacks are short: on a timer tick, ask <code>GestureDetector</code> if a gesture occurred, check <code>NetworkMessenger</code> for remote moves, apply any new moves to <code>GameState</code>, and redraw the UI from the new <code>GameState</code>.</p>
+<p>If you keep this separation, the "multi-sensor input" reach feature becomes trivial (swap out <code>GestureDetector</code>'s behavior without touching anything else). If you skip the separation, that reach feature becomes impossible without a rewrite.</p>
+<h2>Appendix C: Reusing Mini-Project 3 for Gesture Detection</h2>
+<p>Your <code>GestureDetector</code> class should reuse the pattern from Mini-Project 3 directly. Shake detection is functionally identical to MP3's rapid acceleration detection. The differences are:</p>
+<ul>
+<li>In MP3 you processed a completed data array. In Track B you process a moving window of the most recent samples.</li>
+<li>In MP3 the output was a list of timestamps above threshold. In Track B the output is a single boolean: did a gesture happen in the last window.</li>
+<li>Smoothing (Mini-Project 5's <code>movmean</code>) matters more here. A raw accelerometer reading can briefly spike above your threshold during normal handling; smoothing filters these out so your game is not constantly firing phantom shakes.</li>
+</ul>
+<p>A minimum viable detector:</p>
+<pre><code class="language-matlab">function fired = detect(obj, window)
+    % window is the latest N accelerometer samples (Nx3)
+    Ax = window(:, 1); Ay = window(:, 2); Az = window(:, 3);
+    A = sqrt(Ax.^2 + Ay.^2 + Az.^2);     % MP2 resultant
+    A = movmean(A, 5);                    % MP5 smoothing
+    fired = any(A &gt; obj.Threshold);       % MP3 thresholding
+end
+</code></pre>
+<p>Tuning <code>obj.Threshold</code> is the tradeoff you analyzed in Mini-Project 3: too low fires on nothing, too high misses real shakes. Document your chosen value in your design memo.</p>
+<h2>Appendix D: MATLAB Timer Pattern</h2>
+<p>Your app needs two concurrent activities: reading sensor data and polling ThingSpeak. Both are driven from a <code>timer</code> object in your App Designer app.</p>
+<pre><code class="language-matlab">% In startupFcn or a "Connect" button callback:
+app.MainTimer = timer( ...
+    'ExecutionMode', 'fixedRate', ...
+    'Period', 1.0, ...
+    'TimerFcn', @(~,~) app.mainLoop());
+start(app.MainTimer);
+</code></pre>
+<p>The <code>mainLoop</code> method does the following, in order:</p>
+<ol>
+<li>Asks <code>GestureDetector</code> for a gesture in the latest sensor window.</li>
+<li>If a gesture is detected and it is this player's turn, apply the corresponding move to <code>GameState</code>, send the move via <code>NetworkMessenger</code>, and redraw the UI.</li>
+<li>Asks <code>NetworkMessenger</code> for new remote moves. If any arrived, apply them to <code>GameState</code> and redraw the UI.</li>
+</ol>
+<p>If <code>mainLoop</code> takes longer than the timer <code>Period</code>, calls will queue up and the app will feel laggy. Keep the body short.</p>
+<h2>Appendix E: Mini-Project Cross-Reference</h2>
+<ul>
+<li><strong>Mini-Project 1</strong>: phone axes and what the accelerometer measures. Your gesture detector depends on understanding which axis is which. Some gestures (shake) are axis-independent; others (tilt) are not.</li>
+<li><strong>Mini-Project 2</strong>: resultant acceleration formula. Use it exactly.</li>
+<li><strong>Mini-Project 3</strong>: threshold detection, the sensitivity-and-specificity tradeoff, and custom functions with defined signatures. Your gesture detector is a direct extension.</li>
+<li><strong>Mini-Project 4</strong>: <code>SensorDataAnalyzer</code> class and OOP patterns. Your <code>GestureDetector</code>, <code>GameState</code>, and <code>NetworkMessenger</code> all follow the same class-wrapping-a-resource pattern.</li>
+<li><strong>Mini-Project 5</strong>: App Designer and separation of concerns. This project makes both mandatory, not decorative.</li>
+</ul>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>

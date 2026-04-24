@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track B: Networked Sensor Game — Grading Rubric (Instructor Use Only)</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Track B: Networked Sensor Game — Grading Rubric (Instructor Use Only)</h1>
+<p>Total: 100 points. All team members receive the same score unless a peer-reported imbalance triggers review.</p>
+<p>Reference dataset (gesture test streams and network test harness) is assumed to be available at the start of the grading window.</p>
+<hr/>
+<h2>Category 1: Submission Completeness (25 points, Automated)</h2>
+<div aria-label="Category 1: Submission Completeness (25 points, Automated)" class="table-wrapper" role="region" tabindex="0"><table><caption>Category 1: Submission Completeness (25 points, Automated)</caption>
+<thead>
+<tr>
+<th scope="col">Item</th>
+<th scope="col">Pts</th>
+<th scope="col">Automation Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code folder present, parseable by MATLAB</td>
+<td>4</td>
+<td><code>mlint</code> or equivalent syntax check; zero fatal errors</td>
+</tr>
+<tr>
+<td>Four distinct concerns in separate files: sensor acquisition, gesture detection, game state, network messenger</td>
+<td>6</td>
+<td>Regex + file count check: at least 4 <code>.m</code> files with <code>classdef</code>, each with distinct names matching one of the concerns</td>
+</tr>
+<tr>
+<td><code>.mlapp</code> file present for the game GUI</td>
+<td>3</td>
+<td>File exists with <code>.mlapp</code> extension</td>
+</tr>
+<tr>
+<td>ThingSpeak game-state channel URL reachable and contains more than 5 records</td>
+<td>4</td>
+<td>HTTP request to channel feeds endpoint</td>
+</tr>
+<tr>
+<td>YouTube video link valid, accessible, unlisted</td>
+<td>2</td>
+<td>HTTP 200 on URL</td>
+</tr>
+<tr>
+<td>Design memo PDF submitted</td>
+<td>2</td>
+<td>File exists with <code>.pdf</code> extension</td>
+</tr>
+<tr>
+<td>Self-assessment form completed</td>
+<td>2</td>
+<td>Form submission present</td>
+</tr>
+<tr>
+<td>Two peer reviews completed by this team</td>
+<td>2</td>
+<td>Peer review submissions present</td>
+</tr>
+</tbody>
+</table></div>
+<p>If any code file fails to parse, no further automated grading runs; team receives 0 on Category 2 and manual review notes the failure.</p>
+<hr/>
+<h2>Category 2: Quantitative Performance Against Reference (30 points, Automated)</h2>
+<p>Each team's code is run against two reference scenarios. Team's code must expose a function <code>testGestureDetector(referenceStream)</code> that accepts an Nx3 accelerometer matrix and returns a boolean array of the same length indicating when the detector fires. Teams that do not provide the test harness receive zero on items requiring it.</p>
+<p><strong>Gesture detection against reference streams.</strong></p>
+<div aria-label="Category 2: Quantitative Performance Against Reference (30 points, Automated)" class="table-wrapper" role="region" tabindex="0"><table><caption>Category 2: Quantitative Performance Against Reference (30 points, Automated)</caption>
+<thead>
+<tr>
+<th scope="col">Metric</th>
+<th scope="col">Pts</th>
+<th scope="col">Scoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True-positive rate on annotated shake events</td>
+<td>10</td>
+<td>10 × TPR; max 10</td>
+</tr>
+<tr>
+<td>False-positive rate during quiet periods (lower is better)</td>
+<td>8</td>
+<td>8 if FPR ≤ 0.05 per second; 6 if ≤ 0.10; 4 if ≤ 0.20; 2 if ≤ 0.40; 0 otherwise</td>
+</tr>
+<tr>
+<td>Detection latency</td>
+<td>4</td>
+<td>4 if median latency ≤ 0.5 s; 3 if ≤ 1 s; 2 if ≤ 2 s; 1 if ≤ 4 s; 0 otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Network round-trip test.</strong></p>
+<div aria-label="Category 2: Quantitative Performance Against Reference (30 points, Automated)" class="table-wrapper" role="region" tabindex="0"><table><caption>Category 2: Quantitative Performance Against Reference (30 points, Automated)</caption>
+<thead>
+<tr>
+<th scope="col">Metric</th>
+<th scope="col">Pts</th>
+<th scope="col">Scoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team's ThingSpeak channel accepts writes via their <code>NetworkMessenger.sendMove()</code></td>
+<td>4</td>
+<td>Test harness writes a tag move; channel reflects it within 10 seconds</td>
+</tr>
+<tr>
+<td>Team's <code>NetworkMessenger.checkForRemoteMoves()</code> reads new entries since last-read ID correctly</td>
+<td>4</td>
+<td>Test harness writes two sequential moves; team's reader returns both in correct order with no duplicates</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Category 3: YouTube Video (20 points, Grader-Scored)</h2>
+<p>Grader watches once at 1.25x to 1.5x, consulting peer reviews first.</p>
+<div aria-label="Category 3: YouTube Video (20 points, Grader-Scored)" class="table-wrapper" role="region" tabindex="0"><table><caption>Category 3: YouTube Video (20 points, Grader-Scored)</caption>
+<thead>
+<tr>
+<th scope="col">Item</th>
+<th scope="col">Pts</th>
+<th scope="col">Grading Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Format compliance: all six sections, within time limit, captions present</td>
+<td>3</td>
+<td>0 if more than one section missing or video over 6:30</td>
+</tr>
+<tr>
+<td>Game demonstrably works; at least one complete turn shown with sensor-driven gesture control</td>
+<td>5</td>
+<td>Must see a gesture fire and produce the expected game action</td>
+</tr>
+<tr>
+<td>Automatic turn passing shown; no manual clicking to pass turn</td>
+<td>3</td>
+<td>Explicitly verify the turn passes without a button press on either screen</td>
+</tr>
+<tr>
+<td>Remote gameplay shown on two different computers</td>
+<td>3</td>
+<td>Two distinct screens, two different physical machines, must be visible</td>
+</tr>
+<tr>
+<td>Reach feature clearly shown and working</td>
+<td>3</td>
+<td>Not just mentioned; must be visible on screen</td>
+</tr>
+<tr>
+<td>Architecture walkthrough shows four separated concerns</td>
+<td>3</td>
+<td>Open the code, point to each of the four classes, state its responsibility</td>
+</tr>
+</tbody>
+</table></div>
+<p>Peer review disagreement handling: if the grader's initial score differs from the average peer review score by more than 4 points, grader rewatches the flagged section before finalizing.</p>
+<hr/>
+<h2>Category 4: Design Memo (20 points, Grader-Scored)</h2>
+<p>Two to three pages.</p>
+<div aria-label="Category 4: Design Memo (20 points, Grader-Scored)" class="table-wrapper" role="region" tabindex="0"><table><caption>Category 4: Design Memo (20 points, Grader-Scored)</caption>
+<thead>
+<tr>
+<th scope="col">Item</th>
+<th scope="col">Pts</th>
+<th scope="col">Grading Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game rules documented with enough precision to implement</td>
+<td>3</td>
+<td>A reader unfamiliar with the game could understand the mechanics</td>
+</tr>
+<tr>
+<td>Gesture mapping documented: which gesture triggers which action</td>
+<td>3</td>
+<td>Must be a clear one-to-one mapping, not prose description</td>
+</tr>
+<tr>
+<td>Architecture diagram present showing the four concerns and their interfaces</td>
+<td>6</td>
+<td>Boxes-and-arrows or equivalent; interfaces labeled</td>
+</tr>
+<tr>
+<td>Chosen reach feature justified with design rationale</td>
+<td>3</td>
+<td>Why this feature, what it demonstrates or enables</td>
+</tr>
+<tr>
+<td>At least one limitation or tradeoff discussed honestly</td>
+<td>3</td>
+<td>For example, "our shake threshold works for phones held in hand but not in pocket"</td>
+</tr>
+<tr>
+<td>Internal consistency with video and ThingSpeak data</td>
+<td>2</td>
+<td>Stated design matches what is shown in the video</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>Category 5: Excellence, Polish, or Stretch (5 points, Grader Judgment)</h2>
+<p>Bonus category for work that stands out above typical submissions.</p>
+<ul>
+<li>Exceptional architectural clarity: code separation is so clean that reach features truly drop in without modifying other classes: up to 3 points</li>
+<li>Innovative game choice or rule design that increases project difficulty meaningfully: up to 3 points</li>
+<li>Polish: sound, animations, UI design that reflects real care: up to 3 points</li>
+<li>Notable use of the ThingSpeak platform: multi-channel design, leaderboard that updates across sessions, spectator view that actually works: up to 3 points</li>
+</ul>
+<p>Maximum 5 points total.</p>
+<hr/>
+<h2>Grader Workflow per Team</h2>
+<ol>
+<li>Open <code>grading_results.csv</code> for this team (Categories 1 and 2 populated by scripts).</li>
+<li>Read the two peer reviews for this team.</li>
+<li>Watch the video at 1.25x to 1.5x, scoring Category 3.</li>
+<li>Read the memo, scoring Category 4.</li>
+<li>Award Category 5 points if warranted.</li>
+<li>Enter all scores in the master spreadsheet.</li>
+<li>Compare team's self-assessment to your total. If divergence is greater than 10 points, flag for discussion.</li>
+</ol>
+<p>Target time per team: 15 minutes active grading (Categories 3 through 5) plus 2 minutes data entry.</p>
+<hr/>
+<h2>Reference Dataset Specification (For Instructor Use During Dataset Preparation)</h2>
+<p>The gesture test streams are recorded once, before the project assessment window opens. Contents:</p>
+<ul>
+<li><code>gesture_stream_1.mat</code>: 90 seconds of accelerometer data with 12 deliberate shake events at annotated timestamps, plus quiet periods.</li>
+<li><code>gesture_stream_2.mat</code>: 60 seconds with mixed motion (typing nearby, walking, phone handling without intentional shakes) containing zero intentional shake events. Used to measure false-positive rate.</li>
+<li><code>gesture_truth.json</code>: timestamps of all intentional shake events in the first stream.</li>
+</ul>
+<p>Network test harness:</p>
+<ul>
+<li>A MATLAB script that, given a team's <code>NetworkMessenger</code> class and their ThingSpeak channel URL, writes two tag moves and verifies the team's reader retrieves them in the correct order.</li>
+</ul>
+<p>The grading script harness produces the auto-grade row for Category 2 from these resources.</p>
+<hr/>
+<h2>Notes for Calibration Meeting</h2>
+<p>Before TAs begin grading, review three videos together (one expected-strong, one expected-average, one expected-weak) and align on Category 3 and Category 4 scoring. Particular attention:</p>
+<ul>
+<li>What counts as "automatic turn passing"? The other player's screen must update without any user input on either machine. Debug prints or console output do not count.</li>
+<li>What counts as "four separated concerns" in Category 3? Four distinct class files with a clear single responsibility each. A single class that contains both network code and game state logic fails this item regardless of naming.</li>
+<li>Category 5 should be used sparingly. Default is 0. Award only for work clearly above typical submissions.</li>
+</ul>
+<hr/>
+<h2>Common Failure Modes to Watch For</h2>
+<ul>
+<li><strong>"Demo only on one computer."</strong> Some teams will pass a game state channel locally (two MATLAB sessions on the same machine) and stage a video that suggests two machines. Check the architecture walkthrough for network code that actually uses ThingSpeak; check the ThingSpeak channel history for round-trip writes from two distinct clients.</li>
+<li><strong>Gesture-detector false-positive exploitation.</strong> A team sets the shake threshold so low that the game advances on any motion, demonstrating reliable triggering in the video but with a high false-positive rate on the reference stream. Category 2 penalty handles this.</li>
+<li><strong>Mixed-concern class that does everything.</strong> A single class named "GameApp" that contains sensor reading, threshold logic, game rules, and ThingSpeak calls. Category 1 and Category 3 both penalize; total impact is meaningful.</li>
+<li><strong>Stub reach feature.</strong> A reach feature described in the memo but not actually working. Video review catches this; Category 3 and Category 4 both lose points.</li>
+</ul>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>

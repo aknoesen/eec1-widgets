@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Project: Assessment Guide</title>
+  <style>
+    /* ── Skip navigation (ADA requirement) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      padding: 8px 16px;
+      background: #005a9c;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ── Base typography ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ── Headings ── */
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 3px solid #005a9c;
+      padding-bottom: 0.4rem;
+      color: #003366;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2.25rem;
+      color: #003366;
+      border-left: 5px solid #005a9c;
+      padding-left: 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #003366;
+    }
+
+    /* ── Blockquote (callout boxes) ── */
+    blockquote {
+      border-left: 4px solid #6699cc;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #f0f5ff;
+      color: #1a1a1a;
+    }
+
+    /* ── Inline code ── */
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      background: #f4f4f4;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: #1a1a1a;
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
+    /* ── Images ── */
+    img {
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ── Horizontal rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 1.5rem 0;
+    }
+
+    /* ── Responsive table wrapper ── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      background: #003366;
+      color: #ffffff;
+    }
+    th {
+      background: #005a9c;
+      color: #ffffff;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7f9ff;
+    }
+    tr:hover td {
+      background: #eef3ff;
+    }
+
+    /* ── Strong / emphasis ── */
+    strong {
+      color: #8b0000;
+    }
+    em {
+      color: #555555;
+    }
+
+    /* ── Focus visible for keyboard navigation ── */
+    a:focus, button:focus, [tabindex]:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" role="main">
+    <h1>Final Project: Assessment Guide</h1>
+<p>This document explains how your final project is assessed, what you submit, the YouTube video requirements, the peer review process, and the self-assessment form. It applies to both Track A (Kemper Hall Tracker) and Track B (Networked Sensor-Controlled Game).</p>
+<h2>What You Submit</h2>
+<p>Every team submits six items:</p>
+<ol>
+<li><strong>Code folder.</strong> All <code>.m</code> and <code>.mlapp</code> files for your project, zipped. The folder must launch and run on a grader's machine using only the files you include.</li>
+<li><strong>ThingSpeak channel URL.</strong> Read-access URL to your project's channel. The grading script confirms the channel is reachable and contains real data.</li>
+<li><strong>PDF deliverable.</strong> For Track A, the Error Characterization Report. For Track B, the Design Memo. Two to three pages, with at least one figure for Track A.</li>
+<li><strong>YouTube video, unlisted.</strong> Six minutes maximum, following the format below. Submit the URL.</li>
+<li><strong>Self-assessment form.</strong> Your team's own scoring on the assessment rubric (form provided; see below).</li>
+<li><strong>Two peer review forms.</strong> After you submit items 1 through 5, your team is assigned two other teams' videos to review. You complete the peer review rubric (below) for each assigned team.</li>
+</ol>
+<p>Submissions that are incomplete at the deadline (missing code, missing video, missing ThingSpeak URL, missing peer reviews) lose fixed points before human grading begins. Get all six in.</p>
+<h2>Timeline</h2>
+<ul>
+<li><strong>Day 0 (submission deadline):</strong> items 1 through 5 due by 11:59 PM.</li>
+<li><strong>Days 1 to 3:</strong> peer review window. Each team receives two assigned videos and completes a peer review for each.</li>
+<li><strong>Days 4 to 7:</strong> grader review.</li>
+<li><strong>Day 8:</strong> grades posted; peer review feedback shared with each reviewed team.</li>
+</ul>
+<h2>YouTube Video Requirements</h2>
+<p>Videos are the primary demonstration artifact. Because graders watch many videos per grading window, the format is strict. Teams that skip required sections or exceed the time limit lose fixed points.</p>
+<p><strong>Format rules.</strong></p>
+<ul>
+<li>Unlisted YouTube video.</li>
+<li>Six minutes maximum (hard limit).</li>
+<li>Captions required; YouTube auto-captions are acceptable.</li>
+<li>A visible on-screen timestamp or section label at each section transition.</li>
+<li>All three team members must appear on camera or in voiceover at some point in the video.</li>
+</ul>
+<p><strong>Required sections, in order.</strong></p>
+<ol>
+<li><strong>Introduction (15 seconds).</strong> Team members' names, the track you chose (A or B), and the title of your project.</li>
+<li><strong>Core functionality demo (3 minutes).</strong> Show the app running end to end. For Track A: start a walk, cross the GPS-to-indoor boundary, show the regime switch, show floor detection, stop the walk, upload to ThingSpeak, load a past walk. For Track B: start the game, show sensor-driven gesture control, complete at least one full turn with automatic turn passing, show the ThingSpeak channel reflecting the move.</li>
+<li><strong>Reach feature demo (1 minute).</strong> Show your chosen reach feature working.</li>
+<li><strong>Architecture walkthrough (1 minute).</strong> Open your code folder. Point to each class file and explain in one sentence what that class is responsible for. Demonstrate that no class contains logic that belongs in another.</li>
+<li><strong>Quantitative results summary (30 to 45 seconds).</strong> State your measured numbers. For Track A: your return-to-start error, your floor detection accuracy, where your GPS handoff occurred. For Track B: your gesture detection true-positive and false-positive rates, your turn latency across ThingSpeak.</li>
+<li><strong>One lesson learned (15 seconds).</strong> One concrete thing your team learned that you did not know before this project.</li>
+</ol>
+<h2>Rubric Summary (100 points)</h2>
+<p>Your final grade aggregates five categories. Graders use a detailed rubric tied to the reference datasets; you see the high-level structure so you know what to prioritize.</p>
+<div aria-label="Rubric Summary (100 points)" class="table-wrapper" role="region" tabindex="0"><table><caption>Rubric Summary (100 points)</caption>
+<thead>
+<tr>
+<th scope="col">Category</th>
+<th scope="col">Points</th>
+<th scope="col">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submission completeness and required artifacts</td>
+<td>25</td>
+<td>Automated pre-grade</td>
+</tr>
+<tr>
+<td>Quantitative performance against reference data</td>
+<td>30</td>
+<td>Automated dynamic test</td>
+</tr>
+<tr>
+<td>YouTube video</td>
+<td>20</td>
+<td>Grader, with peer review input</td>
+</tr>
+<tr>
+<td>PDF report or memo</td>
+<td>20</td>
+<td>Grader</td>
+</tr>
+<tr>
+<td>Excellence, polish, or stretch challenge</td>
+<td>5</td>
+<td>Grader judgment</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>A note on the performance category.</strong> Graders score the quality of your measurement and analysis, not the magnitude of your numbers. A small, well-characterized error earns more than a large, poorly-characterized one. Reporting "we could not detect the elevator reliably; our true-positive rate was 60 percent" with a mechanistic explanation of why earns close to full points in this category. Reporting "our system worked perfectly" with no numbers earns few points regardless of what your system actually did.</p>
+<h2>Self-Assessment Form</h2>
+<p>Your team completes this form and submits it with item 5. Score yourselves honestly; graders compare your self-assessment to their own scoring, and large divergences trigger a conversation.</p>
+<p>Rate each item 0 (not present), 1 (attempted), 2 (working), or 3 (working well and clearly demonstrated).</p>
+<ol>
+<li>Core functionality complete and demonstrated in the video: ___</li>
+<li>Reach feature complete and demonstrated in the video: ___</li>
+<li>Separation of concerns: the concerns specified by your track (see your track's Core Functionality requirements) are kept in distinct classes: ___</li>
+<li>Quantitative results reported with honest numbers in the PDF and video: ___</li>
+<li>Engineering reasoning in the PDF: mechanism explained, not just symptom described: ___</li>
+<li>Code runs cleanly: launches without errors, completes a full workflow: ___</li>
+</ol>
+<p><strong>One paragraph reflection (team-written, 150 words maximum).</strong> What is the single biggest engineering tradeoff your team made on this project, and why did you make it the way you did?</p>
+<h2>Peer Review Process</h2>
+<p>After the submission deadline, each team is assigned two other teams' videos to review. Reviews are not used to grade you directly; they are used as signal to graders and as formative feedback to the reviewed teams. Both reviews must be completed within the peer review window to receive full credit on submission completeness.</p>
+<p><strong>Rules.</strong></p>
+<ul>
+<li>You review teams in the same track you chose (A teams review A teams, B teams review B teams).</li>
+<li>You watch the entire video before filling out the form.</li>
+<li>You are honest. Inflated reviews help no one.</li>
+<li>Your reviews are shared with the reviewed team (with your team name attached) after grading is complete.</li>
+</ul>
+<h2>Peer Review Rubric</h2>
+<p>Fill out this rubric for each of the two videos you are assigned. Target time per review: 15 to 20 minutes including watching the video.</p>
+<p><strong>Part 1: Numeric Ratings</strong> (score each 0 to 3: 0 = absent, 1 = weak, 2 = adequate, 3 = strong)</p>
+<ol>
+<li><strong>Video format.</strong> All six required sections present, in order, within the time limit, with clear section transitions: ___</li>
+<li><strong>Core functionality.</strong> The app demonstrably works end to end, as shown on screen: ___</li>
+<li><strong>Reach feature.</strong> The chosen reach feature is clearly shown working and meaningfully extends the project: ___</li>
+<li><strong>Architecture walkthrough.</strong> The class separation is shown and explained; each class has a clear single responsibility: ___</li>
+<li><strong>Quantitative results.</strong> Numbers are stated clearly and appear consistent with what the video shows: ___</li>
+</ol>
+<p><strong>Part 2: Short written feedback</strong> (1 to 2 sentences each; specific, not generic)</p>
+<ol>
+<li>
+<p><strong>One specific thing the team did well.</strong> Example: "Your floor-plan image swap on regime change is smooth and the floor label updates correctly." Avoid: "Great job!"</p>
+</li>
+<li>
+<p><strong>One specific thing the team could improve.</strong> Example: "The shake threshold appears too low; during the architecture walkthrough several shakes fired while the phone was stationary." Avoid: "Could be better."</p>
+</li>
+<li>
+<p><strong>One question you have for the reviewed team.</strong> Something you would genuinely want to ask them about their design choices.</p>
+</li>
+</ol>
+<p>Submit one completed form per reviewed team.</p>
+<h2>How Graders Use Peer Reviews</h2>
+<p>Graders read all peer reviews for a team before scoring the video. If both peer reviewers agree that the video shows the core functionality working clearly, the grader confirms and moves on. If peer reviewers disagree or flag problems (for example, "the architecture walkthrough was missing"), the grader watches more carefully and investigates. This is why your honest peer review matters: it saves grader time and catches edge cases faster than a single grader can.</p>
+<p>Peer reviews do not directly change your score. They inform the grader's judgment.</p>
+<h2>Reference Data</h2>
+<p>Both tracks are scored in part on how your code performs against a standardized reference dataset. This means:</p>
+<ul>
+<li>
+<p><strong>Track A:</strong> instructor records one "golden walk" through the Kemper Evaluation Route, with ground-truth annotations of building entry time, floor transitions, elevator start and stop, and exit time. Your code runs against this reference; your floor-detection accuracy and event-detection rates are computed automatically against ground truth.</p>
+</li>
+<li>
+<p><strong>Track B:</strong> instructor records short accelerometer streams containing known shake events at known timestamps and quiet periods in between. Your <code>GestureDetector</code> runs against these; true-positive rate, false-positive rate, and detection latency are computed automatically.</p>
+</li>
+</ul>
+<p>Because all teams are scored against the same reference, results are directly comparable.</p>
+<h2>Questions</h2>
+<p>Questions about the assessment process, video format, or peer review rubric should be posted on the course discussion forum by the start of week 3 of the project. The assessment process is fixed once your video is submitted; ask early.</p>
+<hr/>
+<p><em>Version 1.0</em></p>
+  </main>
+</body>
+</html>
