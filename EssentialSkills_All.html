@@ -81,12 +81,31 @@
       color: #1a1a1a;
     }
 
+    /* ── Code blocks ── */
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #005a9c;
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.45;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.88em;
+      color: #1a1a1a;
+    }
+
     /* ── Images ── */
     img {
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
       display: block;
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     /* ── Horizontal rule ── */
@@ -152,6 +171,16 @@
       outline-offset: 2px;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -267,11 +296,11 @@
 <p><em>Object-oriented programming: classes, properties, methods, and inheritance.</em></p>
 <hr/>
 <p><strong>Expect to think harder here:</strong><br/>
-- Class Definition and Basic Constructor — <code>classdef</code> file, constructor that initializes properties from inputs; <em>new file structure and syntax to learn together</em><br/>
-- Declaring and Using Properties — define properties, <code>Constant</code>/<code>Dependent</code> attributes; <em>basic declarations are easy; attributes and validation add complexity</em><br/>
-- Instance and Static Methods — operate on object data vs callable without an object; <em>knowing when to use static requires design judgment</em><br/>
-- Simple Operator Overloading — overload <code>plus</code>, <code>eq</code>, etc. for intuitive object operations; <em>mechanical once the pattern is clear, but consistent semantics need testing</em><br/>
-- Arrays of Objects and Indexing — create, index, and concatenate object arrays; <em>handle vs value behavior can produce surprising results</em></p>
+1) - Class Definition and Basic Constructor — <code>classdef</code> file, constructor that initializes properties from inputs; <em>new file structure and syntax to learn together</em><br/>
+2) - Declaring and Using Properties — define properties, <code>Constant</code>/<code>Dependent</code> attributes; <em>basic declarations are easy; attributes and validation add complexity</em><br/>
+3) - Instance and Static Methods — operate on object data vs callable without an object; <em>knowing when to use static requires design judgment</em>at<br/>
+4) - Simple Operator Overloading — overload <code>plus</code>, <code>eq</code>, etc. for intuitive object operations; <em>mechanical once the ptern is clear, but consistent semantics need testing</em><br/>
+5) Arrays of Objects and Indexing — create, index, and concatenate object arrays; <em>handle vs value behavior can produce surprising results</em></p>
 <p><strong>Conceptually demanding — start early:</strong><br/>
 - Access Control for Encapsulation — <code>public</code>, <code>protected</code>, <code>private</code> attributes; <em>visibility design requires thinking about API boundaries up front</em><br/>
 - Getters and Setters (Property Accessors) — <code>set</code>/<code>get</code> methods or <code>Dependent</code> properties; <em>accessor semantics differ between value and handle classes in subtle ways</em><br/>
@@ -376,41 +405,12 @@
 - Robustness and Edge-Case Handling — empty structs, missing or heterogeneous fields, defaults, reliable comparison with <code>isequal</code>; <em>handling missing or inconsistent fields defensively is harder than it looks</em></p>
 <hr/>
 <h2>Lecture 13 — Essential Skills</h2>
-<p><em>Visualization: 2-D/3-D plots, images, and surfaces.</em></p>
+<p><em>Workshop:  Advanced GUI for Project.</em></p>
 <hr/>
-<p><strong>Build fluency with these:</strong><br/>
-- Advanced 2-D Line Plots and Multi-Series Control — <code>plot</code> with line style/marker/color, legends, <code>tiledlayout</code>/<code>subplot</code><br/>
-- Image I/O and Metadata — <code>imread</code>/<code>imwrite</code>, query size/class/alpha, handle format differences</p>
-<p><strong>Expect to think harder here:</strong><br/>
-- Visualizing Higher-Dimensional Data — slice, project, or collapse dimensions; present across multiple axes or animated frames; <em>requires thinking about dimensionality reduction before reaching for a function</em><br/>
-- True-Color (RGB) Image Handling — <code>imread</code>/<code>image</code>/<code>imshow</code>, manipulate color channels; <em>datatype management and channel indexing add complexity</em><br/>
-- Indexed Images and Colormaps — indexed representation + colormap, <code>imagesc</code>/<code>colormap</code>; <em>new concept but follows clear APIs once understood</em><br/>
-- Grayscale and Intensity Image Processing — display/process single-channel images, contrast adjustment, RGB conversion; <em>perceptual considerations add nuance beyond the basic API</em><br/>
-- 3-D Line Plots and Trajectories — <code>plot3</code>, <code>view</code>, markers/lighting; <em>meaningful 3D composition and interpretation require practice</em><br/>
-- Regular Grid Evaluation and Surface Plots — <code>meshgrid</code>/<code>ndgrid</code>, <code>surf</code>/<code>mesh</code>/<code>contour</code>; <em>axis scaling and CData mapping need careful attention</em><br/>
-- Scatter Plots and Multivariate Glyph Encoding — <code>scatter</code>/<code>scatter3</code> with color/size/alpha; <em>the API is accessible; designing a clear multivariate encoding is a judgment call</em></p>
-<p><strong>Conceptually demanding — start early:</strong></p>
-<ul>
-<li>Surface Shading, Lighting, and Rendering Options — <code>shading</code>, <code>light</code> objects, CData settings; <em>settings interact subtly; producing effective visuals requires experience</em></li>
-</ul>
 <hr/>
 <h2>Lecture 14 — Essential Skills</h2>
-<p><em>Cell arrays, categorical arrays, and tables.</em></p>
+<p><em>Workshop:  ThingSpeak for Project.</em></p>
 <hr/>
-<p><strong>Build fluency with these:</strong><br/>
-- Cell Array Construction — <code>{}</code> and <code>cell</code>, preallocate for heterogeneous types/sizes<br/>
-- Table Construction and Basic Manipulation — build from arrays/cells/variables, name columns, add/remove rows and columns</p>
-<p><strong>Expect to think harder here:</strong><br/>
-- Indexing Cells: Contents vs Containers — <code>()</code> for cell slices, <code>{}</code> for contents; <em><code>()</code> vs <code>{}</code> is the most common cell array mistake</em><br/>
-- Dynamic and Programmatic Cell Access — <code>C{idx}</code>, comma-separated list unpacking; <em>output shapes and compatibility require attention</em><br/>
-- Cell-Array Utilities and Conversions — <code>cellfun</code>, <code>cell2mat</code>, <code>num2cell</code>, <code>mat2cell</code>; <em>element types and sizes must be compatible or errors are cryptic</em><br/>
-- Passing Cells To/From Functions — <code>varargin</code>/<code>varargout</code>, comma-separated lists; <em>API design with variable numbers of inputs/outputs needs careful thought</em><br/>
-- Categorical Arrays: Creation and Inspection — <code>categorical</code>, category levels, ordered vs unordered; <em>ordered vs unordered semantics affect comparisons and grouping in non-obvious ways</em><br/>
-- Extracting Data From Tables — dot notation, <code>()</code>, <code>{}</code>; <em>each produces a different output type — use the right one for downstream operations</em></p>
-<p><strong>Conceptually demanding — start early:</strong><br/>
-- Managing Categories: Reorder, Merge, Missing — rename/add/remove/reorder categories, handle undefined values; <em>subtle category management errors silently corrupt analysis</em><br/>
-- Grouping, Aggregation, and Joins With Tables — <code>groupsummary</code>, <code>rowfun</code>, <code>join</code>/<code>innerjoin</code>/<code>outerjoin</code>; <em>relational thinking and handling of keys and missing values are new skills for most students</em><br/>
-- Import/Export Workflows and Choosing Containers — <code>readtable</code>/<code>writetable</code>/<code>datastore</code>, choosing table vs cell vs categorical; <em>the right container depends on the whole analysis pipeline, not just the immediate step</em></p>
 <hr/>
 <h2>Lecture 15 — Essential Skills</h2>
 <p><em>Functions in depth: scope, handles, recursion, and robust design.</em></p>
@@ -431,22 +431,29 @@
 - Defensive Function Design and Error Handling — validate inputs, <code>assert</code>/<code>error</code>/<code>warning</code>, comprehensive edge-case tests; <em>writing robust, well-tested functions is a discipline that takes sustained practice</em></p>
 <hr/>
 <h2>Lecture 16 — Essential Skills</h2>
-<p><em>Vectors and matrices: linear algebra foundations.</em></p>
+<p><strong>1. Visualization: 2-D/3-D plots, images, and surfaces.</strong></p>
+<hr/>
+<p><strong>Build fluency with these:</strong><br/>
+- Advanced 2-D Line Plots and Multi-Series Control — <code>plot</code> with line style/marker/color, legends, <code>tiledlayout</code>/<code>subplot</code><br/>
+- Image I/O and Metadata — <code>imread</code>/<code>imwrite</code>, query size/class/alpha, handle format differences</p>
+<p><strong>Expect to think harder here:</strong><br/>
+- True-Color (RGB) Image Handling — <code>imread</code>/<code>image</code>/<code>imshow</code>, manipulate color channels; <em>datatype management and channel indexing add complexity</em><br/>
+- Indexed Images and Colormaps — indexed representation + colormap, <code>imagesc</code>/<code>colormap</code>; <em>new concept but follows clear APIs once understood</em><br/>
+- Grayscale and Intensity Image Processing — display/process single-channel images, contrast adjustment, RGB conversion; <em>perceptual considerations add nuance beyond the basic API</em><br/>
+- 3-D Line Plots and Trajectories — <code>plot3</code>, <code>view</code>, markers/lighting; <em>meaningful 3D composition and interpretation require practice</em><br/>
+- Regular Grid Evaluation and Surface Plots — <code>meshgrid</code>/<code>ndgrid</code>, <code>surf</code>/<code>mesh</code>/<code>contour</code>; <em>axis scaling and CData mapping need careful attention</em><br/>
+- Scatter Plots  — <code>scatter</code> with color/size/alpha; *the API is accessible; </p>
+<hr/>
+<p><strong>2. Vectors and matrices: linear algebra foundations and solving square linear set of equations.</strong></p>
 <hr/>
 <p><strong>Build fluency with these:</strong><br/>
 - Row and Column Vectors, Orientation, and Sizes — construct, transpose, <code>size</code>/<code>length</code>/<code>isempty</code><br/>
-- Vector Arithmetic and Elementwise Operations — <code>+</code>, <code>-</code>, scalar scaling, <code>.*</code>, <code>./</code>, <code>.^</code>; scalar broadcasting<br/>
-- Vector Norms and Measures — <code>norm(v,1)</code>, <code>norm(v,2)</code>, <code>norm(v,Inf)</code> for magnitude and error comparison</p>
+- Vector Arithmetic and Elementwise Operations — <code>+</code>, <code>-</code>, scalar scaling, <code>.*</code>, <code>./</code>, <code>.^</code>; scalar broadcasting</p>
 <p><strong>Expect to think harder here:</strong><br/>
 - Inner (Dot) and Outer Products — <code>dot</code>, matrix multiplication for dot product, <code>v * w.'</code> for outer product; <em>shapes and geometric interpretation (projections, rank-1 matrices) need attention</em><br/>
 - Matrix Creation, Shape, and Indexing — <code>zeros</code>/<code>ones</code>/<code>eye</code>/<code>diag</code>, linear vs subscript indexing; <em>indexing subtleties are a common source of errors</em><br/>
-- Transpose vs Conjugate Transpose — <code>.'</code> vs <code>'</code>; <em>trivial for real data; critical to get right for complex data</em><br/>
 - Matrix Multiplication and Elementwise Matrix Ops — <code>*</code> vs <code>.*</code>; ensure dimension compatibility; <em>the single most common matrix operation error in MATLAB</em><br/>
-- Special Square Matrices and Basic Properties — <code>eye</code>/<code>diag</code>, symmetry tests, <code>det</code>/<code>trace</code>, singular vs nonsingular; <em>numerical near-singularity adds nuance beyond the API</em><br/>
-- Triangular Systems and Forward/Backward Substitution — identify lower/upper triangular, solve with backslash; <em>conceptually clear, but correct indexing for manual substitution takes care</em></p>
-<p><strong>Conceptually demanding — start early:</strong><br/>
-- Elementary Row Operations and Elementary Matrices — represent row operations as matrix multiplications and observe effects on determinants; <em>connecting operations to matrices requires linear-algebra insight that takes time to develop</em><br/>
-- Solving Linear Systems with Backslash — <code>A\b</code> for square, overdetermined, and underdetermined systems; avoid explicit inverses; <em>the call is simple; interpreting behavior for ill-conditioned, singular, or rectangular systems is not</em></p>
+- Solving Linear Systems with Backslash — <code>A\b</code> for square, systems; avoid explicit inverses; <em>the call is simple; interpreting behavior for ill-conditioned, singular, or rectangular systems is not</em></p>
   </main>
 </body>
 </html>
