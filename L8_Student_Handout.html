@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ENG 6 Lecture 8 — Dead Reckoning Activity Handout</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body { font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto;
+padding: 0 1.5rem; color: #111; font-size: 17px; line-height: 1.65; }
+h1 { color: #111; border-bottom: 4px solid #C99700; padding-bottom: 0.4rem; font-size: 1.6em; }
+h2 { color: #111; border-left: 6px solid #C99700; background: #fffbe6;
+padding: 0.5rem 0.8rem; margin-top: 2.5rem; font-size: 1.2em; }
+h3 { color: #111; border-left: 3px solid #888; background: #f4f4f4;
+padding: 0.3rem 0.6rem; margin-top: 1.5rem; font-size: 1.05em; }
+blockquote { background: #e8f4ff; color: #111; border-left: 4px solid #4477aa;
+border-radius: 0 4px 4px 0; padding: 0.6rem 1rem; margin: 0.8rem 0;
+font-style: italic; }
+blockquote p { margin: 0; }
+pre { background: #f0f0f0; color: #111; padding: 0.8rem 1rem; border-radius: 4px;
+border-left: 4px solid #bbb; overflow-x: auto; font-size: 0.88rem; line-height: 1.5; }
+code { background: #efefef; padding: 0.1em 0.3em; border-radius: 3px;
+font-size: 0.9em; color: #333; }
+pre code { background: none; padding: 0; color: #111; font-size: 1em; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th { background: #444; color: white; padding: 0.4rem 0.8rem; text-align: left; }
+td { padding: 0.35rem 0.8rem; border-bottom: 1px solid #ddd; }
+tr:nth-child(even) td { background: #f8f8f8; }
+strong { color: #111; }
+hr { border: none; border-top: 2px solid #ddd; margin: 2rem 0; }
+img { max-width: 560px; width: 100%; border: 1px solid #ccc; border-radius: 4px;
+display: block; margin: 0.6rem 0 1.2rem 0; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+header#title-block-header { display: none; }</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ENG 6 Lecture 8 — Dead Reckoning Activity Handout</h1>
+</header>
+<h1 id="eng-6-lecture-8-team-activity-handout">ENG 6 — Lecture 8 Team
+Activity Handout</h1>
+<h2 id="applied-mathematics-integration-drift-and-curve-fitting">Applied
+Mathematics: Integration, Drift, and Curve Fitting</h2>
+<p><strong>Note on format:</strong> Both activities today are
+construction/verification tasks. You are writing and running MATLAB code
+and checking your results against known analytical answers. There is no
+prediction table — instead, the verification rule replaces prediction:
+<strong>write your expected result before running, then
+check.</strong></p>
+<hr />
+<hr />
+<h1 id="activity-1-dead-reckoning-on-synthetic-data">Activity 1: Dead
+Reckoning on Synthetic Data</h1>
+<p><strong>Teams:</strong> 3–4 students | <strong>Working time:</strong>
+18 min | <strong>Debrief:</strong> 7 min</p>
+<p><strong>Goal:</strong> Perform the two-stage integration that MP4
+requires — but on a signal with a known analytical answer, so you can
+verify your result before applying it to real sensor data.</p>
+<hr />
+<h2 id="instructions">Instructions</h2>
+<ol type="1">
+<li>One team member opens MATLAB Online and enters the setup code below.
+Everyone else follows along on their own screen or watches.</li>
+<li>For each task: <strong>write your expected answer in the space
+provided before running the code.</strong> The expected answer is the
+analytical (pen-and-paper) result.</li>
+<li>Verify: compare your MATLAB output to your expected answer. If they
+differ by more than 0.01, you have a bug — find it before moving to the
+next task.</li>
+<li>Do not move to Activity 2 until your team has Task 3 working and
+verified.</li>
+</ol>
+<hr />
+<h2 id="setup-code">Setup Code</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">5</span><span class="op">;</span>               <span class="co">% time vector: 0 to 5 seconds at 100 Hz</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">ones</span>(<span class="va">size</span>(<span class="va">t</span>))<span class="op">;</span>        <span class="co">% constant acceleration: 2 m/s^2 throughout</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">a</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Acceleration (m/s^2)&#39;</span>)</span></code></pre></div>
+<hr />
+<h2 id="task-1-integrate-acceleration-to-get-velocity">Task 1 —
+Integrate Acceleration to Get Velocity</h2>
+<p>Write one line of MATLAB that computes velocity <code>v</code> from
+acceleration <code>a</code> using <code>cumtrapz</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Your code here:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">v</span> <span class="op">=</span> ____________________________<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">v</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Velocity (m/s)&#39;</span>)</span></code></pre></div>
+<p><strong>Expected answer (analytical):</strong> For constant a = 2
+m/s², starting from rest: v(t) = _________</p>
+<p>What should <code>v(end)</code> equal? (t_end = 5 s) → Expected:
+__________</p>
+<p> </p>
+<p> </p>
+<p><strong>Actual <code>v(end)</code> from MATLAB:</strong>
+__________</p>
+<p>Does it match (within 0.01)? Circle: <strong>YES / NO</strong></p>
+<p>Plot v vs. t. Does the shape match your expectation? Describe:
+__________</p>
+<p> </p>
+<hr />
+<h2 id="task-2-integrate-velocity-to-get-displacement">Task 2 —
+Integrate Velocity to Get Displacement</h2>
+<p>Write one line of MATLAB that computes displacement <code>d</code>
+from velocity <code>v</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Your code here:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">d</span> <span class="op">=</span> ____________________________<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Displacement (m)&#39;</span>)</span></code></pre></div>
+<p><strong>Expected answer (analytical):</strong> For constant a = 2
+m/s² starting from rest: d(t) = _________</p>
+<p>What should <code>d(end)</code> equal? (t_end = 5 s) → Expected:
+__________</p>
+<p> </p>
+<p><strong>Actual <code>d(end)</code> from MATLAB:</strong>
+__________</p>
+<p>Does it match (within 0.1 m)? Circle: <strong>YES / NO</strong></p>
+<p>What does the displacement plot look like (line, parabola, something
+else)? __________</p>
+<p> </p>
+<hr />
+<h2 id="task-3-verify-total-displacement-with-trapz">Task 3 — Verify
+Total Displacement with <code>trapz</code></h2>
+<p>Use <code>trapz</code> (not <code>cumtrapz</code>) to compute total
+displacement from the velocity array.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">d_total</span> <span class="op">=</span> ____________________________<span class="op">;</span></span></code></pre></div>
+<p>Expected <code>d_total</code>: __________</p>
+<p>Actual <code>d_total</code>: __________</p>
+<p><strong>Comparison question:</strong> What is the relationship
+between <code>d_total</code> (from <code>trapz</code>) and
+<code>d(end)</code> (the last element of your <code>cumtrapz</code>
+result)?</p>
+<p> </p>
+<p> </p>
+<hr />
+<h2 id="task-4-what-does-diff-return">Task 4 — What Does
+<code>diff</code> Return?</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">jerk</span> <span class="op">=</span> <span class="va">diff</span>(<span class="va">a</span>) <span class="op">./</span> <span class="va">diff</span>(<span class="va">t</span>)<span class="op">;</span></span></code></pre></div>
+<p>Before running: How long do you expect <code>jerk</code> to be?
+(Hint: <code>length(a)</code> = 501)</p>
+<p>Expected length: __________ Actual length: __________</p>
+<p>What is the physical meaning of <code>jerk</code> for this signal (a
+= constant)? What value do you expect?</p>
+<p> </p>
+<p> </p>
+<p><strong>Watch out:</strong> If you try to <code>plot(t, jerk)</code>,
+what error do you get, and why?</p>
+<p> </p>
+<hr />
+<h2 id="extension-if-your-team-finishes-early">Extension (if your team
+finishes early)</h2>
+<p>Fit a line to the displacement array <code>d</code> using
+<code>polyfit</code>, and plot the fitted line over the data.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">p</span> <span class="op">=</span> <span class="va">polyfit</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d</span><span class="op">,</span> ___)<span class="op">;</span>          <span class="co">% what degree polynomial should fit d exactly?</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">d_fit</span> <span class="op">=</span> <span class="va">polyval</span>(<span class="va">p</span><span class="op">,</span> <span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d</span><span class="op">,</span> <span class="ss">&#39;b.&#39;</span><span class="op">,</span> <span class="va">t</span><span class="op">,</span> <span class="va">d_fit</span><span class="op">,</span> <span class="ss">&#39;r-&#39;</span>)</span></code></pre></div>
+<p>What degree polynomial gives a perfect fit to the parabolic
+displacement? Why?</p>
+<p> </p>
+<hr />
+<h2 id="debrief-questions">Debrief Questions</h2>
+<p>Write answers before the class debrief. You will not be asked to
+share — but your reasoning matters.</p>
+<ol type="1">
+<li><code>cumtrapz</code> returns an array; <code>trapz</code> returns a
+scalar. In your own words, when would you choose each?</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="2" type="1">
+<li>Your team computed velocity from acceleration. What does the
+<em>initial condition</em> (starting velocity) affect in the result?
+What did <code>cumtrapz</code> assume?</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="3" type="1">
+<li>Connect to MP4: In <code>SensorDataAnalyzer.integrate()</code>, you
+will integrate phone acceleration to get displacement. Which function —
+<code>trapz</code> or <code>cumtrapz</code> — do you need, and why?</li>
+</ol>
+<p> </p>
+<p> </p>
+<hr />
+<h2 id="key-concepts-keep-this-as-a-study-reference">Key Concepts (keep
+this as a study reference)</h2>
+<ul>
+<li><strong><code>cumtrapz(t, y)</code></strong> returns an array — the
+running integral at every time step. Use when you need to plot or
+further process the integral.</li>
+<li><strong><code>trapz(t, y)</code></strong> returns a scalar — the
+total area. Use when you need one number.</li>
+<li>The last element of <code>cumtrapz(t,y)</code> equals
+<code>trapz(t,y)</code> — both give the total, but only
+<code>cumtrapz</code> gives the trajectory.</li>
+<li>Numerical integration is approximate. Error is smaller with more
+samples (shorter Δt).</li>
+<li>For dead reckoning: integrate acceleration → velocity, integrate
+velocity → displacement. Two <code>cumtrapz</code> calls.</li>
+<li><code>diff(y)</code> returns an array of length N−1. Always account
+for this when plotting.</li>
+</ul>
+<hr />
+<p><em>ENG 6 Spring 2026 | Lecture 8 | Dead Reckoning — Synthetic
+Data</em></p>
+<h1 id="activity-2-drift-analysis">Activity 2: Drift Analysis</h1>
+<p><strong>Teams:</strong> 3–4 students | <strong>Working time:</strong>
+18 min | <strong>Debrief:</strong> 7 min</p>
+<p><strong>Goal:</strong> Predict, measure, and attempt to correct the
+drift that a small constant bias introduces into a dead-reckoning
+estimate. This is the exact error you will encounter with your phone’s
+Z-axis in MP4.</p>
+<hr />
+<h2 id="instructions-1">Instructions</h2>
+<ol type="1">
+<li>Continue using the same <code>t</code> vector from Activity 1.</li>
+<li>For each task: <strong>write your qualitative prediction before
+running.</strong> A prediction is not a number — it is a description
+(e.g., “the displacement will grow faster”).</li>
+<li>For quantitative tasks: compute the answer in MATLAB, then write it
+in the table below.</li>
+<li>The final debrief question has a direct answer you should be able to
+give before leaving the room.</li>
+</ol>
+<hr />
+<h2 id="setup-code-1">Setup Code</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">5</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">a_true</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">ones</span>(<span class="va">size</span>(<span class="va">t</span>))<span class="op">;</span>          <span class="co">% true signal from Activity 1</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">a_biased</span> <span class="op">=</span> <span class="va">a_true</span> <span class="op">+</span> <span class="fl">0.1</span><span class="op">;</span>           <span class="co">% 0.1 m/s^2 constant bias added</span></span></code></pre></div>
+<hr />
+<h2 id="task-1-integrate-the-biased-signal-twice">Task 1 — Integrate the
+Biased Signal Twice</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">v_biased</span> <span class="op">=</span> <span class="va">cumtrapz</span>(<span class="va">t</span><span class="op">,</span> <span class="va">a_biased</span>)<span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">d_biased</span> <span class="op">=</span> <span class="va">cumtrapz</span>(<span class="va">t</span><span class="op">,</span> <span class="va">v_biased</span>)<span class="op">;</span></span></code></pre></div>
+<p><strong>Prediction before running:</strong> Will
+<code>d_biased</code> be larger or smaller than <code>d</code> from
+Activity 1, and why?</p>
+<p> </p>
+<p> </p>
+<p><strong>After running:</strong> Plot both <code>d</code> (from
+Activity 1) and <code>d_biased</code> on the same axes using
+<code>hold on</code>. Add a legend.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">figure</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d</span><span class="op">,</span>        <span class="ss">&#39;b-&#39;</span><span class="op">,</span>  <span class="ss">&#39;DisplayName&#39;</span><span class="op">,</span> <span class="ss">&#39;True&#39;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d_biased</span><span class="op">,</span> <span class="ss">&#39;r--&#39;</span><span class="op">,</span> <span class="ss">&#39;DisplayName&#39;</span><span class="op">,</span> <span class="ss">&#39;Biased&#39;</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="va">legend</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Displacement (m)&#39;</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;Time (s)&#39;</span>)</span></code></pre></div>
+<hr />
+<h2 id="task-2-quantify-the-drift-error">Task 2 — Quantify the Drift
+Error</h2>
+<p>Fill in the table. Compute each value from your MATLAB workspace.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>d(end)</code> — true displacement at t=5</td>
+<td></td>
+<td>m</td>
+</tr>
+<tr>
+<td><code>d_biased(end)</code> — biased displacement at t=5</td>
+<td></td>
+<td>m</td>
+</tr>
+<tr>
+<td>Displacement error at t=5</td>
+<td></td>
+<td>m</td>
+</tr>
+<tr>
+<td>Error as % of true displacement</td>
+<td></td>
+<td>%</td>
+</tr>
+</tbody>
+</table>
+<p>Now extend t to 10 seconds and repeat:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">t10</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">a_true10</span>   <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">ones</span>(<span class="va">size</span>(<span class="va">t10</span>))<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="va">a_biased10</span> <span class="op">=</span> <span class="va">a_true10</span> <span class="op">+</span> <span class="fl">0.1</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="va">d10</span>        <span class="op">=</span> <span class="va">cumtrapz</span>(<span class="va">t10</span><span class="op">,</span> <span class="va">cumtrapz</span>(<span class="va">t10</span><span class="op">,</span> <span class="va">a_true10</span>))<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">d_biased10</span> <span class="op">=</span> <span class="va">cumtrapz</span>(<span class="va">t10</span><span class="op">,</span> <span class="va">cumtrapz</span>(<span class="va">t10</span><span class="op">,</span> <span class="va">a_biased10</span>))<span class="op">;</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Error (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t = 5 s</td>
+<td></td>
+</tr>
+<tr>
+<td>t = 10 s</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question:</strong> When time doubles, what happens to the
+error — does it double, quadruple, or something else? Why?</p>
+<p> </p>
+<p> </p>
+<hr />
+<h2 id="bonus-task-try-to-remove-the-bias">Bonus Task — Try to Remove
+the Bias</h2>
+<p>A natural idea: subtract the mean of <code>a_biased</code> before
+integrating.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">a_corrected</span> <span class="op">=</span> <span class="va">a_biased</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">a_biased</span>)<span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">d_corrected</span> <span class="op">=</span> <span class="va">cumtrapz</span>(<span class="va">t</span><span class="op">,</span> <span class="va">cumtrapz</span>(<span class="va">t</span><span class="op">,</span> <span class="va">a_corrected</span>))<span class="op">;</span></span></code></pre></div>
+<p><strong>Prediction before running:</strong> Will this completely
+eliminate the drift? Partially reduce it? Have no effect?</p>
+<p> </p>
+<p><strong>After running:</strong> Plot <code>d</code>,
+<code>d_biased</code>, and <code>d_corrected</code> together. Describe
+what you see.</p>
+<p> </p>
+<p> </p>
+<p><strong>Measurement:</strong> What is <code>d_corrected(end)</code>?
+__________ Is it closer to <code>d(end)</code> than
+<code>d_biased(end)</code> was?</p>
+<p> </p>
+<p><strong>Reasoning:</strong> Why does mean subtraction on the
+acceleration NOT fully eliminate drift in the displacement? Write a
+sentence using the word “integration.”</p>
+<p> </p>
+<p> </p>
+<hr />
+<h2 id="task-3-the-mp4-gravity-question">Task 3 — The MP4 Gravity
+Question</h2>
+<p>In MP4, your phone’s Z-axis reads approximately 9.81 m/s² when lying
+flat and still. This is gravity — it is not vertical motion.</p>
+<p><strong>Question:</strong> Before integrating Z-axis acceleration to
+get velocity, what must you subtract?</p>
+<p>Your answer: __________</p>
+<p><strong>Question:</strong> How would you <em>measure</em> this offset
+precisely in your own phone data, before you start moving?</p>
+<p>Your answer: __________</p>
+<p> </p>
+<p>Write MATLAB code that computes <code>v_phone</code> from
+<code>Az</code> and <code>t</code> with the gravity offset removed:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Your code here:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">g_offset</span> <span class="op">=</span> ____________________________<span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="va">az_net</span>   <span class="op">=</span> ____________________________<span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="va">v_phone</span>  <span class="op">=</span> ____________________________<span class="op">;</span></span></code></pre></div>
+<hr />
+<h2 id="extension-if-your-team-finishes-early-1">Extension (if your team
+finishes early)</h2>
+<p>Could you use <code>polyfit</code> to model and remove the drift
+trend from <code>d_biased</code>?</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">p_drift</span> <span class="op">=</span> <span class="va">polyfit</span>(<span class="va">t</span><span class="op">,</span> <span class="va">d_biased</span><span class="op">,</span> ___)<span class="op">;</span>        <span class="co">% what degree captures drift?</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">d_detrended</span> <span class="op">=</span> <span class="va">d_biased</span> <span class="op">-</span> <span class="va">polyval</span>(<span class="va">p_drift</span><span class="op">,</span> <span class="va">t</span>)<span class="op">;</span></span></code></pre></div>
+<p>Does detrending give a better estimate than mean subtraction? When
+would this approach break down?</p>
+<p> </p>
+<hr />
+<h2 id="debrief-questions-1">Debrief Questions</h2>
+<ol type="1">
+<li>Drift grew faster than linearly when you doubled the time. Why is
+the error quadratic in time?</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="2" type="1">
+<li>You tried subtracting the mean of <code>a_biased</code>. In what
+situation would mean subtraction <em>perfectly</em> eliminate
+drift?</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="3" type="1">
+<li>In your own words: why is dead reckoning fundamentally limited as a
+navigation method over long time periods?</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="4" type="1">
+<li>Write the two lines of MATLAB code you will use inside
+<code>SensorDataAnalyzer.integrate()</code> in MP4 (hint: you wrote them
+in Task 3).</li>
+</ol>
+<p> </p>
+<p> </p>
+<ol start="5" type="1">
+<li>Connect to the lab series: Labs 1–3 captured and analyzed events.
+MP4 is about <em>estimating something unmeasured</em> (displacement)
+from something <em>measured</em> (acceleration). What does this change
+about how you validate your result?</li>
+</ol>
+<p> </p>
+<p> </p>
+<hr />
+<h2 id="key-concepts-keep-this-as-a-study-reference-1">Key Concepts
+(keep this as a study reference)</h2>
+<ul>
+<li>A constant bias in acceleration produces <strong>quadratically
+growing</strong> drift in displacement (not linear) — because the error
+accumulates through two integrations.</li>
+<li>Mean subtraction on the acceleration reduces DC offset but does not
+fully remove accumulated integration error if any residual remains.</li>
+<li>In practice, drift is managed by: (a) careful bias estimation from a
+stationary window, (b) periodic resets using external reference (GPS,
+landmarks), or (c) sensor fusion.</li>
+<li><code>polyfit</code> on a drifting signal can characterize the trend
+— but this is a post-processing correction, not a fix to the underlying
+physics.</li>
+<li>The MP4 gravity offset must be measured <em>before</em> motion
+begins — using <code>mean(Az)</code> during a stationary window.</li>
+<li>Dead reckoning is most accurate over short time windows. The longer
+you integrate, the larger the accumulated error.</li>
+</ul>
+<hr />
+<p><em>ENG 6 Spring 2026 | Lecture 8 | Drift Analysis — MP4
+Bridge</em></p>
+</body>
+</html>
